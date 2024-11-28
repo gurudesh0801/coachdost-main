@@ -1,0 +1,83 @@
+/* Base styles for the sticky footer bar */
+.sticky-footer-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3rem;
+  background: transparent;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+  display: none; /* Hidden by default */
+  justify-content: space-around;
+  align-items: center;
+  z-index: 1000;
+  border: 1px solid #524ca8;
+  margin: auto;
+}
+
+/* First button (White background with blue text) */
+.footer-button1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  width: 100%;
+  text-align: center;
+  flex-direction: column;
+  padding: 0.5rem 8rem;
+  border: none;
+  background-color: #ffffff; /* White background */
+  color: #524ca8; /* Blue text */
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.footer-button1:hover {
+  background-color: #f0f0f0; /* Light gray on hover */
+}
+
+/* Second button (Blue background with white text) */
+.footer-button2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  padding: 0.5rem 8rem;
+  background-color: #524ca8; /* Blue background */
+  color: #ffffff; /* White text */
+  font-size: 1.2rem;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.footer-button2:hover {
+  background-color: #3e3a91; /* Darker blue on hover */
+}
+
+/* Icon styling */
+.footer-button i {
+  font-size: 1rem;
+  margin-bottom: 5px;
+}
+
+/* Responsive styling for mobile devices */
+@media (max-width: 768px) {
+  .sticky-footer-bar {
+    display: flex; /* Show only on mobile screens */
+  }
+
+  .footer-button1,
+  .footer-button2 {
+    padding: 1rem 4rem; /* Adjust padding for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-button1,
+  .footer-button2 {
+    padding: 1rem 2rem; /* Compact padding for very small screens */
+  }
+}

@@ -1,0 +1,95 @@
+/* Container styling with gradient background */
+.animation-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(135deg, #5d63cc, #5d63cc);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  font-family: sans-serif;
+}
+
+/* Circle container for organized circle positioning */
+.circle-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Moving Circles */
+.moving-circle {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  opacity: 0.8;
+  animation: moveAndScale 2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* Different colors and delays for each circle */
+.circle1 {
+  background-color: #fff200;
+  animation-delay: 0s;
+}
+
+.circle2 {
+  background-color: #2bff00;
+  animation-delay: 0.5s;
+}
+
+.circle3 {
+  background-color: #2ecc71;
+  animation-delay: 0.8s;
+}
+
+/* Keyframes for moving and scaling the circles */
+@keyframes moveAndScale {
+  0% {
+    transform: scale(1) translate(0, 0) rotate(0deg);
+    opacity: 0.8;
+  }
+  30% {
+    transform: scale(2) translate(50px, -50px) rotate(90deg);
+    opacity: 0.6;
+  }
+  60% {
+    transform: scale(3) translate(-80px, 80px) rotate(180deg);
+    opacity: 0.4;
+  }
+  100% {
+    transform: scale(1) translate(0, 0) rotate(270deg);
+    opacity: 0;
+  }
+}
+
+/* Simple text fade-in without glow */
+.text-display {
+  font-size: 3rem;
+  color: #fffccf;
+  opacity: 0;
+  animation: fadeInAndScale 2s ease-in-out forwards 0s;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* Keyframes for text fade-in and scaling */
+@keyframes fadeInAndScale {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.2);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

@@ -1,0 +1,235 @@
+@font-face {
+  font-family: "LTAvocado"; /* Choose a name for the font */
+  src: url("../../assets/fonts/LTAvocado-Bold.ttf") format("truetype"); /* Adjust the path and format */
+}
+.testimonials-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 20px;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 5rem auto;
+}
+
+/* Left Section */
+.testimonials-left {
+  flex: 1 1 45%;
+  text-align: left;
+  padding: 20px;
+  min-width: 280px; /* Minimum width for smaller screens */
+}
+
+.students-image {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.testimonials-left h1 {
+  font-size: 3rem;
+  margin-bottom: 15px;
+  color: #524ca8;
+  font-family: "LTAvocado";
+}
+
+.testimonials-left p {
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.see-all-reviews {
+  font-weight: bold;
+  color: #4a56e2;
+  text-decoration: none;
+}
+
+.see-all-reviews:hover {
+  text-decoration: underline;
+}
+
+/* Right Section */
+.testimonials-right {
+  flex: 1 1 45%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  min-width: 280px; /* Minimum width for smaller screens */
+}
+
+.testimonial-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  background: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.testimonial-card:hover {
+  transform: scale(1.02); /* Slight zoom effect on hover */
+}
+
+.testimonial-image {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.testimonial-content h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.testimonial-content p {
+  font-size: 1rem;
+  color: #666;
+}
+
+.rating {
+  font-size: 1rem;
+  color: #ff9800;
+  margin-top: 5px;
+}
+
+/* Responsive Design for Tablets */
+@media (max-width: 1024px) {
+  .testimonials-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .testimonials-left,
+  .testimonials-right {
+    flex: 1 1 100%;
+    text-align: center;
+    padding: 15px;
+  }
+
+  .students-image {
+    max-width: 80%;
+    margin: 0 auto 20px;
+  }
+
+  .testimonials-left h1 {
+    font-size: 2rem;
+  }
+
+  .testimonials-left p {
+    font-size: 1rem;
+  }
+
+  .testimonial-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .testimonial-image {
+    margin: 0 auto 10px;
+  }
+}
+/* Responsive Design for Medium Devices (Tablets - 768px) */
+@media (max-width: 768px) {
+  .testimonials-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .testimonials-left,
+  .testimonials-right {
+    flex: 1 1 100%;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .students-image {
+    max-width: 90%;
+    margin: 0 auto 15px;
+    border-radius: 8px;
+  }
+
+  .testimonials-left h1 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+  }
+
+  .testimonials-left p {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 15px;
+  }
+
+  .see-all-reviews {
+    font-size: 0.95rem;
+  }
+
+  .testimonials-right {
+    gap: 15px;
+  }
+
+  .testimonial-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 15px;
+  }
+
+  .testimonial-image {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 10px;
+  }
+
+  .testimonial-content h3 {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+  }
+
+  .testimonial-content p {
+    font-size: 0.9rem;
+  }
+
+  .rating {
+    font-size: 0.95rem;
+  }
+}
+
+/* Responsive Design for Mobile Devices */
+@media (max-width: 576px) {
+  .testimonials-left h1 {
+    font-size: 1.8rem;
+  }
+
+  .testimonials-left p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+
+  .students-image {
+    max-width: 100%;
+    margin-bottom: 15px;
+  }
+
+  .testimonial-card {
+    padding: 15px;
+    gap: 10px;
+  }
+
+  .testimonial-content h3 {
+    font-size: 1rem;
+  }
+
+  .testimonial-content p {
+    font-size: 0.85rem;
+  }
+
+  .rating {
+    font-size: 0.9rem;
+  }
+}

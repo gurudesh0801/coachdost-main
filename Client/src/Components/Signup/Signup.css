@@ -1,0 +1,239 @@
+/* Base Styles */
+.signup-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #6a11cb, #2575fc);
+  padding: 20px;
+}
+
+.signup-card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  max-width: 400px;
+  width: 100%;
+}
+
+.signup-card h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Message Styles */
+.message {
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.message.success {
+  background: #d4edda;
+  color: #155724;
+}
+
+.message.error {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+/* Role Selection */
+.role-selection {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.role-label {
+  font-weight: bold;
+  color: #333;
+}
+
+/* Form Styles */
+.signup-form input,
+.signup-form select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.signup-form input:focus,
+.signup-form select:focus {
+  border-color: #2575fc;
+  outline: none;
+  box-shadow: 0 0 5px rgba(37, 117, 252, 0.5);
+}
+
+/* Button Styles */
+.signup-btn {
+  width: 100%;
+  padding: 10px;
+  background: #2575fc;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.signup-btn:hover {
+  background: #205ecf;
+}
+
+/* Divider */
+.or-divider {
+  text-align: center;
+  margin: 15px 0;
+  font-weight: bold;
+  color: #777;
+}
+
+/* Social Signup Buttons */
+.social-signup {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.social-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.social-btn.google {
+  background: #db4437;
+  color: #fff;
+}
+
+.social-btn.linkedin {
+  background: #0077b5;
+  color: #fff;
+}
+
+.social-btn:hover {
+  opacity: 0.9;
+}
+.file-upload {
+  margin-top: 10px;
+}
+
+.file-label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.file-input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+/* Responsive Design */
+
+/* Tablets (Portrait and Landscape) */
+@media (max-width: 768px) {
+  .signup-card {
+    padding: 20px;
+    max-width: 90%;
+  }
+
+  .signup-form input,
+  .signup-form select {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .signup-btn {
+    font-size: 16px;
+    padding: 8px;
+  }
+
+  .role-label {
+    font-size: 14px;
+  }
+
+  .social-btn {
+    font-size: 14px;
+    padding: 8px 15px;
+  }
+}
+
+/* Mobile Devices */
+@media (max-width: 480px) {
+  .signup-card {
+    padding: 15px;
+  }
+
+  .signup-card h2 {
+    font-size: 20px;
+  }
+
+  .signup-form input,
+  .signup-form select {
+    font-size: 13px;
+    padding: 6px;
+  }
+
+  .signup-btn {
+    font-size: 14px;
+    padding: 6px;
+  }
+
+  .role-label {
+    font-size: 12px;
+  }
+
+  .social-btn {
+    font-size: 12px;
+    padding: 5px 10px;
+  }
+}
+
+/* Large Screens (High Resolution) */
+@media (min-width: 1024px) {
+  .signup-card {
+    padding: 40px;
+    max-width: 450px;
+  }
+
+  .signup-card h2 {
+    font-size: 24px;
+  }
+
+  .signup-form input,
+  .signup-form select {
+    font-size: 18px;
+    padding: 12px;
+  }
+
+  .signup-btn {
+    font-size: 20px;
+    padding: 12px;
+  }
+
+  .role-label {
+    font-size: 16px;
+  }
+
+  .social-btn {
+    font-size: 18px;
+    padding: 10px 25px;
+  }
+}

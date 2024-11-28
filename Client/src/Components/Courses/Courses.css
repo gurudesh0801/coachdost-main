@@ -1,0 +1,185 @@
+@font-face {
+  font-family: "LTAvocado"; /* Choose a name for the font */
+  src: url("../../assets/fonts/LTAvocado-Bold.ttf") format("truetype"); /* Adjust the path and format */
+}
+
+.app {
+  text-align: center;
+  padding: 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.heading1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  color: #524ca8;
+  font-family: "LTAvocado";
+}
+
+/* Tabs Section */
+.tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+  gap: 20px;
+  flex-wrap: wrap; /* Allows tabs to wrap on smaller screens */
+}
+
+.tabs span {
+  font-size: 1rem;
+  padding: 8px 16px;
+  cursor: pointer;
+  color: #555;
+  border-bottom: 2px solid transparent;
+  transition: color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+}
+
+.tabs span:hover {
+  color: #5851db;
+  border-bottom: 2px solid #5851db; /* Highlight effect on hover */
+}
+
+/* Courses Section */
+.courses {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 0 20px;
+}
+
+.course-card1 {
+  background: #fff;
+  border-radius: 8px;
+  color: #524ca8;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out,
+    background-color 0.3s ease-in-out;
+}
+
+/* Hover Effect */
+.course-card1:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+  background-color: #5851db; /* Change background color on hover */
+  color: #ffffff;
+}
+.course-card1:hover .read-more {
+  color: #fff;
+}
+
+.active-card {
+  background-color: #5851db;
+  color: #fff;
+  margin: auto;
+}
+
+.active-card h2,
+.active-card p,
+.active-card .price {
+  color: #ffffff;
+}
+
+/* Icon Placeholder */
+.icon {
+  width: 50px;
+  height: 50px;
+  margin: 0 auto 15px;
+  border-radius: 50%;
+  background-color: #ccc;
+}
+
+/* Footer Section */
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.price {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.read-more {
+  text-decoration: none;
+  font-size: 0.9rem;
+  color: #5851db;
+  font-weight: bold;
+}
+
+.read-more:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Design */
+
+/* Small devices (max-width: 600px) */
+@media (max-width: 600px) {
+  .tabs {
+    gap: 10px;
+    font-size: 0.9rem;
+    display: flex;
+  }
+
+  .course-card1 {
+    padding: 15px;
+  }
+
+  .heading {
+    font-size: 1.8rem;
+    font-family: "LTAvocado";
+  }
+
+  .price {
+    font-size: 1rem;
+  }
+}
+
+/* Medium devices (max-width: 768px) */
+@media (max-width: 768px) {
+  .tabs {
+    justify-content: center; /* Align tabs to the left for better UX */
+  }
+
+  .course-card1 {
+    padding: 18px;
+  }
+
+  .heading {
+    font-size: 2rem;
+    font-family: "LTAvocado";
+  }
+}
+
+/* Large devices (max-width: 992px) */
+@media (max-width: 992px) {
+  .courses {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+  }
+
+  .course-card1 {
+    padding: 20px;
+  }
+
+  .heading {
+    font-size: 2.2rem;
+    font-family: "LTAvocado";
+  }
+}
+
+/* Extra large devices (min-width: 1200px) */
+@media (min-width: 1200px) {
+  .courses {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+
+  .course-card1 {
+    padding: 25px;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+  }
+}

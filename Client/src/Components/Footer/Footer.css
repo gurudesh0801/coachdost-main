@@ -1,0 +1,230 @@
+/* General Styling */
+@font-face {
+  font-family: "LTAvocado"; /* Choose a name for the font */
+  src: url("../../assets/fonts/LTAvocado-Bold.ttf") format("truetype"); /* Adjust the path and format */
+}
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+.footer {
+  color: white;
+  padding: 40px 20px;
+  text-align: center;
+}
+.subscribe-section {
+  background-color: #524ca8;
+  padding: 10rem 10rem;
+}
+
+/* Subscribe Section */
+.subscribe-section h2 {
+  font-family: "LTAvocado";
+  font-size: 3.5rem;
+  margin: auto;
+}
+
+.subscribe-section p {
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+.subscribe-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+}
+
+.subscribe-form input {
+  padding: 20px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  width: 30rem;
+  max-width: 100%;
+  color: rgb(255, 255, 255);
+  background-color: #ffffff48;
+}
+
+.subscribe-form button {
+  position: absolute;
+  right: 20rem;
+  padding: 13px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #ffffff;
+  color: #524ca8;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.subscribe-form button:hover {
+  background-color: #ececec;
+}
+
+/* Footer Bottom Section */
+.footer-bottom {
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.contact-button {
+  background-color: #524ca8;
+  color: white;
+  border: 1px solid white;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.contact-button:hover {
+  background-color: #ffffff;
+  color: #524ca8;
+}
+
+.footer-text h3 {
+  font-size: 2rem;
+  color: #524ca8;
+  font-family: "LTAvocado";
+}
+
+.footer-text p {
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.footer-links {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: #524ca8;
+  font-size: 0.9rem;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Design */
+
+/* For tablets and smaller screens (max-width: 768px) */
+@media (max-width: 768px) {
+  .subscribe-section {
+    padding: 5rem 2rem;
+    text-align: center;
+  }
+
+  .subscribe-section h2 {
+    font-size: 2rem;
+  }
+
+  .subscribe-section p {
+    font-size: 0.9rem;
+  }
+
+  .subscribe-form {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .subscribe-form input {
+    width: 90%; /* Adjust width for smaller screens */
+  }
+
+  .subscribe-form button {
+    width: 30%; /* Match button width to input */
+    text-align: center; /* Center-align text inside the button */
+    right: 0;
+  }
+
+  .footer {
+    padding: 20px 10px;
+    text-align: center;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 1rem;
+  }
+
+  .footer-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .footer-text h3 {
+    font-size: 1.5rem;
+  }
+
+  .footer-text p {
+    font-size: 0.8rem;
+  }
+
+  .contact-button {
+    text-align: center;
+  }
+}
+
+/* For small mobile devices (max-width: 480px) */
+@media (max-width: 480px) {
+  .subscribe-section {
+    padding: 3rem 1rem;
+  }
+
+  .subscribe-section h2 {
+    font-size: 1.5rem;
+    line-height: 1.8rem;
+  }
+
+  .subscribe-section p {
+    font-size: 0.8rem;
+  }
+
+  .subscribe-form input {
+    padding: 10px; /* Reduce padding for smaller screens */
+    font-size: 0.9rem; /* Adjust font size */
+  }
+
+  .subscribe-form button {
+    width: 30%; /* Match button width to input */
+    padding: 10px;
+    text-align: center; /* Center-align text inside the button */
+    right: 0;
+  }
+
+  .footer {
+    font-size: 0.8rem;
+    padding: 10px 5px;
+  }
+
+  .footer-bottom {
+    gap: 5px;
+  }
+
+  .footer-text h3 {
+    font-size: 1.2rem;
+  }
+
+  .footer-text p {
+    font-size: 0.7rem;
+  }
+
+  .footer-links a {
+    font-size: 0.8rem;
+  }
+
+  .contact-button {
+    padding: 0.7rem 2rem;
+  }
+}
