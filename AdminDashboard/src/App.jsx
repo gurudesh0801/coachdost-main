@@ -10,7 +10,7 @@ import OrdersPage from "./pages/OrdersPage";
 import AnalyticsPage from "./pages/AnalyticsPage";
 import SettingsPage from "./pages/SettingsPage";
 import { useEffect, useState } from "react";
-import Login from "./components/login/login";
+import Login from "./components/login/Login";
 import UnapprovedCoachesPage from "./pages/UnapprovedCoachesPage";
 import SessionsApprovalPage from "./pages/SessionsApprovalPage";
 import UnapprovedBlogsPage from "./pages/UnapprovedBlogsPage";
