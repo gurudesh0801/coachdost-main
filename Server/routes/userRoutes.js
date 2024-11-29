@@ -13,7 +13,7 @@ const upload = multer({ dest: "uploads/" });
 const router = express.Router();
 
 // Signup route
-router.post("/signup", signupUser);
+router.post("/signup", upload.none(), signupUser);
 router.get("/", getAllUsers);
 router.get("/growth", getUserGrowth);
 router.post("/login", loginUser);

@@ -26,6 +26,9 @@ app.use(cors());
 app.use(bodyParser.json());
 
 // Routes
+app.get("/", (req, res) => {
+  res.send("Api Working Fine");
+});
 app.use("/api/users", userRoutes);
 app.use("/api/coaches", coachRoutes);
 app.use("/api/coaches", coachLogin);

@@ -5,9 +5,10 @@ const multer = require("multer");
 
 const signupUser = async (req, res) => {
   const { username, phone, email, password, role } = req.body;
+  console.log(req);
 
   // Validate input
-  if (!username || !phone || !email || !password) {
+  if (!username || !phone || !email || !password || !role) {
     return res.status(400).json({ message: "All fields are required" });
   }
 

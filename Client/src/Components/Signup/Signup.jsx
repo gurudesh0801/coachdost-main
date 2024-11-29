@@ -37,17 +37,35 @@ const Signup = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    // Validate required fields for "Coach"
+    if (formData.role === "Coach") {
+      if (
+        !formData.categories ||
+        !formData.experience ||
+        !formData.profilePicture
+      ) {
+        setMessage({
+          type: "error",
+          text: "All fields are required for Coach signup.",
+        });
+        return;
+      }
+    }
+
     // Create FormData object for file and text data
     const formPayload = new FormData();
     formPayload.append("username", formData.username);
     formPayload.append("phone", formData.phone);
     formPayload.append("email", formData.email);
     formPayload.append("password", formData.password);
-    formPayload.append("experience", formData.experience);
-    formPayload.append("categories", formData.categories);
     formPayload.append("role", formData.role);
-    if (formData.profilePicture) {
-      formPayload.append("profilePicture", formData.profilePicture);
+
+    if (formData.role === "Coach") {
+      formPayload.append("experience", formData.experience);
+      formPayload.append("categories", formData.categories);
+      if (formData.profilePicture) {
+        formPayload.append("profilePicture", formData.profilePicture);
+      }
     }
 
     const endpoint =
@@ -69,9 +87,9 @@ const Signup = () => {
         alert("Successfully signed up!");
 
         if (formData.role === "Client") {
-          navigate("/clientdashboard");
+          window.location.href = "http://localhost:5176"; // Use window.location.href for external navigation
         } else if (formData.role === "Coach") {
-          navigate("/coachdashboard");
+          window.location.href = "http://localhost:5175"; // Use window.location.href for external navigation
         }
       } else {
         setMessage({ type: "error", text: data.message || "Signup failed" });

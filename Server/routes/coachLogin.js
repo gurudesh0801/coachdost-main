@@ -24,7 +24,9 @@ router.post("/login", async (req, res) => {
     // Check if the coach exists in the database
     const coach = await Coach.findOne({ email });
     if (!coach) {
-      return res.status(404).json({ message: "Coach not found" });
+      return res.status(404).json({
+        message: "Your Approval Pending Once Aprrove You Will Recived Mail",
+      });
     }
 
     // Check if coach is approved
