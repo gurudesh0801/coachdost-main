@@ -9,7 +9,6 @@ import SalesPage from "./pages/SalesPage";
 import OrdersPage from "./pages/OrdersPage";
 import AnalyticsPage from "./pages/AnalyticsPage";
 import SettingsPage from "./pages/SettingsPage";
-import NewCoachForm from "./components/newCoachForm/newCoachForm";
 import { useEffect, useState } from "react";
 import Login from "./components/login/login";
 import UnapprovedCoachesPage from "./pages/UnapprovedCoachesPage";
