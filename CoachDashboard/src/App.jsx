@@ -12,7 +12,6 @@ import { useEffect, useState } from "react";
 import Login from "./components/login/Login";
 import WriteBlogPage from "./pages/WriteBlogPage";
 import CalendarPage from "./pages/CalendarPage";
-import ViewSessionRequests from "./pages/UnapprovedSessionsPage ";
 import UnapprovedSessionsPage from "./pages/UnapprovedSessionsPage ";
 
 function App() {
