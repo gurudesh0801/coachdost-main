@@ -87,10 +87,6 @@ function App() {
               path="/blogpage"
               element={<WriteBlogPage token={token} coachInfo={coachInfo} />}
             />
-            <Route
-              path="/newcoachform"
-              element={<NewCoachForm token={token} coachInfo={coachInfo} />}
-            />
           </Routes>
         </div>
       )}

@@ -10,11 +10,11 @@ const coachRoutes = require("./routes/coachRoutes");
 const coachLogin = require("./routes/coachLogin");
 const sessionRoutes = require("./routes/sessionRoutes");
 const blogRoutes = require("./routes/blogRoutes");
-const { verifyToken } = require("./utils/jwtUtils");
 const bookingRoutes = require("./routes/bookingRoutes");
+const { google } = require("googleapis");
 
 // Load environment variables
-dotenv.config();
+require("dotenv").config();
 
 // Connect to MongoDB
 connectDB();

@@ -80,7 +80,7 @@ const OverviewPage = ({ token, user }) => {
   }, []);
 
   console.log("it is in overview page", user);
-
+  console.log(approvedSessions);
   return (
     <div className="flex-1 overflow-auto relative z-10">
       <Header title="Overview" user={user} />
@@ -130,7 +130,9 @@ const OverviewPage = ({ token, user }) => {
                     key={session.id}
                     className="p-4 bg-white shadow rounded-md border border-gray-200"
                   >
-                    <h3 className="text-lg font-bold mb-2">{session.title}</h3>
+                    <h3 className="text-lg font-bold mb-2">
+                      {session.focusArea}
+                    </h3>
                     <p className="text-sm text-gray-600">
                       {new Date(session.date).toLocaleString()}
                     </p>

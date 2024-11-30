@@ -122,6 +122,7 @@ const FindCoach = ({ user }) => {
         email: user.email, // Include user's email
       },
     };
+    console.log("coachInfo", selectedCoach);
 
     try {
       const response = await fetch(

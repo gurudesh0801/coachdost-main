@@ -63,10 +63,6 @@ function App() {
               token={token}
             />
             <Route path="/settings" element={<SettingsPage token={token} />} />
-            <Route
-              path="/newcoachform"
-              element={<NewCoachForm token={token} />}
-            />
           </Routes>
         </div>
       )}

@@ -78,10 +78,6 @@ function App() {
               element={<FindCoachPage token={token} user={user} />}
             />
             <Route
-              path="/newcoachform"
-              element={<NewCoachForm token={token} user={user} />}
-            />
-            <Route
               path="/total-sessions"
               element={<TotalSessionsPage token={token} user={user} />}
             />
