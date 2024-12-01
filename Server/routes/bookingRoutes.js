@@ -8,7 +8,6 @@ const router = express.Router();
 router.post("/book-session", async (req, res) => {
   try {
     const { userType, coachingType, focusArea, time, coach, user } = req.body;
-    console.log(req.body);
 
     if (!userType || !coachingType || !focusArea || !time || !coach || !user) {
       return res.status(400).json({ message: "All fields are required." });

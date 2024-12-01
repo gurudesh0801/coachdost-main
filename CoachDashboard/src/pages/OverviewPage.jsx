@@ -17,14 +17,17 @@ const OverviewPage = ({ token, coachInfo }) => {
     const fetchNewUsers = async () => {
       try {
         const response = await fetch(
-          `${import.meta.env.VITE_API_BASE_URL}/api/users`
+          `${import.meta.env.VITE_API_BASE_URL}/api/coaches/book-session`
         ); // Update with your API URL
         if (!response.ok) {
           throw new Error("Failed to fetch new users count");
         }
         const data = await response.json();
-        setNewUsers(data.users.length);
-        console.log(data);
+        const filteredData = data.filter(
+          (item) => item.coach === coachInfo._id
+        );
+        console.log(filteredData);
+        setNewUsers(filteredData.length);
       } catch (error) {
         console.error("Error fetching new users count:", error);
       }
@@ -73,7 +76,7 @@ const OverviewPage = ({ token, coachInfo }) => {
 
         {/* CHARTS */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          <SalesOverviewChart />
+          <SalesOverviewChart token={token} coachInfo={coachInfo} />
           <CategoryDistributionChart />
           <SalesChannelChart />
         </div>

@@ -5,7 +5,7 @@ const multer = require("multer");
 
 const signupUser = async (req, res) => {
   const { username, phone, email, password, role } = req.body;
-  console.log(req);
+  // console.log(req);
 
   // Validate input
   if (!username || !phone || !email || !password || !role) {

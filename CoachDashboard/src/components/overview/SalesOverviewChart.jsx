@@ -1,56 +1,121 @@
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from "recharts";
+import React, { useState, useEffect } from "react";
+import {
+  LineChart,
+  Line,
+  CartesianGrid,
+  XAxis,
+  YAxis,
+  Tooltip,
+  ResponsiveContainer,
+  Legend,
+} from "recharts";
 import { motion } from "framer-motion";
 
-const salesData = [
-	{ name: "Jul", sales: 4200 },
-	{ name: "Aug", sales: 3800 },
-	{ name: "Sep", sales: 5100 },
-	{ name: "Oct", sales: 4600 },
-	{ name: "Nov", sales: 5400 },
-	{ name: "Dec", sales: 7200 },
-	{ name: "Jan", sales: 6100 },
-	{ name: "Feb", sales: 5900 },
-	{ name: "Mar", sales: 6800 },
-	{ name: "Apr", sales: 6300 },
-	{ name: "May", sales: 7100 },
-	{ name: "Jun", sales: 7500 },
-];
+const SalesOverviewChart = ({ token, coachInfo }) => {
+  console.log(coachInfo, "CoachInfo");
+  const [interval, setInterval] = useState("day"); // Default to daily view
+  const [data, setData] = useState([]); // Chart data
 
-const SalesOverviewChart = () => {
-	return (
-		<motion.div
-			className='bg-gray-800 bg-opacity-50 backdrop-blur-md shadow-lg rounded-xl p-6 border border-gray-700'
-			initial={{ opacity: 0, y: 20 }}
-			animate={{ opacity: 1, y: 0 }}
-			transition={{ delay: 0.2 }}
-		>
-			<h2 className='text-lg font-medium mb-4 text-gray-100'>Sales Overview</h2>
+  const fetchChartData = async () => {
+    if (!coachInfo?._id) {
+      console.error("Coach information is not available");
+      return;
+    }
 
-			<div className='h-80'>
-				<ResponsiveContainer width={"100%"} height={"100%"}>
-					<LineChart data={salesData}>
-						<CartesianGrid strokeDasharray='3 3' stroke='#4B5563' />
-						<XAxis dataKey={"name"} stroke='#9ca3af' />
-						<YAxis stroke='#9ca3af' />
-						<Tooltip
-							contentStyle={{
-								backgroundColor: "rgba(31, 41, 55, 0.8)",
-								borderColor: "#4B5563",
-							}}
-							itemStyle={{ color: "#E5E7EB" }}
-						/>
-						<Line
-							type='monotone'
-							dataKey='sales'
-							stroke='#6366F1'
-							strokeWidth={3}
-							dot={{ fill: "#6366F1", strokeWidth: 2, r: 6 }}
-							activeDot={{ r: 8, strokeWidth: 2 }}
-						/>
-					</LineChart>
-				</ResponsiveContainer>
-			</div>
-		</motion.div>
-	);
+    try {
+      const response = await fetch(
+        `${
+          import.meta.env.VITE_API_BASE_URL
+        }/api/coaches/book-session-chart?interval=${interval}&coachId=${
+          coachInfo._id
+        }`,
+        {
+          method: "GET",
+          headers: {
+            Authorization: `Bearer ${token}`, // Include token in headers
+            "Content-Type": "application/json",
+          },
+        }
+      );
+
+      if (!response.ok) {
+        throw new Error(`Failed to fetch data: ${response.statusText}`);
+      }
+
+      const chartData = await response.json();
+      console.log(chartData);
+      setData(chartData); // Update the chart data state
+    } catch (error) {
+      console.error("Error fetching chart data:", error);
+    }
+  };
+
+  useEffect(() => {
+    fetchChartData();
+  }, [interval, coachInfo?._id]); // Fetch data whenever interval or coachInfo._id changes
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: -20 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -20 }}
+      transition={{ duration: 0.5 }}
+      className="max-w-3xl mx-full mt-8 text-center"
+    >
+      <h2 className="mb-6 text-2xl font-bold text-gray-700">
+        Approved Sessions Chart
+      </h2>
+      <motion.div
+        initial={{ scale: 0.8 }}
+        animate={{ scale: 1 }}
+        transition={{ duration: 0.5 }}
+        className="mb-4"
+      >
+        <div className="flex items-center justify-center">
+          <label
+            htmlFor="interval"
+            className="mr-4 text-lg font-medium text-gray-600"
+          >
+            View by:
+          </label>
+          <select
+            id="interval"
+            onChange={(e) => setInterval(e.target.value)}
+            value={interval}
+            className="px-4 py-2 text-black border rounded-lg shadow-sm"
+          >
+            <option value="day">Day</option>
+            <option value="month">Month</option>
+            <option value="year">Year</option>
+          </select>
+        </div>
+      </motion.div>
+      <div className="w-full h-96">
+        <ResponsiveContainer>
+          <LineChart
+            data={data}
+            margin={{ top: 20, right: 20, left: 0, bottom: 0 }}
+          >
+            <CartesianGrid stroke="#e2e8f0" strokeDasharray="5 5" />
+            <XAxis dataKey="date" />
+            <YAxis />
+            <Tooltip />
+            <Legend />
+            <Line
+              type="monotone"
+              dataKey="count"
+              stroke="#4f46e5"
+              strokeWidth={2}
+              dot={{ r: 5 }}
+              activeDot={{ r: 8 }}
+              animationBegin={0}
+              animationDuration={800}
+            />
+          </LineChart>
+        </ResponsiveContainer>
+      </div>
+    </motion.div>
+  );
 };
+
 export default SalesOverviewChart;

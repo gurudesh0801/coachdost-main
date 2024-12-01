@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const Booking = require("../models/Booking");
 const User = require("../models/userModel");
+const Coach = require("../models/Coach");
 const { google } = require("googleapis");
 const { sendSessionApprovalEmail } = require("../utils/email");
 const {
@@ -12,8 +13,7 @@ const {
   getUnapprovedCoaches,
   approveCoach,
 } = require("../controllers/adminController");
-
-const Coach = require("../models/Coach");
+const { default: mongoose } = require("mongoose");
 require("dotenv").config();
 
 const atoken = process.env.ACCESS_TOKEN;
@@ -141,6 +141,80 @@ router.get("/book-session", async (req, res) => {
   } catch (error) {
     console.error("Error fetching approved sessions:", error);
     res.status(500).json({ error: "Failed to fetch approved sessions" });
+  }
+});
+
+router.get("/book-session-chart", async (req, res) => {
+  try {
+    const { interval, coachId } = req.query; // 'day', 'month', 'year', and 'coachId'
+    console.log(coachId);
+    if (!coachId) {
+      return res.status(400).json({ error: "Coach ID is required" });
+    }
+
+    // Check if the coach exists
+    const coachExists = await Coach.findById(coachId);
+    if (!coachExists) {
+      return res.status(404).json({ error: "Coach not found" });
+    }
+    // Define group format based on interval
+    let groupFormat;
+    if (interval === "day") {
+      groupFormat = {
+        year: { $year: "$time" },
+        month: { $month: "$time" },
+        day: { $dayOfMonth: "$time" },
+      };
+    } else if (interval === "month") {
+      groupFormat = {
+        year: { $year: "$time" },
+        month: { $month: "$time" },
+      };
+    } else if (interval === "year") {
+      groupFormat = {
+        year: { $year: "$time" },
+      };
+    } else {
+      return res.status(400).json({ error: "Invalid interval" });
+    }
+
+    // MongoDB aggregation
+    const chartData = await Booking.aggregate([
+      {
+        $match: {
+          status: "Approved", // Only approved bookings
+          coach: new mongoose.Types.ObjectId(coachId), // Match the coach ID
+        },
+      },
+      {
+        $group: {
+          _id: groupFormat,
+          count: { $sum: 1 }, // Count the number of sessions
+        },
+      },
+      { $sort: { "_id.year": 1, "_id.month": 1, "_id.day": 1 } }, // Sort by date
+    ]);
+
+    // Format data for frontend
+    const formattedData = chartData.map((item) => {
+      let date;
+      if (interval === "day") {
+        date = `${item._id.year}-${String(item._id.month).padStart(
+          2,
+          "0"
+        )}-${String(item._id.day).padStart(2, "0")}`;
+      } else if (interval === "month") {
+        date = `${item._id.year}-${String(item._id.month).padStart(2, "0")}`;
+      } else {
+        date = `${item._id.year}`;
+      }
+      return { date, count: item.count };
+    });
+
+    res.status(200).json(formattedData);
+  } catch (error) {
+    console.error("Error fetching chart data:", error);
+    res.status(500).json({ error: "Failed to fetch chart data" });
   }
 });
 
