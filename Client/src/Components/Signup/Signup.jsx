@@ -87,9 +87,9 @@ const Signup = () => {
         alert("Successfully signed up!");
 
         if (formData.role === "Client") {
-          window.location.href = "user.coachdost.com"; // Use window.location.href for external navigation
+          window.location.href = "https://user.coachdost.com"; // Use window.location.href for external navigation
         } else if (formData.role === "Coach") {
-          window.location.href = "coach.coachdost.com"; // Use window.location.href for external navigation
+          window.location.href = "https://coach.coachdost.com"; // Use window.location.href for external navigation
         }
       } else {
         setMessage({ type: "error", text: data.message || "Signup failed" });
