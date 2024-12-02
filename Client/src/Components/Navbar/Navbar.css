@@ -1,32 +1,26 @@
-/* Navbar Container */
-@font-face {
-  font-family: "LTAvocado"; /* Choose a name for the font */
-  src: url("../../assets/fonts/LTAvocado-Regular.ttf") format("truetype"); /* Adjust the path and format */
-}
-
+/* General Navbar Styling */
 .navbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 10px 20px;
   position: relative;
+  background-color: #ffffff;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
 }
 
-/* Logo Container */
+/* Logo Styling */
 .logo img {
-  height: 50px; /* Adjust as necessary */
-  width: 10rem;
-  display: flex;
-  margin-left: 0.4rem;
-  margin-top: 5px;
+  height: 50px;
+  width: auto;
 }
 
-/* Centered Navigation Links */
+/* Navigation Links */
 .nav-links {
   list-style: none;
   display: flex;
   margin-left: auto;
-  margin-right: 2rem;
   gap: 20px;
 }
 
@@ -34,16 +28,15 @@
   text-decoration: none;
   color: #000000;
   font-size: 1rem;
-  transition: color 0.3s;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  font-weight: 400;
+  transition: color 0.3s ease-in-out;
 }
 
 .nav-links li a:hover {
   color: #007bff;
 }
 
-/* Left Side Button */
+/* Left Side Buttons */
 .left-button .demo-button {
   padding: 10px 20px;
   margin-right: 1rem;
@@ -52,25 +45,63 @@
   border-radius: 5px;
   border: none;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: all 0.3s ease-in-out;
 }
 
 .left-button .demo-button:hover {
   background-color: #cacaca;
   color: #282828;
-  transition: all 0.5s ease-out;
 }
 
-/* Hamburger Icon */
-/* Hamburger Icon */
+/* Dropdown Menu */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1001;
+  display: flex;
+  flex-direction: column;
+  min-width: 150px;
+  padding: 10px 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.dropdown-menu .dropdown-item {
+  padding: 10px 15px;
+  cursor: pointer;
+  text-align: left;
+  background-color: #ffffff;
+  border: none;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.dropdown-menu .dropdown-item:hover {
+  background-color: #f0f0f0;
+  color: #007bff;
+}
+
+.dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Hamburger Menu */
 .hamburger {
   display: none;
   flex-direction: column;
   cursor: pointer;
   gap: 5px;
-  position: relative;
-  z-index: 20; /* Ensures it stays above other elements */
-  transition: transform 0.3s ease;
 }
 
 .hamburger .bar {
@@ -81,202 +112,121 @@
   transition: all 0.3s ease-in-out;
 }
 
-/* Active state: Transform the bars */
 .hamburger.active .bar:nth-child(1) {
   transform: translateY(8px) rotate(45deg);
 }
 
 .hamburger.active .bar:nth-child(2) {
-  opacity: 0; /* Middle bar disappears */
+  opacity: 0;
 }
 
 .hamburger.active .bar:nth-child(3) {
   transform: translateY(-8px) rotate(-45deg);
 }
 
-/* Responsive Styling */
-/* Responsive Styling */
-/* For larger screens (1200px and above) */
+/* Active Navigation Links for Mobile */
+.nav-links.active {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top: 60px;
+  left: 0;
+  width: 100%;
+  background-color: #ffffff;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 15px 0;
+  gap: 15px;
+  z-index: 10;
+}
+
+.nav-links.active li {
+  width: 100%;
+  text-align: center;
+}
+
+.nav-links.active li a {
+  padding: 10px 0;
+  width: 100%;
+  display: block;
+  color: #333;
+  font-size: 1.1rem;
+  transition: background 0.3s, color 0.3s;
+}
+
+.nav-links.active li a:hover {
+  background-color: #f0f0f0;
+  color: #007bff;
+}
+
+/* Responsive Design */
+
+/* Large Screens (1200px and above) */
 @media (min-width: 1200px) {
-  /* Navbar Container */
   .navbar {
-    padding: 20px 40px; /* More padding for larger screens */
+    padding: 20px 40px;
   }
 
-  /* Logo Styling */
-  .logo img {
-    height: 60px; /* Larger logo size */
-    width: auto; /* Keep proportions */
-  }
-
-  /* Navigation Links */
   .nav-links {
-    margin-left: auto;
-    margin-right: 2rem;
-    gap: 30px; /* Increased gap for large screens */
+    gap: 30px;
   }
 
   .nav-links li a {
-    font-size: 1.2rem; /* Slightly larger font for better readability */
-    font-weight: 600;
-    transition: color 0.3s ease-in-out;
+    font-size: 1.2rem;
   }
 
-  .nav-links li a:hover {
-    color: #007bff; /* Keep the same hover effect */
-  }
-
-  /* Left Button */
   .left-button .demo-button {
     padding: 12px 25px;
-    font-size: 1.1rem; /* Larger button text */
-  }
-
-  /* Hamburger Icon */
-  .hamburger {
-    display: none; /* Hide hamburger icon on large screens */
-  }
-
-  /* Ensure that when hovering over links, it looks clean and spacious */
-  .nav-links li a:hover {
-    background-color: transparent; /* Remove background color on hover */
-  }
-
-  /* Adjust the footer for large screens */
-  .footer {
-    padding: 40px 20px;
-    text-align: center;
-  }
-
-  .footer-bottom {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .footer-text h3 {
-    font-size: 2rem; /* Larger footer text */
-  }
-
-  .footer-links {
-    flex-direction: row;
-    gap: 20px;
-    justify-content: center;
-  }
-
-  .footer-links a {
-    font-size: 1rem; /* Larger font size for links in the footer */
-  }
-
-  .contact-button {
     font-size: 1.1rem;
   }
-}
 
-/* For screen sizes between 998px and 1024px */
-@media (max-width: 1024px) and (min-width: 998px) {
-  .subscribe-form {
-    flex-direction: row; /* Keep the input and button side by side */
-    justify-content: space-between; /* Add space between input and button */
-    gap: 15px; /* Moderate gap for spacing */
-  }
-
-  .subscribe-form input {
-    width: 90%; /* Allow input to take most of the space */
-    padding: 15px; /* Moderate padding for input */
-    font-size: 1rem; /* Standard font size */
-  }
-
-  .subscribe-form button {
-    width: 25%; /* Button takes less space */
-    padding: 12px 15px; /* Adjust padding */
-    font-size: 1rem; /* Maintain text visibility */
-    text-align: center; /* Center text inside the button */
-    white-space: nowrap; /* Prevent text wrapping */
+  .hamburger {
+    display: none;
   }
 }
 
-/* For larger screens (768px and below) */
+/* Medium Screens (1024px - 768px) */
+@media (max-width: 1024px) {
+  .nav-links {
+    gap: 15px;
+  }
+
+  .left-button .demo-button {
+    padding: 10px 20px;
+    font-size: 1rem;
+  }
+}
+
+/* Small Screens (768px and below) */
 @media (max-width: 768px) {
-  /* Hide desktop layout */
-  .logo img {
-    margin: 0;
-  }
-
   .nav-links {
     display: none;
   }
 
-  /* Adjust the hamburger menu */
   .hamburger {
     display: flex;
     margin-left: auto;
   }
 
-  .hamburger .bar {
-    width: 30px;
-    height: 3px;
-    background-color: #333;
-  }
-
-  /* When active, show the nav links in a dropdown */
   .nav-links.active {
     display: flex;
+  }
+
+  .left-button {
     flex-direction: column;
     align-items: center;
-    position: absolute;
-    top: 60px;
-    left: 0;
-    width: 100%;
-    background-color: #ffffff;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    padding: 15px 0;
-    gap: 15px;
-    z-index: 10; /* Ensures it overlays content */
-  }
-
-  /* Center-align the links */
-  .nav-links.active li {
-    width: 100%;
-    text-align: center;
-  }
-
-  .nav-links.active li a {
-    padding: 10px 0;
-    width: 100%;
-    display: block;
-    color: #333;
-    font-size: 1.1rem; /* Slightly larger text for touch screens */
-    transition: background 0.3s, color 0.3s;
-  }
-
-  .nav-links.active li a:hover {
-    transition: 1s;
-    background-color: #f0f0f0;
-    color: #007bff;
-  }
-
-  /* Ensure left button stays visible */
-  .left-button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: auto;
   }
 
   .left-button .demo-button {
     padding: 8px 16px;
     font-size: 1rem;
-    margin-right: 0.7rem;
   }
 }
 
-/* For smaller screens (576px and below) */
+/* Extra Small Screens (576px and below) */
 @media (max-width: 576px) {
   .logo img {
-    margin-left: 0;
-    height: 40px; /* Reduce logo size */
-    width: auto; /* Keep proportions */
+    height: 40px;
   }
 
   .hamburger .bar {
@@ -285,11 +235,11 @@
   }
 
   .nav-links.active li a {
-    font-size: 1rem; /* Slightly smaller text */
+    font-size: 1rem;
   }
 
   .left-button .demo-button {
     padding: 6px 12px;
-    font-size: 0.9rem; /* Reduce button size */
+    font-size: 0.9rem;
   }
 }

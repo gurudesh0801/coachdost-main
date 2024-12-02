@@ -6,21 +6,28 @@ import "./Navbar.css";
 
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const navigate = useNavigate();
-  const goto = () => {
+
+  const gotoSignup = () => {
     navigate("/signup");
+  };
+
+  const gotoLogin = (role) => {
+    if (role === "Coach") {
+      window.location.href = "https://coach.coachdost.com";
+    } else if (role === "User") {
+      window.location.href = "https://user.coachdost.com";
+    }
   };
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
-    const hamburger = document.querySelector(".hamburger");
-
-    // Toggle the active class on click
-    hamburger.addEventListener("click", () => {
-      hamburger.classList.toggle("active");
-    });
   };
-  // Select the hamburger element
+
+  const toggleDropdown = () => {
+    setIsDropdownOpen(!isDropdownOpen);
+  };
 
   return (
     <nav className="navbar">
@@ -30,7 +37,6 @@ function Navbar() {
           <img src={logo} alt="Logo" />
         </Link>
       </div>
-      {/* Left Button */}
 
       {/* Centered Navigation Links */}
       <ul className={`nav-links ${isMenuOpen ? "active" : ""}`}>
@@ -50,11 +56,38 @@ function Navbar() {
           </Link>
         </li>
       </ul>
+
+      {/* Right Side Buttons */}
       <div className="left-button">
-        <button onClick={goto} className="demo-button">
+        <button onClick={gotoSignup} className="demo-button">
           Join Now
         </button>
-        <button className="demo-button">Login</button>
+
+        {/* Login Dropdown */}
+        <div className="dropdown">
+          <button
+            className="demo-button dropdown-toggle"
+            onClick={toggleDropdown}
+          >
+            Login
+          </button>
+          {isDropdownOpen && (
+            <div className="dropdown-menu">
+              <button
+                onClick={() => gotoLogin("Coach")}
+                className="dropdown-item"
+              >
+                Login as Coach
+              </button>
+              <button
+                onClick={() => gotoLogin("User")}
+                className="dropdown-item"
+              >
+                Login as User
+              </button>
+            </div>
+          )}
+        </div>
       </div>
 
       {/* Hamburger Icon */}
