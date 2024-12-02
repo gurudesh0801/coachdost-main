@@ -5,24 +5,19 @@ const multer = require("multer");
 
 const signupUser = async (req, res) => {
   const { username, phone, email, password, role } = req.body;
-  // console.log(req);
 
-  // Validate input
   if (!username || !phone || !email || !password || !role) {
     return res.status(400).json({ message: "All fields are required" });
   }
 
   try {
-    // Check if user already exists
     const userExists = await User.findOne({ email });
     if (userExists) {
       return res.status(400).json({ message: "User already exists" });
     }
 
-    // Hash the password
     const hashedPassword = await bcrypt.hash(password, 10);
 
-    // Create new user
     const newUser = await User.create({
       username,
       phone,

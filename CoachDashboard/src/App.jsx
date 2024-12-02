@@ -16,21 +16,21 @@ import UnapprovedSessionsPage from "./pages/UnapprovedSessionsPage ";
 
 function App() {
   const [token, setToken] = useState(
-    localStorage.getItem("token") ? localStorage.getItem("token") : ""
+    sessionStorage.getItem("token") ? sessionStorage.getItem("token") : ""
   );
   const [coachInfo, setCoachInfo] = useState(
-    localStorage.getItem("coachInfo")
-      ? JSON.parse(localStorage.getItem("coachInfo"))
+    sessionStorage.getItem("coachInfo")
+      ? JSON.parse(sessionStorage.getItem("coachInfo"))
       : ""
   );
   // console.log(coachInfo, "App");
 
   useEffect(() => {
-    localStorage.setItem("token", token);
+    sessionStorage.setItem("token", token);
 
     // Store coachInfo properly as a JSON string
     if (coachInfo) {
-      localStorage.setItem("coachInfo", JSON.stringify(coachInfo));
+      sessionStorage.setItem("coachInfo", JSON.stringify(coachInfo));
     }
   }, [token, coachInfo]);
   console.log(coachInfo, "App.jsx");

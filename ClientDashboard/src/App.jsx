@@ -16,19 +16,21 @@ import FindCoachPage from "./pages/FindCoachPage";
 
 function App() {
   const [token, setToken] = useState(
-    localStorage.getItem("token") ? localStorage.getItem("token") : ""
+    sessionStorage.getItem("token") ? sessionStorage.getItem("token") : ""
   );
   const [user, setUser] = useState(
-    localStorage.getItem("user") ? JSON.parse(localStorage.getItem("user")) : ""
+    sessionStorage.getItem("user")
+      ? JSON.parse(sessionStorage.getItem("user"))
+      : ""
   );
   console.log(user);
 
   useEffect(() => {
-    localStorage.setItem("token", token);
+    sessionStorage.setItem("token", token);
 
     // Store user properly as a JSON string
     if (user) {
-      localStorage.setItem("user", JSON.stringify(user));
+      sessionStorage.setItem("user", JSON.stringify(user));
     }
   }, [token, user]);
   return (

@@ -1,7 +1,7 @@
 import { Route, Routes } from "react-router-dom";
+import { useState, useEffect } from "react";
 
 import Sidebar from "./components/common/Sidebar";
-
 import OverviewPage from "./pages/OverviewPage";
 import ProductsPage from "./pages/ProductsPage";
 import UsersPage from "./pages/UsersPage";
@@ -9,28 +9,32 @@ import SalesPage from "./pages/SalesPage";
 import OrdersPage from "./pages/OrdersPage";
 import AnalyticsPage from "./pages/AnalyticsPage";
 import SettingsPage from "./pages/SettingsPage";
-import { useEffect, useState } from "react";
 import Login from "./components/login/Login";
 import UnapprovedCoachesPage from "./pages/UnapprovedCoachesPage";
 import SessionsApprovalPage from "./pages/SessionsApprovalPage";
 import UnapprovedBlogsPage from "./pages/UnapprovedBlogsPage";
 
 function App() {
+  // Initialize token from sessionStorage
   const [token, setToken] = useState(
-    localStorage.getItem("token") ? localStorage.getItem("token") : ""
+    () => sessionStorage.getItem("token") || ""
   );
 
+  // Update sessionStorage whenever the token changes
   useEffect(() => {
-    localStorage.setItem("token", token);
+    if (token) {
+      sessionStorage.setItem("token", token);
+    } else {
+      sessionStorage.removeItem("token");
+    }
   }, [token]);
 
   return (
     <>
       {token === "" ? (
-        <Login setToken={setToken} />
+        <Login setToken={(newToken) => setToken(newToken)} />
       ) : (
         <div className="flex h-screen bg-gray-900 text-gray-100 overflow-hidden">
-          {/* BG */}
           <div className="fixed inset-0 z-0">
             <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 opacity-80" />
             <div className="absolute inset-0 backdrop-blur-sm" />
@@ -49,18 +53,15 @@ function App() {
             />
             <Route
               path="/unapproved"
-              element={<UnapprovedCoachesPage />}
-              token={token}
+              element={<UnapprovedCoachesPage token={token} />}
             />
             <Route
               path="/unapproved-session"
-              element={<SessionsApprovalPage />}
-              token={token}
+              element={<SessionsApprovalPage token={token} />}
             />
             <Route
               path="/unapproved-blogs"
-              element={<UnapprovedBlogsPage />}
-              token={token}
+              element={<UnapprovedBlogsPage token={token} />}
             />
             <Route path="/settings" element={<SettingsPage token={token} />} />
           </Routes>
