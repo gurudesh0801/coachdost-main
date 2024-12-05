@@ -1,0 +1,141 @@
+.coachDost-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  color: rgb(0, 0, 0);
+  max-width: 1300px;
+  margin: auto;
+}
+
+.coachDost-left {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+}
+.coachDost-left::after {
+  content: "";
+  position: absolute;
+  top: -3rem;
+  right: 4rem;
+  width: 15rem;
+  height: 25rem;
+  background: linear-gradient(180deg, #031248, #7907ae);
+  z-index: -1;
+  border-radius: 2rem;
+}
+
+.coachDost-image {
+  width: 300px;
+  height: auto;
+  border-radius: 10px;
+}
+
+.coachDost-right {
+  flex: 1;
+  padding: 20px;
+}
+
+.coachDost-right h1 {
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+}
+
+.coachDost-right h1 span {
+  color: #ff4507;
+}
+
+.coachDost-right ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.coachDost-right ul li {
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+
+.coachDost-button {
+  background-color: #b85a1c;
+  color: white;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.coachDost-button:hover {
+  background-color: #e06c23;
+}
+
+/* Responsive Styles */
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .coachDost-container {
+    flex-direction: column; /* Stack the content vertically */
+    text-align: center; /* Center-align the text */
+    padding: 15px;
+  }
+
+  .coachDost-left,
+  .coachDost-right {
+    width: 100%; /* Make sections take full width */
+    padding: 15px;
+  }
+  .coachDost-left::after {
+    display: none;
+  }
+  .coachDost-image {
+    width: 300px; /* Adjust image size for smaller screens */
+    height: auto;
+  }
+
+  .coachDost-right h1 {
+    font-size: 3rem; /* Reduce heading size */
+    margin-bottom: 15px;
+  }
+
+  .coachDost-right ul li {
+    font-size: 1rem; /* Reduce list item font size */
+  }
+
+  .coachDost-button {
+    font-size: 1rem;
+    padding: 10px 18px; /* Adjust button size */
+  }
+}
+
+@media (max-width: 480px) {
+  .coachDost-container {
+    padding: 10px; /* Reduce padding further */
+  }
+
+  .coachDost-left,
+  .coachDost-right {
+    padding: 10px;
+  }
+
+  .coachDost-image {
+    width: 150px; /* Smaller image for mobile devices */
+    height: auto;
+  }
+
+  .coachDost-right h1 {
+    font-size: 2rem; /* Further reduce heading size */
+    margin-bottom: 10px;
+  }
+
+  .coachDost-right ul li {
+    font-size: 0.9rem; /* Smaller font size for list items */
+  }
+
+  .coachDost-button {
+    font-size: 0.9rem; /* Smaller button font size */
+    padding: 8px 14px; /* Smaller padding */
+  }
+}

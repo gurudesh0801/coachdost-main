@@ -8,7 +8,7 @@ import {
 import Navbar from "./Components/Navbar/Navbar";
 import "./App.css";
 import Home from "./Components/Home/Home";
-import CoachProfileContainer from "./Components/Coaches/CoachProfileContainer";
+// import CoachProfileContainer from "./Components/Coaches/CoachProfileContainer";
 import Footer from "./Components/Footer/Footer";
 import StickyFooterBar from "./Components/StickyFooterBar/StickyFooterBar";
 import Loading from "./Components/Loading/Loading";

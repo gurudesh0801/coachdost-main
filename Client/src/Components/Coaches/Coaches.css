@@ -1,0 +1,140 @@
+.container {
+  text-align: center;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.title {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  font-family: "Playwrite DE Grund", serif;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-style: normal;
+}
+
+.decorative-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1.5rem 0 3rem;
+  gap: 1rem;
+}
+
+.decorative-divider .line {
+  width: 40px;
+  height: 2px;
+  background: linear-gradient(to right, #4f46e5, #3b82f6);
+}
+
+.decorative-divider .dots {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.decorative-divider .dots span {
+  width: 10px;
+  height: 10px;
+  background-color: #4f46e5;
+  border-radius: 50%;
+}
+/* Carousel styles */
+.carousel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  overflow: hidden;
+  padding: 1rem;
+}
+
+/* Card styles */
+.card {
+  width: 100px;
+  height: 300px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease, background-color 0.3s ease, width 0.5s ease;
+  position: relative;
+  border: 1px solid #ff914d;
+  color: #ffffff;
+  padding: 1rem;
+}
+
+.card-content {
+  text-align: center;
+}
+
+.card-content h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.card-content p {
+  font-size: 0.9rem;
+  margin: 0.5rem 0 1rem;
+  color: #555;
+}
+
+.card-button {
+  background-color: white;
+  color: #ff914d;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.card-button:hover {
+  background-color: #ff914d;
+  color: white;
+}
+
+/* Hover effect for cards */
+.card:hover {
+  width: 200px;
+  background-color: #dc762c;
+  transition: 0.5s;
+  color: white;
+}
+
+/* Controls */
+.controls {
+  margin-top: 1rem;
+}
+
+.control {
+  background-color: transparent;
+  border: 2px solid white;
+  color: white;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  margin: 0 0.5rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.control:hover {
+  background-color: white;
+  color: #ff914d;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .carousel {
+    flex-direction: column;
+  }
+
+  .card {
+    width: 90%;
+  }
+}

@@ -1,106 +1,118 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import logo from "../../assets/images/logo.png";
-import { useNavigate } from "react-router-dom";
 import "./Navbar.css";
+import logo from "../../assets/images/logo.png"; // Replace with the correct path to your logo
+import { useNavigate } from "react-router-dom";
 
-function Navbar() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const navigate = useNavigate();
-
-  const gotoSignup = () => {
-    navigate("/signup");
-  };
-
-  const gotoLogin = (role) => {
-    if (role === "Coach") {
-      window.location.href = "https://coach.coachdost.com";
-    } else if (role === "User") {
-      window.location.href = "https://user.coachdost.com";
-    }
-  };
+const Navbar = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const navigate = useNavigate(); // Fix: Call the useNavigate hook
 
   const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
+    setMenuOpen(!menuOpen);
   };
 
-  const toggleDropdown = () => {
-    setIsDropdownOpen(!isDropdownOpen);
+  // Smooth scroll
+  document.querySelectorAll("a[href^='#']").forEach((anchor) => {
+    anchor.addEventListener("click", function (e) {
+      e.preventDefault(); // Prevent default anchor behavior
+
+      const target = document.querySelector(this.getAttribute("href"));
+      if (target) {
+        window.scrollTo({
+          top: target.offsetTop,
+          behavior: "smooth",
+        });
+
+        // Slowing down the scroll further
+        let distance = Math.abs(window.scrollY - target.offsetTop);
+        let duration = distance / 2; // Adjust this value for speed (higher = slower)
+        window.setTimeout(() => {
+          window.scrollTo({ top: target.offsetTop });
+        }, duration);
+      }
+    });
+  });
+
+  const goto = () => {
+    navigate("/signup"); // Navigate to the /signup page
   };
 
   return (
     <nav className="navbar">
-      {/* Logo */}
-      <div className="logo">
-        <Link to="/">
+      <div className="navbar-container">
+        {/* Logo Section */}
+        <div className="navbar-logo">
           <img src={logo} alt="Logo" />
-        </Link>
-      </div>
-
-      {/* Centered Navigation Links */}
-      <ul className={`nav-links ${isMenuOpen ? "active" : ""}`}>
-        <li>
-          <Link to="#why" onClick={toggleMenu}>
-            Explore Coaches
-          </Link>
-        </li>
-        <li>
-          <Link to="#services" onClick={toggleMenu}>
-            About us
-          </Link>
-        </li>
-        <li>
-          <Link to="#contact" onClick={toggleMenu}>
-            Why us?
-          </Link>
-        </li>
-      </ul>
-
-      {/* Right Side Buttons */}
-      <div className="left-button">
-        <button onClick={gotoSignup} className="demo-button">
-          Join Now
-        </button>
-
-        {/* Login Dropdown */}
-        <div className="dropdown">
-          <button
-            className="demo-button dropdown-toggle"
-            onClick={toggleDropdown}
-          >
-            Login
-          </button>
-          {isDropdownOpen && (
-            <div className="dropdown-menu">
-              <button
-                onClick={() => gotoLogin("Coach")}
-                className="dropdown-item"
-              >
-                Login as Coach
-              </button>
-              <button
-                onClick={() => gotoLogin("User")}
-                className="dropdown-item"
-              >
-                Login as User
-              </button>
-            </div>
-          )}
         </div>
-      </div>
 
-      {/* Hamburger Icon */}
-      <div
-        className={`hamburger ${isMenuOpen ? "active" : ""}`}
-        onClick={toggleMenu}
-      >
-        <span className="bar"></span>
-        <span className="bar"></span>
-        <span className="bar"></span>
+        {/* Links Section */}
+        <div className={`navbar-links ${menuOpen ? "active" : ""}`}>
+          <a href="/" onClick={() => setMenuOpen(false)}>
+            Home
+          </a>
+          <a href="#about" onClick={() => setMenuOpen(false)}>
+            About Us
+          </a>
+          <a href="#whyus" onClick={() => setMenuOpen(false)}>
+            Why Us
+          </a>
+          <div className="dropdown">
+            <span className="dropdown-link">Services ▾</span>
+            <div className="dropdown-menu">
+              <a href="#web-development" onClick={() => setMenuOpen(false)}>
+                Web Development
+              </a>
+              <a href="#mobile-development" onClick={() => setMenuOpen(false)}>
+                Mobile Development
+              </a>
+              <a href="#data-science" onClick={() => setMenuOpen(false)}>
+                Data Science
+              </a>
+            </div>
+          </div>
+          <a href="#blog" onClick={() => setMenuOpen(false)}>
+            Blog
+          </a>
+          <div className="dropdown">
+            <span className="dropdown-link">FAQ ▾</span>
+            <div className="dropdown-menu">
+              <a href="#general-questions" onClick={() => setMenuOpen(false)}>
+                General Questions
+              </a>
+              <a href="#technical-support" onClick={() => setMenuOpen(false)}>
+                Technical Support
+              </a>
+              <a href="#billing" onClick={() => setMenuOpen(false)}>
+                Billing
+              </a>
+            </div>
+          </div>
+          <a href="#contact" onClick={() => setMenuOpen(false)}>
+            Contact
+          </a>
+          <div className="mobile-buttons">
+            <button className="join-btn" onClick={goto}>
+              Join Now
+            </button>
+            <button className="login-btn">Login</button>
+          </div>
+        </div>
+
+        {/* Buttons (Desktop Only) */}
+        <div className="navbar-buttons">
+          <button className="join-btn" onClick={goto}>
+            Join Now
+          </button>
+          <button className="login-btn">Login</button>
+        </div>
+
+        {/* Hamburger Icon */}
+        <div className="menu-icon" onClick={toggleMenu}>
+          {menuOpen ? "✖" : "☰"}
+        </div>
       </div>
     </nav>
   );
-}
+};
 
 export default Navbar;
