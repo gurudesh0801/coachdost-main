@@ -27,6 +27,7 @@
   font-size: 2.5rem;
   line-height: 1.2;
   margin-bottom: 1.5rem;
+  font-family: sans-serif;
   /* line-height: 3rem; */
 }
 
@@ -40,6 +41,7 @@
   line-height: 1.5;
   margin-bottom: 2rem;
   color: #f1f1f1;
+  font-family: sans-serif;
 }
 
 .hero-button {

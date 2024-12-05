@@ -16,6 +16,7 @@
   gap: 30px; /* Add spacing between left and right sections */
   max-width: 1200px;
   margin: auto;
+  font-family: sans-serif;
 }
 
 /* Left Section */
