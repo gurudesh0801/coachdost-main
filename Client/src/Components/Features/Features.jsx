@@ -27,15 +27,6 @@ const Features = () => {
   return (
     <div className="features-container">
       <h1>Unlock Your Full Potential with Personalized Coaching</h1>
-      <div className="decorative-divider">
-        <div className="line"></div>
-        <div className="dots">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-        <div className="line"></div>
-      </div>
       <div className="features-grid">
         {features.map((feature, index) => (
           <div className="feature-card" key={index}>

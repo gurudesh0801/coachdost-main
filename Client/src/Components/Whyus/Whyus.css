@@ -5,9 +5,11 @@
   justify-content: center;
   padding: 20px;
   color: rgb(0, 0, 0);
-  max-width: 1300px;
+  max-width: 1500px;
   margin: auto;
-  font-family: sans-serif;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
 }
 
 .coachDost-left {
@@ -20,17 +22,17 @@
 .coachDost-left::after {
   content: "";
   position: absolute;
-  top: -3rem;
-  right: 4rem;
-  width: 15rem;
-  height: 25rem;
+  top: -2.5rem;
+  right: 3rem;
+  width: 17rem;
+  height: 30rem;
   background: linear-gradient(180deg, #031248, #7907ae);
   z-index: -1;
   border-radius: 2rem;
 }
 
 .coachDost-image {
-  width: 300px;
+  width: 400px;
   height: auto;
   border-radius: 10px;
 }
@@ -41,7 +43,7 @@
 }
 
 .coachDost-right h1 {
-  font-size: 3.5rem;
+  font-size: 4rem;
   margin-bottom: 20px;
 }
 
@@ -122,13 +124,14 @@
   }
 
   .coachDost-image {
-    width: 150px; /* Smaller image for mobile devices */
+    width: 230px; /* Smaller image for mobile devices */
     height: auto;
   }
 
   .coachDost-right h1 {
-    font-size: 2rem; /* Further reduce heading size */
+    font-size: 3rem; /* Further reduce heading size */
     margin-bottom: 10px;
+    font-weight: 900;
   }
 
   .coachDost-right ul li {
@@ -137,6 +140,6 @@
 
   .coachDost-button {
     font-size: 0.9rem; /* Smaller button font size */
-    padding: 8px 14px; /* Smaller padding */
+    padding: 12px 20px; /* Smaller padding */
   }
 }

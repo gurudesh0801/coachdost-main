@@ -43,15 +43,6 @@ const Coaches = () => {
   return (
     <div className="container">
       <h1 className="title">Explore Coaches</h1>
-      <div className="decorative-divider">
-        <div className="line"></div>
-        <div className="dots">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-        <div className="line"></div>
-      </div>
       <div className="carousel">
         {cards.map((card) => (
           <div className="card" key={card.id}>

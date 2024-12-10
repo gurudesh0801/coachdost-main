@@ -3,42 +3,17 @@
   padding: 2rem;
   max-width: 1200px;
   margin: auto;
-}
-
-.title {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-  font-family: "Playwrite DE Grund", serif;
+  font-family: "Plus Jakarta Sans", sans-serif;
   font-optical-sizing: auto;
-  font-weight: 800;
+  font-weight: 700;
   font-style: normal;
 }
 
-.decorative-divider {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 1.5rem 0 3rem;
-  gap: 1rem;
+.title {
+  font-size: 3rem;
+  margin-bottom: 1rem;
 }
 
-.decorative-divider .line {
-  width: 40px;
-  height: 2px;
-  background: linear-gradient(to right, #4f46e5, #3b82f6);
-}
-
-.decorative-divider .dots {
-  display: flex;
-  gap: 0.5rem;
-}
-
-.decorative-divider .dots span {
-  width: 10px;
-  height: 10px;
-  background-color: #4f46e5;
-  border-radius: 50%;
-}
 /* Carousel styles */
 .carousel {
   display: flex;
@@ -50,8 +25,9 @@
 }
 
 /* Card styles */
+/* Card styles */
 .card {
-  width: 100px;
+  width: 200px;
   height: 300px;
   background-color: #ffffff;
   border-radius: 10px;
@@ -59,27 +35,38 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  transition: transform 0.3s ease, background-color 0.3s ease, width 0.5s ease;
+  transition: all 0.5s ease-in-out; /* Smooth transition for all properties */
   position: relative;
   border: 1px solid #ff914d;
-  color: #ffffff;
+  color: #000000;
   padding: 1rem;
+  overflow: hidden;
 }
 
-.card-content {
-  text-align: center;
+.card:hover {
+  width: 200px; /* Expands the card */
+  background-color: #dc762c;
+  color: rgb(0, 0, 0);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Add a smooth shadow */
+  transform: scale(1.05); /* Subtle scaling effect */
+  transition: all 0.5s ease-in-out; /* Ensures a consistent transition */
 }
-
 .card-content h3 {
-  margin: 0;
-  font-size: 1.2rem;
-  color: #333;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+.card-content p {
+  font-weight: 400;
+}
+/* Adding smooth transitions for children elements (text/button) */
+.card-content h3,
+.card-content p {
+  transition: color 0.3s ease-in-out;
 }
 
-.card-content p {
-  font-size: 0.9rem;
-  margin: 0.5rem 0 1rem;
-  color: #555;
+.card:hover .card-content h3,
+.card:hover .card-content p {
+  color: #fff; /* Smooth text color change on hover */
 }
 
 .card-button {
@@ -95,14 +82,7 @@
 .card-button:hover {
   background-color: #ff914d;
   color: white;
-}
-
-/* Hover effect for cards */
-.card:hover {
-  width: 200px;
-  background-color: #dc762c;
-  transition: 0.5s;
-  color: white;
+  transform: scale(1.1); /* Slight scaling effect for the button */
 }
 
 /* Controls */
@@ -129,12 +109,62 @@
 }
 
 /* Responsive Design */
+/* Responsive Design */
+
+/* Tablets and Smaller Devices */
 @media (max-width: 768px) {
   .carousel {
-    flex-direction: column;
+    flex-direction: column; /* Stack carousel items vertically */
+    gap: 1.5rem; /* Increase spacing for better layout */
   }
 
   .card {
-    width: 90%;
+    width: 90%; /* Cards take up most of the screen width */
+    max-width: 400px; /* Limit card width for readability */
+    height: auto; /* Allow height to adjust naturally */
+    padding: 1.5rem; /* Add more padding */
+  }
+  .card:hover {
+    width: 100%;
+  }
+
+  .title {
+    font-size: 2.5rem; /* Scale down title font size */
+  }
+}
+
+/* Mobile Devices */
+@media (max-width: 480px) {
+  .card {
+    width: 100%; /* Full width on smaller screens */
+    padding: 1rem; /* Reduce padding for smaller screens */
+  }
+
+  .title {
+    font-size: 2rem; /* Further reduce title size */
+    margin-bottom: 0.5rem;
+  }
+
+  .card-content h3 {
+    font-size: 1.2rem; /* Scale down heading size */
+  }
+
+  .card-content p {
+    font-size: 0.9rem; /* Reduce paragraph size */
+  }
+
+  .card-button {
+    padding: 0.4rem 0.8rem; /* Adjust button padding */
+    font-size: 0.9rem; /* Reduce button font size */
+  }
+
+  .controls {
+    margin-top: 0.5rem; /* Reduce spacing for controls */
+  }
+
+  .control {
+    width: 30px; /* Smaller controls */
+    height: 30px;
+    font-size: 1rem;
   }
 }

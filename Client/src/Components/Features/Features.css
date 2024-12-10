@@ -5,42 +5,20 @@
   color: white;
   max-width: 1200px;
   margin: auto;
-  font-family: sans-serif;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
 }
 
 .features-container h1 {
   color: #1c1c3a;
-  font-family: "Playwrite DE Grund", serif;
+  font-family: "Plus Jakarta Sans", sans-serif;
   font-optical-sizing: auto;
-  font-weight: 800;
+  font-weight: 700;
   font-style: normal;
 }
 
-.decorative-divider {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 1.5rem 0 3rem;
-  gap: 1rem;
-}
-
-.decorative-divider .line {
-  width: 40px;
-  height: 2px;
-  background: linear-gradient(to right, #4f46e5, #3b82f6);
-}
-
-.decorative-divider .dots {
-  display: flex;
-  gap: 0.5rem;
-}
-
-.decorative-divider .dots span {
-  width: 10px;
-  height: 10px;
-  background-color: #4f46e5;
-  border-radius: 50%;
-}
 /* Grid layout */
 .features-grid {
   display: grid;
@@ -50,6 +28,7 @@
 }
 
 .feature-card {
+  margin-top: 2rem;
   background-color: white; /* White background for each card */
   border: 1px solid #d3d3d3; /* Thin light border */
   padding: 20px;
@@ -82,12 +61,13 @@
 
 .feature-description {
   font-size: 1rem;
+  font-weight: 400;
   color: #333; /* Darker color for readability */
 }
 
 /* Button */
 .features-button {
-  background-color: #9b59b6;
+  background-color: #670089;
   color: white;
   padding: 12px 30px;
   font-size: 1.2rem;
