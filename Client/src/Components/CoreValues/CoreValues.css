@@ -10,8 +10,7 @@
   border-radius: 15px;
   overflow: hidden;
   gap: 30px; /* Add spacing between left and right sections */
-  max-width: 1200px;
-  margin: auto;
+  margin: auto 2rem;
   font-family: "Plus Jakarta Sans", sans-serif;
   font-optical-sizing: auto;
   font-weight: 700;
@@ -149,6 +148,9 @@
 
 /* Small Screens (Mobile) */
 @media (max-width: 480px) {
+  .core-values-container {
+    margin: 2rem auto;
+  }
   .core-values-title {
     font-size: 2rem;
   }

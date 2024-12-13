@@ -1,0 +1,166 @@
+.our-team-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/* Hero Section */
+.hero-section {
+  background-color: #6a0dad;
+  color: white;
+  text-align: center;
+  padding: 3rem 1rem;
+  border-radius: 8px;
+}
+
+.hero-title {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero-description {
+  font-size: 1.2rem;
+}
+
+/* Leadership Section */
+.leadership-section {
+  margin: 3rem 0;
+  text-align: center;
+}
+
+.leadership-title {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #6a0dad;
+}
+
+.leadership-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.leadership-card {
+  background-color: #fff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.card-content .card-name {
+  color: #6a0dad;
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+}
+
+.card-position {
+  font-weight: bold;
+  color: #555;
+}
+
+.card-expertise,
+.card-experience,
+.card-achievements {
+  color: #666;
+  margin: 0.5rem 0;
+}
+
+/* Culture Section */
+.culture-section {
+  background-color: #f7f7ff;
+  padding: 3rem 1rem;
+  text-align: center;
+}
+
+.culture-title {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #6a0dad;
+}
+
+.culture-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.culture-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.culture-card-title {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+  color: #6a0dad;
+}
+
+.culture-card-description {
+  color: #555;
+}
+
+/* Join Us Section */
+.join-us-section {
+  text-align: center;
+  margin: 3rem 0;
+}
+
+.join-us-title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #6a0dad;
+}
+
+.join-us-description {
+  margin-bottom: 1.5rem;
+  color: #555;
+}
+
+.join-us-button {
+  background-color: #6a0dad;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.join-us-button:hover {
+  background-color: #5a0a9d;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-description {
+    font-size: 1rem;
+  }
+
+  .leadership-grid,
+  .culture-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 1.8rem;
+  }
+
+  .hero-description {
+    font-size: 0.9rem;
+  }
+
+  .join-us-button {
+    font-size: 0.9rem;
+    padding: 0.6rem 1.2rem;
+  }
+}

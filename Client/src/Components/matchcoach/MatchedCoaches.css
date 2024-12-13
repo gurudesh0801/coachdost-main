@@ -1,0 +1,168 @@
+/* General Styles */
+.matched-coaches-container {
+  font-family: Arial, sans-serif;
+  padding: 2rem;
+  background-color: #f7f7f7;
+  color: #333;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Header Section */
+.header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.header h1 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.header p {
+  color: #777;
+}
+
+/* Filter and Sort Section */
+.filter-sort-section {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.filter-button,
+.sort-select {
+  padding: 0.5rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #fff;
+}
+
+/* Main Content */
+.main-content {
+  display: flex;
+  gap: 2rem;
+}
+
+/* Filters Sidebar */
+.filters {
+  width: 25%;
+  background-color: #fff;
+  padding: 1.5rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.filters h2 {
+  margin-bottom: 1rem;
+}
+
+.filters label {
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.filters input {
+  margin-right: 0.5rem;
+}
+
+/* Coaches Grid */
+.coaches-grid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.coach-card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.coach-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.coach-image {
+  width: 100%;
+  height: 150px;
+  background-color: #ddd;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+}
+
+.coach-details h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.coach-details p {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 0.5rem;
+}
+
+.price {
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.coach-card button {
+  background-color: #6a0dad;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.coach-card button:hover {
+  background-color: #520b8c;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .main-content {
+    flex-direction: column;
+  }
+
+  .filters {
+    width: 100%;
+  }
+
+  .filter-sort-section {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .header h1 {
+    font-size: 1.5rem;
+  }
+
+  .coach-card {
+    padding: 0.8rem;
+  }
+
+  .coach-details h3 {
+    font-size: 1rem;
+  }
+
+  .coach-details p,
+  .price {
+    font-size: 0.85rem;
+  }
+
+  .coach-card button {
+    padding: 0.4rem 0.8rem;
+  }
+}

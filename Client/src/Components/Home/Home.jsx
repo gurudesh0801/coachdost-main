@@ -10,6 +10,7 @@ import TestimonialsCoaches from "../TestimonialsCoaches/TestimonialsCoaches";
 import EducationalCoaches from "../EducationalCoaches/EducationalCoaches";
 import OfferSection from "../OfferSection/OfferSection";
 import OurTeam from "../OurTeam/OurTeam";
+import TestimonialCard from "../TestimonialCard/TestimonialCard";
 
 const Home = () => {
   return (
@@ -45,6 +46,7 @@ const Home = () => {
       <OfferSection />
       <EducationalCoaches />
       <OurTeam />
+      <TestimonialCard />
       {/* <EducationalCoaches /> */}
     </>
   );

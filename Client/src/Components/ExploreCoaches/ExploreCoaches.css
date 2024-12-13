@@ -5,8 +5,7 @@
   text-align: center;
   color: white;
   border-radius: 30px;
-  max-width: 1200px;
-  margin: 2rem auto;
+  margin: 3rem 2rem;
   font-family: "Plus Jakarta Sans", sans-serif;
 }
 
@@ -168,6 +167,9 @@
 }
 
 @media (max-width: 480px) {
+  .explore-coaches-container {
+    margin: 2rem auto;
+  }
   .section-title {
     font-size: 1.8rem;
   }

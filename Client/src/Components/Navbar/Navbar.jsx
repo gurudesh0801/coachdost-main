@@ -1,112 +1,171 @@
 import React, { useState } from "react";
 import "./Navbar.css";
-import logo from "../../assets/images/logo.png"; // Replace with the correct path to your logo
+import logo from "../../assets/images/logo.png";
 import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
-  const [menuOpen, setMenuOpen] = useState(false);
-  const navigate = useNavigate(); // Fix: Call the useNavigate hook
+  const [menuOpen, setMenuOpen] = useState(false); // State for mobile menu
+  const [activeDropdown, setActiveDropdown] = useState(""); // Track the active dropdown
+  const navigate = useNavigate();
 
+  // Toggle the mobile menu
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
+    setActiveDropdown(""); // Close any open dropdowns when toggling the mobile menu
   };
 
-  // Smooth scroll
-  document.querySelectorAll("a[href^='#']").forEach((anchor) => {
-    anchor.addEventListener("click", function (e) {
-      e.preventDefault(); // Prevent default anchor behavior
+  // Handle Dropdown Toggle
+  const toggleDropdown = (dropdownName) => {
+    setActiveDropdown((prev) => (prev === dropdownName ? "" : dropdownName));
+  };
 
-      const target = document.querySelector(this.getAttribute("href"));
-      if (target) {
-        window.scrollTo({
-          top: target.offsetTop,
-          behavior: "smooth",
-        });
-
-        // Slowing down the scroll further
-        let distance = Math.abs(window.scrollY - target.offsetTop);
-        let duration = distance / 2; // Adjust this value for speed (higher = slower)
-        window.setTimeout(() => {
-          window.scrollTo({ top: target.offsetTop });
-        }, duration);
-      }
-    });
-  });
-
-  const goto = () => {
-    navigate("/signup"); // Navigate to the /signup page
+  // Navigate to signup page
+  const gotoSignup = () => {
+    navigate("/signup");
   };
 
   return (
     <nav className="navbar">
       <div className="navbar-container">
-        {/* Logo Section */}
+        {/* Logo */}
         <div className="navbar-logo">
           <img src={logo} alt="Logo" />
         </div>
 
-        {/* Links Section */}
+        {/* Navbar Links */}
         <div className={`navbar-links ${menuOpen ? "active" : ""}`}>
-          <a href="/" onClick={() => setMenuOpen(false)}>
-            Home
-          </a>
-          <a href="#about" onClick={() => setMenuOpen(false)}>
-            About Us
-          </a>
-          <a href="#whyus" onClick={() => setMenuOpen(false)}>
-            Why Us
-          </a>
+          <a href="/">Home</a>
+
+          {/* About Dropdown */}
           <div className="dropdown">
-            <span className="dropdown-link">Services ▾</span>
-            <div className="dropdown-menu">
-              <a href="#web-development" onClick={() => setMenuOpen(false)}>
-                Web Development
-              </a>
-              <a href="#mobile-development" onClick={() => setMenuOpen(false)}>
-                Mobile Development
-              </a>
-              <a href="#data-science" onClick={() => setMenuOpen(false)}>
-                Data Science
-              </a>
-            </div>
+            <span
+              className="dropdown-link"
+              onClick={() => toggleDropdown("about")}
+            >
+              About Us ▾
+            </span>
+            {activeDropdown === "about" && (
+              <div className="dropdown-menu">
+                <a href="/who-we-are">Who We Are?</a>
+                <a href="/our-team">Our Team</a>
+                <a href="#success-stories">Success Stories</a>
+                <a href="#joinascoach">Join as Coach s</a>
+                <a href="#career-opportunities">Career Opportunities</a>
+              </div>
+            )}
           </div>
-          <a href="#blog" onClick={() => setMenuOpen(false)}>
-            Blog
-          </a>
+
+          {/* Services Dropdown */}
           <div className="dropdown">
-            <span className="dropdown-link">FAQ ▾</span>
-            <div className="dropdown-menu">
-              <a href="#general-questions" onClick={() => setMenuOpen(false)}>
-                General Questions
-              </a>
-              <a href="#technical-support" onClick={() => setMenuOpen(false)}>
-                Technical Support
-              </a>
-              <a href="#billing" onClick={() => setMenuOpen(false)}>
-                Billing
-              </a>
-            </div>
+            <span
+              className="dropdown-link"
+              onClick={() => toggleDropdown("services")}
+            >
+              Services ▾
+            </span>
+            {activeDropdown === "services" && (
+              <div className="dropdown-menu">
+                <a href="/findcoaches">Find Coach</a>
+                <a href="/booksession">Book a Session</a>
+                <div className="dropdown">
+                  <span
+                    className="dropdown-link"
+                    onClick={() => toggleDropdown("coachcategories")}
+                  >
+                    Coach Categories ▾
+                  </span>
+                  {activeDropdown === "coachcategories" && (
+                    <div className="dropdown-menu">
+                      <a href="#life-coach">Life Coaching</a>
+                      <a href="#career-coaching">Career Coaching</a>
+                      <a href="#leadership-coaching">Leadership Development</a>
+                      <a href="#educationalcoaches">IELTS/TOEFL/OET</a>
+                    </div>
+                  )}
+                </div>
+                <a href="#corporate">Corporate Solutions</a>
+                <a href="#pricingplanes">Pricing Plans</a>
+              </div>
+            )}
           </div>
-          <a href="#contact" onClick={() => setMenuOpen(false)}>
-            Contact
-          </a>
+
+          {/* Blog Dropdown */}
+          <div className="dropdown">
+            <span
+              className="dropdown-link"
+              onClick={() => toggleDropdown("blog")}
+            >
+              Blog ▾
+            </span>
+            {activeDropdown === "blog" && (
+              <div className="dropdown-menu">
+                <a href="#latest-articles">Latest Articles</a>
+                <a href="#coach-insights">Coach Insights</a>
+                <a href="#coach-insights">Success Stories</a>
+                <a href="#coach-insights">Industry Updates</a>
+                <a href="#coach-insights">Video Resources</a>
+                <a href="#coach-insights">Newsletter</a>
+              </div>
+            )}
+          </div>
+
+          {/* FAQ Dropdown */}
+          <div className="dropdown">
+            <span
+              className="dropdown-link"
+              onClick={() => toggleDropdown("faq")}
+            >
+              FAQ ▾
+            </span>
+            {activeDropdown === "faq" && (
+              <div className="dropdown-menu">
+                <a href="#student-guide">Student Guide</a>
+                <a href="#technical-support">Technical Support</a>
+                <a href="#technical-support">Payment FAQs</a>
+                <a href="#technical-support">Technical Support</a>
+                <a href="#technical-support">Our Policies</a>
+              </div>
+            )}
+          </div>
+
+          {/* Contact Dropdown */}
+          <div className="dropdown">
+            <span
+              className="dropdown-link"
+              onClick={() => toggleDropdown("contact")}
+            >
+              Contact ▾
+            </span>
+            {activeDropdown === "contact" && (
+              <div className="dropdown-menu">
+                <a href="#student-guide">Student Guide</a>
+                <a href="#technical-support">Technical Support</a>
+                <a href="#technical-support">Become a Coach</a>
+                <a href="#technical-support">Corporate Partnerships</a>
+                <a href="#technical-support">Book a Call</a>
+                <a href="#technical-support">Chat with Us</a>
+              </div>
+            )}
+          </div>
+
+          {/* Mobile Buttons */}
           <div className="mobile-buttons">
-            <button className="join-btn" onClick={goto}>
+            <button className="join-btn" onClick={gotoSignup}>
               Join Now
             </button>
             <button className="login-btn">Login</button>
           </div>
         </div>
 
-        {/* Buttons (Desktop Only) */}
+        {/* Desktop Buttons */}
         <div className="navbar-buttons">
-          <button className="join-btn" onClick={goto}>
+          <button className="join-btn" onClick={gotoSignup}>
             Join Now
           </button>
           <button className="login-btn">Login</button>
         </div>
 
-        {/* Hamburger Icon */}
+        {/* Mobile Hamburger Icon */}
         <div className="menu-icon" onClick={toggleMenu}>
           {menuOpen ? "✖" : "☰"}
         </div>

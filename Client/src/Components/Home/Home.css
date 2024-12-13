@@ -11,8 +11,7 @@
     #7907ae
   ); /* Background gradient */
   color: #ffffff;
-  max-width: 1200px;
-  margin: 4rem auto;
+  margin: 4rem 2rem;
   border-radius: 2rem;
   position: relative;
   overflow: hidden; /* Prevent content spill */
@@ -119,6 +118,7 @@
     flex-direction: column;
     text-align: center;
     padding: 3rem 2rem;
+    margin: 3rem auto;
   }
 
   .hero-content {
