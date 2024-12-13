@@ -1,0 +1,179 @@
+/* Main Container */
+.why-choose-us-container {
+  background: linear-gradient(
+    110deg,
+    #1e105f,
+    #68099f
+  ); /* Gradient Background */
+  border-radius: 50px;
+  padding: 1.5rem 2rem;
+  text-align: center;
+  max-width: 1200px;
+  margin: 2rem auto;
+  color: white;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Title */
+.why-choose-us-title {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: center;
+  color: #dc762c;
+}
+
+/* Cards Container */
+.cards-container1 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  margin-top: 3rem;
+}
+
+/* Individual Card */
+.card1 {
+  background: rgba(255, 255, 255, 0.1); /* Slightly transparent background */
+  border-radius: 15px;
+  padding: 1rem;
+  height: 10rem;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.icon {
+  font-size: 3rem;
+  color: #dc762c; /* Icon color */
+  margin-bottom: 1rem;
+  transition: color 0.3s ease;
+}
+
+.card-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: white;
+}
+
+/* Explore Button */
+.explore-button {
+  background-color: #dc762c;
+  color: #ffffff;
+  border: none;
+  padding: 0.8rem 2rem;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+/* ================================= */
+/* Responsive Design for All Devices */
+/* ================================= */
+
+/* Large Tablets and Small Desktops */
+@media (max-width: 1024px) {
+  .cards-container {
+    grid-template-columns: repeat(2, 1fr); /* 2 cards per row */
+  }
+
+  .why-choose-us-title {
+    font-size: 2.2rem;
+  }
+
+  .card-title {
+    font-size: 1.1rem;
+  }
+}
+
+/* ================================= */
+/* Responsive Design for All Devices */
+/* ================================= */
+
+/* Large Tablets and Small Desktops (1024px and below) */
+@media (max-width: 1024px) {
+  .cards-container1 {
+    grid-template-columns: repeat(2, 1fr); /* 2 cards per row */
+    gap: 1rem;
+  }
+
+  .why-choose-us-title {
+    font-size: 2.2rem;
+  }
+
+  .card-title {
+    font-size: 1.1rem;
+  }
+}
+
+/* Tablets (768px and below) */
+@media (max-width: 768px) {
+  .why-choose-us-container {
+    padding: 2rem 1.5rem;
+    border-radius: 30px;
+  }
+
+  .why-choose-us-title {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .cards-container1 {
+    grid-template-columns: 1fr; /* 1 card per row */
+    gap: 1.2rem;
+  }
+
+  .card1 {
+    padding: 1.2rem;
+    height: auto; /* Auto height for smaller screens */
+  }
+
+  .icon {
+    font-size: 2.5rem; /* Slightly smaller icons */
+  }
+
+  .explore-button {
+    padding: 0.6rem 1.5rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* Mobile Phones (480px and below) */
+@media (max-width: 480px) {
+  .why-choose-us-container {
+    padding: 1.5rem 1rem;
+    border-radius: 20px;
+  }
+
+  .why-choose-us-title {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+
+  .cards-container1 {
+    gap: 1rem; /* Smaller gaps */
+  }
+
+  .card1 {
+    padding: 1rem;
+    border-radius: 10px;
+  }
+
+  .icon {
+    font-size: 2rem; /* Smaller icon size */
+  }
+
+  .card-title {
+    font-size: 1rem; /* Adjust title size */
+  }
+
+  .explore-button {
+    padding: 0.5rem 1.2rem;
+    font-size: 0.8rem;
+    border-radius: 15px;
+  }
+}

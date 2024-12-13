@@ -1,0 +1,246 @@
+/* Main Container */
+.mainCont {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  background-color: #fdfbf3;
+  padding: 40px 20px;
+  font-family: Arial, sans-serif;
+  box-sizing: border-box;
+}
+
+.leftImg {
+  height: 100%;
+}
+/* Left Image */
+.leftImg img {
+  width: 100%;
+  max-width: 300px;
+  height: 25rem;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+/* Right Section */
+.rightSide {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1;
+  gap: 20px;
+}
+
+.circle {
+  width: 50px;
+  height: 50px;
+  background-color: #ff7a29;
+  border-radius: 50%;
+}
+
+/* Text and Button Section */
+.text-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.leftCont {
+  flex: 1;
+  text-align: left;
+}
+
+.leftCont h1 {
+  font-size: 28px;
+  font-weight: bold;
+  color: #220b53;
+  margin-bottom: 10px;
+}
+
+.leftCont p {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.leftCont button {
+  padding: 10px 20px;
+  font-size: 14px;
+  background-color: #ff7a29;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.leftCont button:hover {
+  background-color: #e3691d;
+}
+/* Right Image */
+.rightCont img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+/* Count Section */
+.countCont {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #ff7a29;
+  color: #fff;
+  border-radius: 10px;
+  padding: 20px 10px;
+  text-align: center;
+}
+
+.countCont div {
+  flex: 1;
+}
+
+.countCont h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  line-height: 1rem;
+}
+
+.countCont p {
+  font-size: 14px;
+  margin: 0;
+}
+
+/* Responsive Design */
+/* Responsive Design */
+
+/* For Tablets and Small Desktops (1024px and below) */
+@media (max-width: 1024px) {
+  .mainCont {
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+    padding: 30px 10px;
+  }
+
+  .text-btn {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .leftImg img,
+  .rightCont img {
+    max-width: 90%;
+    height: auto;
+    margin: 0 auto;
+  }
+
+  .leftCont h1 {
+    font-size: 24px;
+  }
+
+  .leftCont p {
+    font-size: 13px;
+  }
+
+  .countCont {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .countCont div {
+    flex: 1 1 45%;
+    margin-bottom: 10px;
+  }
+}
+
+/* For Mobile Devices (768px and below) */
+@media (max-width: 768px) {
+  .mainCont {
+    gap: 20px;
+    padding: 20px 10px;
+  }
+
+  .leftCont h1 {
+    font-size: 20px;
+    margin-bottom: 8px;
+  }
+
+  .leftCont p {
+    font-size: 12px;
+    margin-bottom: 15px;
+  }
+
+  .leftCont button {
+    font-size: 12px;
+    padding: 8px 14px;
+  }
+
+  .countCont {
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  .countCont h1 {
+    font-size: 24px;
+  }
+
+  .countCont p {
+    font-size: 12px;
+  }
+}
+
+/* For Extra Small Mobile Devices (480px and below) */
+@media (max-width: 480px) {
+  .mainCont {
+    padding: 15px 5px;
+  }
+
+  .text-btn {
+    gap: 10px;
+  }
+
+  .circle {
+    width: 40px;
+    height: 40px;
+  }
+
+  .leftCont h1 {
+    font-size: 18px;
+    line-height: 1.2;
+    margin-bottom: 6px;
+  }
+
+  .leftCont p {
+    font-size: 11px;
+    margin-bottom: 10px;
+  }
+
+  .leftCont button {
+    font-size: 11px;
+    padding: 6px 12px;
+  }
+
+  .leftImg img,
+  .rightCont img {
+    height: 12rem;
+    max-width: 100%;
+  }
+
+  .countCont {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .countCont h1 {
+    font-size: 20px;
+    margin-bottom: 5px;
+  }
+
+  .countCont p {
+    font-size: 11px;
+  }
+}

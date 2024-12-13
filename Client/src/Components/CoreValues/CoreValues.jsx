@@ -34,10 +34,6 @@ const CoreValues = () => {
         <h1 className="core-values-title">
           Our <br /> Commitment to Your Success
         </h1>
-        <p className="core-values-description">
-          Lorem Ipsum is simply dummy text the printing and typeset Lorem Ipsum
-          has been the industry's standard ever.
-        </p>
       </div>
       <div className="core-values-right">
         {values.map((value, index) => (

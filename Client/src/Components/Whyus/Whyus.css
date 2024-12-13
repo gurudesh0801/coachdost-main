@@ -7,7 +7,7 @@
   color: rgb(0, 0, 0);
   max-width: 1500px;
   margin: auto;
-  font-family: "Plus Jakarta Sans", sans-serif;
+  font-family: "Roboto", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
 }
@@ -24,17 +24,17 @@
   position: absolute;
   top: -2.5rem;
   right: 3rem;
-  width: 17rem;
-  height: 30rem;
+  width: 25rem;
+  height: 25rem;
   background: linear-gradient(180deg, #031248, #7907ae);
   z-index: -1;
-  border-radius: 2rem;
+  border-radius: 1rem;
 }
 
 .coachDost-image {
-  width: 400px;
+  width: 25rem;
   height: auto;
-  border-radius: 10px;
+  /* border-radius: 1rem; */
 }
 
 .coachDost-right {
@@ -43,32 +43,31 @@
 }
 
 .coachDost-right h1 {
-  font-size: 4rem;
+  font-size: 2rem;
   margin-bottom: 20px;
-}
-
-.coachDost-right h1 span {
-  color: #ff4507;
+  font-weight: 700;
+  color: #1e105f;
 }
 
 .coachDost-right ul {
-  list-style: none;
   padding: 0;
   margin-bottom: 20px;
+  margin-left: 1rem;
 }
 
 .coachDost-right ul li {
   margin-bottom: 10px;
   font-size: 1.2rem;
+  font-weight: 300;
 }
 
 .coachDost-button {
   background-color: #b85a1c;
   color: white;
-  padding: 10px 20px;
+  padding: 1rem 1.3rem;
   font-size: 1rem;
   border: none;
-  border-radius: 5px;
+  border-radius: 2rem;
   cursor: pointer;
 }
 
@@ -83,6 +82,7 @@
     flex-direction: column; /* Stack the content vertically */
     text-align: center; /* Center-align the text */
     padding: 15px;
+    margin: auto;
   }
 
   .coachDost-left,
@@ -102,7 +102,6 @@
     font-size: 3rem; /* Reduce heading size */
     margin-bottom: 15px;
   }
-
   .coachDost-right ul li {
     font-size: 1rem; /* Reduce list item font size */
   }
@@ -129,13 +128,14 @@
   }
 
   .coachDost-right h1 {
-    font-size: 3rem; /* Further reduce heading size */
+    font-size: 1.5rem; /* Further reduce heading size */
     margin-bottom: 10px;
     font-weight: 900;
   }
 
   .coachDost-right ul li {
     font-size: 0.9rem; /* Smaller font size for list items */
+    list-style: none;
   }
 
   .coachDost-button {

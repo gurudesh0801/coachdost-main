@@ -1,0 +1,273 @@
+/* General Container */
+.testimonials-coaches-container {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  background-color: #f9f9f9;
+  padding: 2rem;
+  color: #1e105f;
+  max-width: 1200px;
+  margin: auto;
+}
+.textT {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+/* Section Titles */
+.testimonials-title {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #1e105f;
+  font-weight: bold;
+}
+.coaches-title {
+  font-size: 2.5rem;
+  text-align: start;
+  margin-bottom: 2rem;
+  color: #1e105f;
+  font-weight: bold;
+}
+
+.coaches-subtitle {
+  text-align: start;
+  color: #b085f5;
+  letter-spacing: 1.5px;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Testimonials Section */
+.testimonials-wrapper {
+  margin-bottom: 4rem;
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Two cards per row */
+  gap: 2rem;
+  justify-items: center;
+}
+
+.testimonials-card {
+  display: flex;
+  flex-direction: row;
+  background: #fff;
+  border: 1px solid #eaeaea;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.testimonials-card:hover {
+  transform: translateY(-8px);
+}
+
+.testimonials-image {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin: 1.5rem;
+}
+
+.testimonials-details {
+  padding: 1rem;
+}
+
+.testimonials-name {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: #1e105f;
+}
+
+.testimonials-description {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* Coaches Section */
+.coaches-wrapper {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.coaches-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.coaches-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 15rem;
+  background-color: #fff;
+  padding: 1.5rem;
+  border: 1px solid #eaeaea;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.coaches-card:hover {
+  transform: translateY(-8px);
+}
+
+.coaches-image {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
+
+.coaches-details {
+  text-align: center;
+}
+
+.coaches-country {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: #1e105f;
+}
+
+.coaches-points {
+  list-style: none;
+  padding: 0;
+  color: #555;
+}
+
+.coaches-points li {
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.coaches-view-more-btn {
+  background-color: #dc762c;
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s ease;
+}
+
+.coaches-view-more-btn:hover {
+  background-color: #b85a1c;
+}
+
+/* Responsive Design */
+/* Responsive Design for Tablets and Small Desktops */
+@media (max-width: 1024px) {
+  .testimonials-title,
+  .coaches-title {
+    font-size: 2rem; /* Reduce font size for section titles */
+  }
+
+  .testimonials-grid {
+    grid-template-columns: 1fr; /* Stack testimonials vertically */
+  }
+
+  .testimonials-card {
+    flex-direction: column; /* Stack content vertically */
+    text-align: center;
+  }
+
+  .testimonials-image {
+    width: 100px;
+    height: 100px;
+    margin: 1rem auto; /* Center image */
+  }
+
+  .coaches-grid {
+    grid-template-columns: repeat(2, 1fr); /* Two coach cards per row */
+  }
+
+  .coaches-card {
+    width: 100%; /* Adjust card width to fit the grid */
+    padding: 1rem;
+  }
+
+  .coaches-image {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+/* Responsive Design for Mobile Devices */
+@media (max-width: 768px) {
+  .testimonials-title,
+  .coaches-title {
+    font-size: 1.8rem; /* Further reduce font size */
+  }
+
+  .testimonials-wrapper {
+    margin-bottom: 2rem; /* Reduce spacing */
+  }
+
+  .testimonials-card {
+    padding: 1rem;
+  }
+
+  .coaches-grid {
+    grid-template-columns: 1fr; /* Single column layout for coach cards */
+  }
+
+  .coaches-card {
+    padding: 1rem;
+    width: 100%; /* Full width */
+  }
+
+  .coaches-view-more-btn {
+    font-size: 0.9rem;
+    padding: 0.6rem 1rem;
+  }
+}
+
+/* Responsive Design for Small Mobile Devices */
+@media (max-width: 480px) {
+  .testimonials-coaches-container {
+    padding: 1rem; /* Reduce overall padding */
+  }
+
+  .testimonials-title,
+  .coaches-title {
+    font-size: 1.5rem; /* Smaller title for small screens */
+    margin-bottom: 1.5rem;
+  }
+
+  .testimonials-card {
+    padding: 0.8rem;
+  }
+
+  .testimonials-image {
+    width: 80px;
+    height: 80px;
+  }
+
+  .coaches-card {
+    padding: 0.8rem;
+  }
+
+  .coaches-image {
+    width: 70px;
+    height: 70px;
+    margin-bottom: 0.5rem;
+  }
+
+  .coaches-points li {
+    font-size: 0.8rem; /* Reduce font size for points */
+  }
+
+  .coaches-view-more-btn {
+    font-size: 0.8rem;
+    padding: 0.5rem 0.8rem;
+  }
+}

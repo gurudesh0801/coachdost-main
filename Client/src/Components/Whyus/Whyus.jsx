@@ -1,6 +1,6 @@
 import React from "react";
 import "./Whyus.css";
-import image from "../../assets/images/image.png";
+import image from "../../assets/images/save.png";
 
 const Whyus = () => {
   return (
@@ -13,15 +13,15 @@ const Whyus = () => {
         />
       </div>
       <div className="coachDost-right">
-        <h1>
-          Why Choose <br />
-          <span>CoachDost?</span>
-        </h1>
+        <h1>Why Choose CoachDost?</h1>
         <ul>
-          <li>24/7 Access To Expert Guidance</li>
-          <li>Multilingual Coaches Across Industries</li>
-          <li>Safe & Private Coaching Environment</li>
-          <li>End-To-End Coaching Platform</li>
+          <li>One-to-one focus</li>
+          <li>Measurable Goal Setting for each session</li>
+          <li>Confidentiality</li>
+          <li>Action—immediate, progressive review</li>
+          <li>Coach acts as a partner to help you</li>
+          <li>Stretch beyond your comfort zone</li>
+          <li>Accountability & Ownership</li>
         </ul>
         <button className="coachDost-button">Explore Our Coaches ➜</button>
       </div>

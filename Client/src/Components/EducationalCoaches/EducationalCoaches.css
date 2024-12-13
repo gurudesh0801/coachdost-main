@@ -1,0 +1,203 @@
+/* Main Container */
+.eduCoach {
+  font-family: Arial, sans-serif;
+  background-color: #fdfbf3;
+  color: #333;
+  text-align: center;
+  padding: 40px 20px;
+  box-sizing: border-box;
+}
+.textedu {
+  display: flex;
+  align-items: center;
+  margin: 0 2rem;
+  justify-content: space-between;
+}
+/* Heading Section */
+.textedu p {
+  text-align: start;
+  font-size: 14px;
+  color: #ff7a29;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.textedu h1 {
+  font-size: 2.5rem;
+  color: #220b53;
+  margin-bottom: 30px;
+  font-weight: bold;
+  text-align: start;
+}
+.textedu .btn button {
+  padding: 0.7rem 3rem;
+  background: transparent;
+  border: 2px solid #ff7a29;
+  border-radius: 2rem;
+}
+
+/* Profiles Section */
+.coachesProfile {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.profiles {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  padding: 20px;
+  max-width: 300px;
+  flex: 1;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.profiles:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.profiles img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 15px;
+  background-color: #e0e0e0;
+}
+
+.profiles h2 {
+  font-size: 1.5rem;
+  color: #220b53;
+  margin-bottom: 10px;
+}
+
+.profiles p {
+  font-size: 14px;
+  color: #666;
+  margin: 5px 0;
+}
+
+.profiles p:last-child {
+  color: #ff7a29;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.profiles p:last-child:hover {
+  text-decoration: underline;
+}
+
+/* ==============================
+   RESPONSIVE STYLES
+   ============================== */
+
+/* For Tablets (max-width: 1024px) */
+/* ==============================
+   RESPONSIVE STYLES
+   ============================== */
+
+/* For Tablets and Small Desktops (max-width: 1024px) */
+@media (max-width: 1024px) {
+  .textedu {
+    flex-direction: column;
+    text-align: center;
+    margin: 0;
+  }
+
+  .textedu h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .textedu p {
+    text-align: center;
+    font-size: 13px;
+  }
+
+  .coachesProfile {
+    gap: 15px;
+  }
+
+  .profiles {
+    max-width: 45%;
+  }
+}
+
+/* For Mobile Devices (max-width: 768px) */
+@media (max-width: 768px) {
+  .textedu {
+    flex-direction: column;
+    text-align: center;
+    margin: 0;
+  }
+
+  .textedu h1 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+  }
+
+  .textedu p {
+    font-size: 12px;
+  }
+
+  .coachesProfile {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .profiles {
+    max-width: 90%;
+    margin-bottom: 15px;
+    padding: 15px;
+  }
+
+  .profiles img {
+    width: 90px;
+    height: 90px;
+  }
+
+  .profiles h2 {
+    font-size: 1.4rem;
+  }
+
+  .profiles p {
+    font-size: 12px;
+  }
+}
+
+/* For Small Mobile Devices (max-width: 480px) */
+@media (max-width: 480px) {
+  .textedu h1 {
+    font-size: 1.5rem;
+    line-height: 1.2;
+    margin-bottom: 10px;
+  }
+
+  .textedu p {
+    font-size: 11px;
+  }
+
+  .profiles {
+    padding: 12px;
+  }
+
+  .profiles img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .profiles h2 {
+    font-size: 1.3rem;
+  }
+
+  .profiles p {
+    font-size: 11px;
+  }
+}

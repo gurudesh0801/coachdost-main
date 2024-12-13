@@ -4,7 +4,12 @@ import heroImage from "../../assets/images/img5.png"; // Replace with the correc
 import Whyus from "../Whyus/Whyus";
 import Features from "../Features/Features";
 import CoreValues from "../CoreValues/CoreValues";
-import Coaches from "../Coaches/Coaches";
+import Coaches from "../ExploreCoaches/ExploreCoaches";
+import WhyChooseUs from "../WhyChooseUs/WhyChooseUs";
+import TestimonialsCoaches from "../TestimonialsCoaches/TestimonialsCoaches";
+import EducationalCoaches from "../EducationalCoaches/EducationalCoaches";
+import OfferSection from "../OfferSection/OfferSection";
+import OurTeam from "../OurTeam/OurTeam";
 
 const Home = () => {
   return (
@@ -12,14 +17,20 @@ const Home = () => {
       <section className="hero">
         <div className="hero-content">
           <h1>
-            A Global Coaching Platform Providing Confidential, Premium Guidance
-            In A Secure Environment
+            A Global Coaching Platform Offering High-quality Guidance To You,
+            Anytime, Anywhere
           </h1>
           <p>
-            A Safe, Private, And High-Quality Coaching Experience Accessible
-            From The Comfort Of Your Home. Transform Your Life Today!
+            A coaching platform focused on a providing a safe, private and high
+            quality environment to people all around the world. We will provide
+            high quality coaches to the people from the comfort of their home.
           </p>
-          <button className="hero-button">Start Your Growth Journey ➔</button>
+          <div className="btns">
+            <button className="hero-button1">
+              Start Your Growth Journey ➔
+            </button>
+            <button className="hero-button2">Meet Our Coaches</button>
+          </div>
         </div>
         <div className="hero-image">
           <img src={heroImage} alt="Hero Coaches" />
@@ -28,7 +39,13 @@ const Home = () => {
       <Whyus />
       <Features />
       <CoreValues />
+      <WhyChooseUs />
       <Coaches />
+      <TestimonialsCoaches />
+      <OfferSection />
+      <EducationalCoaches />
+      <OurTeam />
+      {/* <EducationalCoaches /> */}
     </>
   );
 };

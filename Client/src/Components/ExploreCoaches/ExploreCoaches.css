@@ -1,0 +1,201 @@
+/* Main Container */
+.explore-coaches-container {
+  background: linear-gradient(110deg, #1e105f, #68099f);
+  padding: 3rem 2rem;
+  text-align: center;
+  color: white;
+  border-radius: 30px;
+  max-width: 1200px;
+  margin: 2rem auto;
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+/* Subtitle */
+.section-subtitle {
+  font-size: 1rem;
+  letter-spacing: 1.5px;
+  margin-bottom: 0.5rem;
+  color: #ffb74d;
+}
+
+/* Title */
+.section-title1 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+/* Coaches Grid */
+.coaches-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  justify-items: center;
+  margin-bottom: 2rem;
+}
+
+/* Individual Card */
+.coach-card {
+  position: relative;
+  height: 300px; /* Default Height */
+  border-radius: 20px;
+  text-align: center;
+  overflow: hidden;
+  transition: transform 0.3s ease, width 0.3s ease; /* Smooth transitions */
+  width: 100%;
+  max-width: 300px;
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.coach-card:hover {
+  width: 15rem; /* Slight vertical scaling */
+  max-width: 350px; /* Expand width on hover */
+  cursor: pointer;
+}
+
+/* Image */
+.coach-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.coach-card:hover .coach-image {
+  transform: scale(1.1); /* Zoom the image slightly on hover */
+}
+
+/* Info Overlay - Hidden by Default */
+.coach-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(220, 118, 44, 0.95);
+  color: white;
+  padding: 1rem;
+  text-align: left;
+  opacity: 0; /* Initially hidden */
+  transform: translateY(100%);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Show Info on Hover */
+.coach-card:hover .coach-info {
+  opacity: 1; /* Show content */
+  transform: translateY(0); /* Slide up */
+}
+
+.coach-title {
+  font-size: 1.2rem;
+  margin: 0 0 0.5rem 0;
+  font-weight: 700;
+}
+
+.coach-description {
+  font-size: 0.9rem;
+  line-height: 1.4;
+  margin-bottom: 1rem;
+}
+
+.coach-cta {
+  background: none;
+  border: 1px solid white;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.coach-cta:hover {
+  background: white;
+  color: #dc762c;
+}
+
+/* Navigation Arrows */
+.navigation-arrows {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+.nav-arrow {
+  background: #dc762c;
+  color: white;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s ease;
+}
+
+.nav-arrow:hover {
+  background: #b85a1c;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .coaches-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+
+  .coach-info {
+    padding: 0.8rem;
+  }
+
+  .coach-title {
+    font-size: 1rem;
+  }
+
+  .coach-description {
+    font-size: 0.8rem;
+  }
+
+  .coach-card {
+    height: 250px;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .coach-info {
+    padding: 0.5rem;
+  }
+
+  .coach-title {
+    font-size: 0.9rem;
+  }
+
+  .coach-description {
+    font-size: 0.75rem;
+  }
+
+  .coach-cta {
+    font-size: 0.8rem;
+    padding: 0.3rem 0.8rem;
+  }
+
+  .nav-arrow {
+    width: 30px;
+    height: 30px;
+    font-size: 0.8rem;
+  }
+
+  .coach-card {
+    height: 200px;
+  }
+}
