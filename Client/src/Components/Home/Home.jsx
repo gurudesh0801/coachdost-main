@@ -42,9 +42,9 @@ const Home = () => {
       <CoreValues />
       <WhyChooseUs />
       <Coaches />
-      <TestimonialsCoaches />
       <OfferSection />
       <EducationalCoaches />
+      <TestimonialsCoaches />
       <OurTeam />
       <TestimonialCard />
       {/* <EducationalCoaches /> */}

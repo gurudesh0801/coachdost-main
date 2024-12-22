@@ -32,7 +32,8 @@ const CoreValues = () => {
       <div className="core-values-left">
         <p className="core-values-subtitle">CORE VALUES</p>
         <h1 className="core-values-title">
-          Our <br /> Commitment to Your Success
+          Our <br /> Commitment to <br />
+          Your Success
         </h1>
       </div>
       <div className="core-values-right">

@@ -20,9 +20,10 @@
 /* Team Content */
 .team-content {
   display: flex;
-  justify-content: space-between;
-  gap: 20px;
+  justify-content: space-around;
   align-items: center;
+  max-width: 1200px;
+  margin: auto;
 }
 
 /* Team Info Cards */
@@ -42,7 +43,8 @@
 }
 
 .team-card:hover {
-  transform: translateY(-5px);
+  background: none;
+  border: 1px solid wheat;
 }
 
 .team-name {
@@ -100,6 +102,8 @@
   background-color: #ff7a29;
   color: #fff;
 }
+
+/* Responsive Design */
 
 /* Responsive Design */
 
@@ -177,5 +181,11 @@
 
   .team-social-icons {
     gap: 6px;
+  }
+
+  .social-icon {
+    width: 20px;
+    height: 20px;
+    font-size: 0.7rem;
   }
 }

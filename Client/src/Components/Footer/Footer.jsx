@@ -1,85 +1,70 @@
 import React from "react";
 import "./Footer.css";
-import { FaEnvelope, FaGlobe, FaCheck } from "react-icons/fa"; // For icons
+import { FaPassport, FaGlobe, FaArrowRight } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className="footer-container">
+    <footer className="footer">
       {/* Top Section */}
       <div className="footer-top">
-        <div className="footer-top-box">
-          <div className="footer-icon">
-            <FaEnvelope />
+        <div className="footer-section">
+          <div className="icon-support">
+            <FaPassport />
           </div>
-          <p>
-            Need Advice On How To Become A Better Version Of Yourself In Your
-            Personal Life?
-          </p>
+          <h3>Need Any Support For Tour And Visa?</h3>
         </div>
-        <div className="footer-top-box">
-          <div className="footer-icon">
+        <div className="footer-section">
+          <div className="icon-travel">
             <FaGlobe />
           </div>
-          <p>
-            Are You Ready For Sharpening Your Skillsets For Your Professional
-            Life?
-          </p>
+          <h3>Are You Ready For Get Started Travelling?</h3>
         </div>
       </div>
 
       {/* Middle Section */}
       <div className="footer-middle">
-        <div className="footer-section company-details">
-          <h3>COACHDOST</h3>
+        <div className="footer-column">
+          <h4>RouteX</h4>
           <p>
-            Corporate business typically refers to large-scale mansola it
-            enterprises or organizat
+            Corporate business typically refers to large-scale enterprises or
+            organizations.
           </p>
         </div>
-
-        <div className="footer-section services">
-          <h3>Services</h3>
+        <div className="footer-column">
+          <h4>Services</h4>
           <ul>
-            <li>
-              <FaCheck className="check-icon" /> Mistakes To Avoid
-            </li>
-            <li>
-              <FaCheck className="check-icon" /> Your Startup
-            </li>
-            <li>
-              <FaCheck className="check-icon" /> Knew About Fonts
-            </li>
-            <li>
-              <FaCheck className="check-icon" /> Knew About Fonts
-            </li>
+            <li>Mistakes to Avoid</li>
+            <li>Your Startup</li>
+            <li>Know About Funds</li>
           </ul>
         </div>
-
-        <div className="footer-section useful-links">
-          <h3>Useful Link</h3>
+        <div className="footer-column">
+          <h4>Useful Links</h4>
           <ul>
             <li>Latest News</li>
             <li>Careers</li>
-            <li>General Inquiries</li>
             <li>Case Studies</li>
           </ul>
         </div>
-
-        <div className="footer-section newsletter">
-          <h3>Subscribe Our Newsletter</h3>
-          <p>Corporate business typically refers to large-scale mansola it.</p>
-          <div className="newsletter-input">
+        <div className="footer-column">
+          <h4>Subscribe Our Newsletter</h4>
+          <div className="newsletter">
             <input type="email" placeholder="Enter Email" />
-            <button className="subscribe-btn"></button>
+            <button>
+              <FaArrowRight />
+            </button>
           </div>
         </div>
       </div>
 
       {/* Bottom Section */}
       <div className="footer-bottom">
-        <p>Trams & Condition</p>
-        <p>Privacy Policy</p>
-        <p>Contact Us</p>
+        <p>© Yourcompany 2024. All Rights Reserved</p>
+        <ul>
+          <li>Terms & Conditions</li>
+          <li>Privacy Policy</li>
+          <li>Contact Us</li>
+        </ul>
       </div>
     </footer>
   );

@@ -1,8 +1,13 @@
 import React from "react";
 import "./Whyus.css";
 import image from "../../assets/images/save.png";
+import { useNavigate } from "react-router-dom";
 
 const Whyus = () => {
+  const navigate = useNavigate();
+  const goto = () => {
+    navigate("/explorecoaches");
+  };
   return (
     <div className="coachDost-container" id="whyus">
       <div className="coachDost-left">
@@ -23,7 +28,12 @@ const Whyus = () => {
           <li>Stretch beyond your comfort zone</li>
           <li>Accountability & Ownership</li>
         </ul>
-        <button className="coachDost-button">Explore Our Coaches ➜</button>
+        <button className="coachDost-button" onClick={goto}>
+          Explore Our Coaches
+        </button>
+        <button className="coachDost-button2">
+          Schedule Free Consultation
+        </button>
       </div>
     </div>
   );

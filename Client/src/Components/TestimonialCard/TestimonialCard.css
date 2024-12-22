@@ -3,20 +3,17 @@
   display: flex;
   align-items: stretch;
   justify-content: space-between;
-  background-color: #f16322;
   border-radius: 10px;
   max-width: 1200px;
   margin: 2rem auto;
   overflow: hidden;
   color: #fff;
   font-family: Arial, sans-serif;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 /* Left Image Section */
 .testimonial-image {
   flex: 1;
-  background-color: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -33,6 +30,7 @@
   flex: 1.5;
   padding: 2rem;
   display: flex;
+  border-radius: 2rem;
   flex-direction: column;
   justify-content: center;
   background-color: #f16322;
@@ -90,15 +88,18 @@
      Responsive Styles
   ========================================== */
 
-/* Tablets and Small Desktops */
+/* Responsive Styles */
+
+/* Tablets and Small Desktops (Max-width: 1024px) */
 @media (max-width: 1024px) {
   .testimonial-container {
     flex-direction: column;
     max-width: 90%;
+    margin: 1.5rem auto;
   }
 
   .testimonial-image {
-    height: 300px;
+    height: 250px;
   }
 
   .testimonial-content {
@@ -113,27 +114,28 @@
 
   .testimonial-text {
     font-size: 1rem;
-    line-height: 1.6;
-    margin: 1.5rem 0;
+    line-height: 1.5;
+    margin: 1rem 0;
+    text-align: justify;
   }
 
   .nav-btn {
-    width: 40px;
-    height: 40px;
+    width: 35px;
+    height: 35px;
     font-size: 1rem;
   }
 }
 
-/* Mobile Devices */
+/* Mobile Devices (Max-width: 768px) */
 @media (max-width: 768px) {
   .testimonial-container {
     flex-direction: column;
     max-width: 95%;
-    margin: 1.5rem auto;
+    margin: 1rem auto;
   }
 
   .testimonial-image {
-    height: 250px;
+    height: 200px;
   }
 
   .testimonial-content {
@@ -148,29 +150,34 @@
 
   .testimonial-text {
     font-size: 0.95rem;
-    line-height: 1.5;
+    line-height: 1.4;
     text-align: justify;
   }
 
   .nav-btn {
-    width: 35px;
-    height: 35px;
+    width: 30px;
+    height: 30px;
     font-size: 0.9rem;
   }
 }
 
-/* Extra Small Devices (Phones) */
+/* Extra Small Devices (Phones, Max-width: 480px) */
 @media (max-width: 480px) {
   .testimonial-container {
     flex-direction: column;
+    max-width: 100%;
+    margin: 0.8rem auto;
     border-radius: 8px;
   }
 
   .testimonial-image {
-    height: 200px;
+    height: 150px;
   }
+
   .testimonial-image img {
-    width: 10rem;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
   }
 
   .testimonial-content {
@@ -185,12 +192,13 @@
 
   .testimonial-text {
     font-size: 0.9rem;
-    margin: 1rem 0;
+    line-height: 1.3;
+    margin: 0.8rem 0;
   }
 
   .nav-btn {
-    width: 30px;
-    height: 30px;
+    width: 25px;
+    height: 25px;
     font-size: 0.8rem;
   }
 }

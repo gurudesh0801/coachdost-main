@@ -36,7 +36,7 @@ const Features = () => {
           </div>
         ))}
       </div>
-      <button className="features-button">Book a Session</button>
+      <button className="features-button">Start Your Journey</button>
     </div>
   );
 };

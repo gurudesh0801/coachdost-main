@@ -5,6 +5,7 @@
   justify-content: center;
   padding: 20px;
   color: rgb(0, 0, 0);
+  max-width: 1200px;
   margin: auto;
   font-family: "Roboto", sans-serif;
   font-optical-sizing: auto;
@@ -22,10 +23,10 @@
   content: "";
   position: absolute;
   top: -4rem;
-  right: 6rem;
+  right: 2rem;
   width: 25rem;
   height: 25rem;
-  background: linear-gradient(180deg, #031248, #7907ae);
+  background: linear-gradient(90deg, #1e105f, #660a9e);
   z-index: -1;
   border-radius: 1rem;
 }
@@ -39,13 +40,15 @@
 .coachDost-right {
   flex: 1;
   padding: 20px;
+  grid-column: auto;
 }
 
 .coachDost-right h1 {
-  font-size: 2rem;
+  font-size: 2.5rem;
   margin-bottom: 20px;
   font-weight: 700;
   color: #1e105f;
+  margin-top: -3rem;
 }
 
 .coachDost-right ul {
@@ -56,16 +59,28 @@
 
 .coachDost-right ul li {
   margin-bottom: 10px;
-  font-size: 1.2rem;
+  font-size: 1.6rem;
   font-weight: 300;
 }
 
 .coachDost-button {
-  background-color: #b85a1c;
+  background-color: #dc762c;
   color: white;
   padding: 1rem 1.3rem;
+  margin-top: 1rem;
   font-size: 1rem;
-  border: none;
+  border: 1px solid white;
+  border-radius: 2rem;
+  cursor: pointer;
+  margin-right: 1rem;
+}
+.coachDost-button2 {
+  background: none;
+  color: #1e105f;
+  padding: 1rem 1.3rem;
+  margin-top: 1rem;
+  font-size: 1rem;
+  border: 1px solid #1e105f;
   border-radius: 2rem;
   cursor: pointer;
 }
@@ -78,42 +93,44 @@
 /* Responsive Styles */
 @media (max-width: 768px) {
   .coachDost-container {
-    flex-direction: column; /* Stack the content vertically */
-    text-align: center; /* Center-align the text */
+    flex-direction: column; /* Stack content vertically */
+    text-align: center;
     padding: 15px;
-    margin: auto;
   }
 
   .coachDost-left,
   .coachDost-right {
-    width: 100%; /* Make sections take full width */
+    width: 100%; /* Full width for sections */
     padding: 15px;
   }
+
   .coachDost-left::after {
-    display: none;
+    display: none; /* Hide background gradient */
   }
+
   .coachDost-image {
-    width: 300px; /* Adjust image size for smaller screens */
+    width: 300px; /* Adjust image size */
     height: auto;
   }
 
   .coachDost-right h1 {
-    font-size: 3rem; /* Reduce heading size */
+    font-size: 1.8rem; /* Reduce heading size */
     margin-bottom: 15px;
   }
+
   .coachDost-right ul li {
-    font-size: 1rem; /* Reduce list item font size */
+    font-size: 1rem; /* Reduce list font size */
   }
 
   .coachDost-button {
     font-size: 1rem;
-    padding: 10px 18px; /* Adjust button size */
+    padding: 10px 18px; /* Adjust button padding */
   }
 }
 
 @media (max-width: 480px) {
   .coachDost-container {
-    padding: 10px; /* Reduce padding further */
+    padding: 10px; /* Further reduce padding */
   }
 
   .coachDost-left,
@@ -122,23 +139,25 @@
   }
 
   .coachDost-image {
-    width: 230px; /* Smaller image for mobile devices */
+    width: 230px; /* Smaller image for mobile */
     height: auto;
   }
 
   .coachDost-right h1 {
-    font-size: 1.5rem; /* Further reduce heading size */
+    font-size: 1.5rem; /* Smaller heading */
     margin-bottom: 10px;
     font-weight: 900;
+    margin-top: 1rem;
   }
 
   .coachDost-right ul li {
-    font-size: 0.9rem; /* Smaller font size for list items */
-    list-style: none;
+    font-size: 0.9rem; /* Reduce list item font size */
+    list-style: none; /* Remove bullets for cleaner look */
   }
 
   .coachDost-button {
-    font-size: 0.9rem; /* Smaller button font size */
-    padding: 12px 20px; /* Smaller padding */
+    font-size: 0.9rem;
+    padding: 12px 20px; /* Adjust button size */
+    margin-right: 0;
   }
 }

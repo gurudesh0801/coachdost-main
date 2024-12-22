@@ -1,203 +1,196 @@
-/* Main Container */
+/* Main container */
 .eduCoach {
-  font-family: Arial, sans-serif;
-  background-color: #fdfbf3;
-  color: #333;
-  text-align: center;
-  padding: 40px 20px;
-  box-sizing: border-box;
+  padding: 40px;
+  background-color: #ffffff;
+  font-family: "Plus Jakarta Sans", sans-serif;
 }
+
+/* Header section */
 .textedu {
   display: flex;
-  align-items: center;
-  margin: 0 2rem;
   justify-content: space-between;
+  margin: 0 4rem;
+  align-items: center;
+  margin-bottom: 30px;
 }
-/* Heading Section */
-.textedu p {
-  text-align: start;
-  font-size: 14px;
-  color: #ff7a29;
+
+.text1 .supportingText {
+  color: #1e105f;
+  font-size: 1rem;
   font-weight: bold;
   margin-bottom: 10px;
 }
 
-.textedu h1 {
-  font-size: 2.5rem;
-  color: #220b53;
-  margin-bottom: 30px;
+.text1 .heading {
+  color: #1e105f;
+  font-size: 4rem;
   font-weight: bold;
-  text-align: start;
-}
-.textedu .btn button {
-  padding: 0.7rem 3rem;
-  background: transparent;
-  border: 2px solid #ff7a29;
-  border-radius: 2rem;
 }
 
-/* Profiles Section */
+.text2 {
+  display: flex;
+  gap: 10px;
+}
+
+.text2 .larr,
+.text2 .rarr {
+  background-color: #dc762c;
+  color: #ffffff;
+  border: none;
+  border-radius: 50%;
+  font-size: 18px;
+  padding: 1rem 1rem;
+  text-align: center;
+  cursor: pointer;
+}
+
+.text2 .larr {
+  background-color: #cccccc; /* Different color for left arrow */
+}
+
+/* Profiles container */
 .coachesProfile {
   display: flex;
   justify-content: space-around;
   gap: 20px;
-  flex-wrap: wrap;
-  margin-top: 20px;
+  flex-wrap: wrap; /* Ensure responsiveness */
 }
 
-.profiles {
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  padding: 20px;
-  max-width: 300px;
-  flex: 1;
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+/* Profile card */
+.profile {
+  position: relative;
+  width: 300px;
+  height: 400px;
+  overflow: hidden;
 }
 
-.profiles:hover {
-  transform: translateY(-5px);
-  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
-}
-
-.profiles img {
-  width: 100px;
-  height: 100px;
+.coachImg {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  border-radius: 50%;
-  margin-bottom: 15px;
-  background-color: #e0e0e0;
+  border-radius: 10px;
 }
 
-.profiles h2 {
-  font-size: 1.5rem;
-  color: #220b53;
+/* Text box at the bottom of the image */
+.textBox {
+  position: absolute;
+  bottom: 0;
+  left: 20px; /* Left margin */
+  background-color: rgba(
+    226,
+    226,
+    226,
+    0.885
+  ); /* Semi-transparent background */
+  color: #1e105f;
+  padding: 15px;
+  border-radius: 10px;
+  width: calc(100% - 40px); /* Adjust width for left margin */
+}
+
+.coachTitle {
+  font-size: 20px;
+  font-weight: bold;
   margin-bottom: 10px;
 }
 
-.profiles p {
+.coachDesc {
   font-size: 14px;
-  color: #666;
-  margin: 5px 0;
+  margin-bottom: 15px;
 }
 
-.profiles p:last-child {
-  color: #ff7a29;
+.customPackage {
+  display: inline-block;
+  font-size: 14px;
+  color: #1e105f;
   font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: 0.3s;
   cursor: pointer;
 }
 
-.profiles p:last-child:hover {
-  text-decoration: underline;
-}
+/* Responsive Design */
 
-/* ==============================
-   RESPONSIVE STYLES
-   ============================== */
-
-/* For Tablets (max-width: 1024px) */
-/* ==============================
-   RESPONSIVE STYLES
-   ============================== */
-
-/* For Tablets and Small Desktops (max-width: 1024px) */
+/* Tablets and medium-sized screens */
 @media (max-width: 1024px) {
   .textedu {
-    flex-direction: column;
-    text-align: center;
-    margin: 0;
-  }
-
-  .textedu h1 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    text-align: center;
-  }
-
-  .textedu p {
-    text-align: center;
-    font-size: 13px;
+    flex-wrap: wrap;
   }
 
   .coachesProfile {
-    gap: 15px;
+    justify-content: center; /* Center the cards */
   }
 
-  .profiles {
-    max-width: 45%;
+  .profile {
+    width: 45%; /* Reduce size for two cards per row */
+    height: 350px;
+  }
+
+  .textBox {
+    font-size: 14px;
+    left: 15px;
+    width: calc(100% - 30px);
+  }
+
+  .coachTitle {
+    font-size: 18px;
+  }
+
+  .customPackage {
+    font-size: 12px;
   }
 }
 
-/* For Mobile Devices (max-width: 768px) */
+/* Mobile screens */
 @media (max-width: 768px) {
   .textedu {
     flex-direction: column;
-    text-align: center;
-    margin: 0;
-  }
-
-  .textedu h1 {
-    font-size: 1.8rem;
-    margin-bottom: 15px;
-  }
-
-  .textedu p {
-    font-size: 12px;
+    align-items: flex-start;
   }
 
   .coachesProfile {
-    flex-direction: column;
+    flex-direction: column; /* Stack the cards vertically */
     align-items: center;
-    gap: 10px;
   }
 
-  .profiles {
-    max-width: 90%;
-    margin-bottom: 15px;
-    padding: 15px;
+  .profile {
+    width: 90%;
+    height: 300px;
   }
 
-  .profiles img {
-    width: 90px;
-    height: 90px;
-  }
-
-  .profiles h2 {
-    font-size: 1.4rem;
-  }
-
-  .profiles p {
-    font-size: 12px;
+  .textBox {
+    left: 10px;
+    width: calc(100% - 20px);
   }
 }
 
-/* For Small Mobile Devices (max-width: 480px) */
+/* Extra small mobile screens */
 @media (max-width: 480px) {
-  .textedu h1 {
-    font-size: 1.5rem;
-    line-height: 1.2;
-    margin-bottom: 10px;
+  .text1 .heading {
+    font-size: 24px;
   }
 
-  .textedu p {
-    font-size: 11px;
+  .profile {
+    width: 100%;
   }
 
-  .profiles {
-    padding: 12px;
+  .coachTitle {
+    font-size: 16px;
   }
 
-  .profiles img {
-    width: 80px;
-    height: 80px;
+  .coachDesc {
+    font-size: 12px;
   }
 
-  .profiles h2 {
-    font-size: 1.3rem;
+  .customPackage {
+    font-size: 10px;
+    padding: 3px 8px;
   }
 
-  .profiles p {
-    font-size: 11px;
+  .text2 .larr,
+  .text2 .rarr {
+    font-size: 16px;
+    padding: 8px 12px;
   }
 }

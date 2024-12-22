@@ -23,20 +23,6 @@ const OurTeam = () => {
         </div>
         <div className="team-image-container">
           <img src={teamMemberImg} alt="Team Member" className="team-image" />
-          <div className="team-social-icons">
-            <a href="#!" className="social-icon">
-              ✖
-            </a>
-            <a href="#!" className="social-icon">
-              F
-            </a>
-            <a href="#!" className="social-icon">
-              📸
-            </a>
-            <a href="#!" className="social-icon">
-              in
-            </a>
-          </div>
         </div>
       </div>
     </div>

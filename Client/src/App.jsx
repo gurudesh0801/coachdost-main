@@ -17,6 +17,7 @@ import FindCoach from "./Components/Find-coach/FindCoach";
 import CoachBookingProfile from "./Components/coachbookingprofile/CoachBookingProfile";
 import WhoWeAre from "./Components/whoweare/WhoWeAre";
 import OurTeam1 from "./Components/Team/OurTeam1";
+import CoachExplore from "./Components/CoachExplore/CoachExplore";
 
 const AppContent = () => {
   const location = useLocation(); // Get the current location (path)
@@ -34,6 +35,7 @@ const AppContent = () => {
         <Route path="/booksession" element={<CoachBookingProfile />} />
         <Route path="/who-we-are" element={<WhoWeAre />} />
         <Route path="/our-team" element={<OurTeam1 />} />
+        <Route path="/explorecoaches" element={<CoachExplore />} />
       </Routes>
       {!isAdminRoute && <Footer />} <StickyFooterBar />
     </>
@@ -41,19 +43,9 @@ const AppContent = () => {
 };
 
 function App() {
-  const [isLoading, setIsLoading] = useState(true);
-
-  const handleAnimationEnd = () => {
-    setIsLoading(false);
-  };
-
   return (
     <Router>
-      {isLoading ? (
-        <Loading onAnimationEnd={handleAnimationEnd} />
-      ) : (
-        <AppContent />
-      )}
+      <AppContent />
     </Router>
   );
 }

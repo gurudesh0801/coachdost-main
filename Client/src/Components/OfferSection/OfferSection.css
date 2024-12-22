@@ -4,6 +4,8 @@
   justify-content: space-between;
   align-items: center;
   gap: 20px;
+  max-width: 1300px;
+  margin: auto;
   background-color: #fdfbf3;
   padding: 40px 20px;
   font-family: Arial, sans-serif;
@@ -32,9 +34,9 @@
 }
 
 .circle {
-  width: 50px;
-  height: 50px;
-  background-color: #ff7a29;
+  width: 3.2rem;
+  height: 3.2rem;
+  background-color: rgb(255, 123, 41);
   border-radius: 50%;
 }
 
@@ -67,16 +69,11 @@
 .leftCont button {
   padding: 10px 20px;
   font-size: 14px;
-  background-color: #ff7a29;
-  color: #fff;
+  color: #220b53;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease;
-}
-
-.leftCont button:hover {
-  background-color: #e3691d;
 }
 /* Right Image */
 .rightCont img {
