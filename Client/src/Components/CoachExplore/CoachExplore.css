@@ -1,6 +1,6 @@
 /* General Container */
 .coach-explore-container {
-  font-family: Arial, sans-serif;
+  font-family: "Plus Jakarta Sans", sans-serif;
   color: #333;
   line-height: 1.6;
 }
@@ -9,14 +9,29 @@
 .coach-explore-hero {
   background: linear-gradient(135deg, #3f00b5, #7e1dcf);
   color: white;
-  padding: 100px 0;
+  padding: 262px 0;
   text-align: center;
   position: relative;
+  overflow: hidden;
+}
+.coach-explore-hero::before {
+  content: "";
+  background: url("../../assets/images/Vector.png") no-repeat center;
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0.5; /* Adjust transparency */
+  z-index: 0;
 }
 
-.coach-explore-hero p {
-  font-size: 2.5rem;
-  margin: 0;
+.coach-explore-hero h1 {
+  font-size: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Top Coaches Section */
@@ -29,12 +44,12 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 20px;
+  margin: 2rem 2rem;
 }
 
 .top-coaches-header h2 {
-  font-size: 2rem;
-  color: #2c2c2c;
+  font-size: 4rem;
+  color: #1e105f;
 }
 
 .pagination-wrapper {
@@ -70,7 +85,8 @@
 
 .coaches-card-container {
   display: flex;
-  justify-content: center;
+  align-items: center;
+  justify-content: space-around;
   gap: 20px;
 }
 
@@ -90,21 +106,36 @@
   border-radius: 10px;
   object-fit: cover;
 }
+.coach-card-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.coach-card-content button {
+  padding: 1.3rem 1.3rem;
+  background: none;
+  border: 1px solid #1e105f;
+  border-radius: 1.3rem;
+  font-size: 1.5rem;
+}
+.coach-card-content button:hover {
+  background-color: #e36218;
+}
 
 .coach-card-content h3 {
   font-size: 1.5rem;
-  color: #333;
+  color: #1e105f;
   margin: 0;
 }
 
 .coach-card-content p {
   font-size: 1rem;
-  color: #666;
+  color: #727272;
   margin: 10px 0;
 }
 
 .coach-card-content a {
-  color: #7e1dcf;
+  color: #1e105f;
   text-decoration: none;
   font-weight: bold;
   transition: color 0.3s;
@@ -210,51 +241,119 @@
 
 /* Responsive Design */
 
+/* Tablets (Max-width: 1024px) */
 @media (max-width: 1024px) {
+  .coach-explore-hero h1 {
+    font-size: 3rem; /* Adjust hero text size */
+  }
+
   .coaches-card-container {
-    flex-direction: column;
-    gap: 15px;
-    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+
+  .coach-card {
+    width: 48%; /* Two cards per row */
   }
 
   .coaching-list {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr); /* Two columns in grid */
+    gap: 20px;
   }
 
   .coaching-sidebar {
-    width: 100%;
-  }
-}
-
-@media (max-width: 768px) {
-  .coaches-card-container {
-    gap: 10px;
-  }
-
-  .coaching-list {
-    grid-template-columns: 1fr;
-  }
-
-  .coaching-card-content h4 {
-    font-size: 1rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .coach-explore-hero p {
-    font-size: 2rem;
+    width: 100%; /* Full width for sidebar */
+    margin-bottom: 20px; /* Add spacing below sidebar */
   }
 
   .sidebar-item {
-    font-size: 14px;
-    padding: 10px 15px;
+    font-size: 16px; /* Slightly smaller text */
+    padding: 12px 15px; /* Adjust padding for sidebar items */
+  }
+}
+
+/* Mobile Devices (Max-width: 768px) */
+@media (max-width: 768px) {
+  .coach-explore-hero {
+    padding: 150px 0; /* Reduce hero padding */
+  }
+
+  .coach-explore-hero h1 {
+    font-size: 2.5rem; /* Smaller hero text */
+  }
+
+  .top-coaches-header h2 {
+    font-size: 2.2rem; /* Adjust heading size */
+  }
+
+  .coaches-card-container {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .coach-card {
+    width: 90%; /* Full-width cards with spacing */
+  }
+
+  .coaching-list {
+    grid-template-columns: 1fr; /* Single column grid */
+    gap: 15px; /* Smaller gap between items */
+  }
+
+  .coaching-sidebar {
+    display: none; /* Hide sidebar */
+  }
+
+  .pagination-wrapper {
+    justify-content: center; /* Center align pagination */
+    gap: 5px; /* Reduce spacing */
+  }
+}
+
+/* Small Devices (Max-width: 480px) */
+@media (max-width: 480px) {
+  .coach-explore-hero {
+    padding: 100px 0; /* Further reduce hero padding */
+  }
+
+  .coach-explore-hero h1 {
+    font-size: 2rem; /* Smaller text for smaller screens */
+  }
+
+  .top-coaches-header h2 {
+    font-size: 1.8rem; /* Adjust heading size */
+    text-align: center; /* Center align for better readability */
+  }
+
+  .coaches-card-container {
+    gap: 10px; /* Smaller gap for limited screen width */
+  }
+
+  .coach-card {
+    width: 95%; /* Almost full-width cards */
+  }
+
+  .coaching-list {
+    grid-template-columns: 1fr; /* Single column for list */
+    gap: 10px;
   }
 
   .coaching-card-content h4 {
-    font-size: 0.9rem;
+    font-size: 1rem; /* Adjust card title size */
   }
 
   .coaching-card-content p {
-    font-size: 0.8rem;
+    font-size: 0.8rem; /* Adjust paragraph size */
+  }
+
+  .sidebar-item {
+    font-size: 13px; /* Smaller sidebar text */
+    padding: 10px; /* Compact padding */
+  }
+
+  .pagination-wrapper {
+    flex-wrap: wrap; /* Wrap pagination buttons */
+    gap: 5px;
   }
 }

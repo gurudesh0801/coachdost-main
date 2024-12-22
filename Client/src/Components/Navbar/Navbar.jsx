@@ -28,7 +28,7 @@ const Navbar = () => {
     <nav className="navbar">
       <div className="navbar-container">
         {/* Logo */}
-        <div className="navbar-logo">
+        <div className="navbar-logo" onClick={() => navigate("/")}>
           <img src={logo} alt="Logo" />
         </div>
 
@@ -36,27 +36,31 @@ const Navbar = () => {
         <div className={`navbar-links ${menuOpen ? "active" : ""}`}>
           <a href="/">Home</a>
 
-          {/* About Dropdown */}
-          <div className="dropdown">
+          {/* Dropdown: About Us */}
+          <div
+            className={`dropdown ${activeDropdown === "about" ? "open" : ""}`}
+          >
             <span
               className="dropdown-link"
               onClick={() => toggleDropdown("about")}
             >
               About Us ▾
             </span>
-            {activeDropdown === "about" && (
-              <div className="dropdown-menu">
-                <a href="/who-we-are">Who We Are?</a>
-                <a href="/our-team">Our Team</a>
-                <a href="#success-stories">Success Stories</a>
-                <a href="#joinascoach">Join as Coach s</a>
-                <a href="#career-opportunities">Career Opportunities</a>
-              </div>
-            )}
+            <div className="dropdown-menu">
+              <a href="/who-we-are">Who We Are?</a>
+              <a href="/our-team">Our Team</a>
+              <a href="#success-stories">Success Stories</a>
+              <a href="#joinascoach">Join as Coach</a>
+              <a href="#career-opportunities">Career Opportunities</a>
+            </div>
           </div>
 
-          {/* Services Dropdown */}
-          <div className="dropdown">
+          {/* Dropdown: Services */}
+          <div
+            className={`dropdown ${
+              activeDropdown === "services" ? "open" : ""
+            }`}
+          >
             <span
               className="dropdown-link"
               onClick={() => toggleDropdown("services")}
@@ -67,15 +71,21 @@ const Navbar = () => {
               <div className="dropdown-menu">
                 <a href="/findcoaches">Find Coach</a>
                 <a href="/booksession">Book a Session</a>
-                <div className="dropdown">
+
+                {/* Nested Dropdown: Coach Categories */}
+                <div
+                  className={`dropdown ${
+                    activeDropdown === "coachcategories" ? "open" : ""
+                  }`}
+                >
                   <span
-                    className="dropdown-link"
+                    className="dropdown-link nested"
                     onClick={() => toggleDropdown("coachcategories")}
                   >
                     Coach Categories ▾
                   </span>
                   {activeDropdown === "coachcategories" && (
-                    <div className="dropdown-menu">
+                    <div className="dropdown-menu nested-menu">
                       <a href="#life-coach">Life Coaching</a>
                       <a href="#career-coaching">Career Coaching</a>
                       <a href="#leadership-coaching">Leadership Development</a>
@@ -89,63 +99,60 @@ const Navbar = () => {
             )}
           </div>
 
-          {/* Blog Dropdown */}
-          <div className="dropdown">
+          {/* Dropdown: Blog */}
+          <div
+            className={`dropdown ${activeDropdown === "blog" ? "open" : ""}`}
+          >
             <span
               className="dropdown-link"
               onClick={() => toggleDropdown("blog")}
             >
               Blog ▾
             </span>
-            {activeDropdown === "blog" && (
-              <div className="dropdown-menu">
-                <a href="#latest-articles">Latest Articles</a>
-                <a href="#coach-insights">Coach Insights</a>
-                <a href="#coach-insights">Success Stories</a>
-                <a href="#coach-insights">Industry Updates</a>
-                <a href="#coach-insights">Video Resources</a>
-                <a href="#coach-insights">Newsletter</a>
-              </div>
-            )}
+            <div className="dropdown-menu">
+              <a href="#latest-articles">Latest Articles</a>
+              <a href="#coach-insights">Coach Insights</a>
+              <a href="#success-stories">Success Stories</a>
+              <a href="#industry-updates">Industry Updates</a>
+              <a href="#video-resources">Video Resources</a>
+              <a href="#newsletter">Newsletter</a>
+            </div>
           </div>
 
-          {/* FAQ Dropdown */}
-          <div className="dropdown">
+          {/* Dropdown: FAQ */}
+          <div className={`dropdown ${activeDropdown === "faq" ? "open" : ""}`}>
             <span
               className="dropdown-link"
               onClick={() => toggleDropdown("faq")}
             >
               FAQ ▾
             </span>
-            {activeDropdown === "faq" && (
-              <div className="dropdown-menu">
-                <a href="#student-guide">Student Guide</a>
-                <a href="#technical-support">Technical Support</a>
-                <a href="#technical-support">Payment FAQs</a>
-                <a href="#technical-support">Technical Support</a>
-                <a href="#technical-support">Our Policies</a>
-              </div>
-            )}
+            <div className="dropdown-menu">
+              <a href="#student-guide">Student Guide</a>
+              <a href="#technical-support">Technical Support</a>
+              <a href="#payment-faqs">Payment FAQs</a>
+              <a href="#our-policies">Our Policies</a>
+            </div>
           </div>
 
-          {/* Contact Dropdown */}
-          <div className="dropdown">
+          {/* Dropdown: Contact */}
+          <div
+            className={`dropdown ${activeDropdown === "contact" ? "open" : ""}`}
+          >
             <span
               className="dropdown-link"
               onClick={() => toggleDropdown("contact")}
             >
               Contact ▾
             </span>
-            {activeDropdown === "contact" && (
-              <div className="dropdown-menu">
-                <a href="#student-guide">Student Guide</a>
-                <a href="#technical-support">Technical Support</a>
-                <a href="#technical-support">Become a Coach</a>
-                <a href="#technical-support">Corporate Partnerships</a>
-                <a href="#technical-support">Book a Call</a>
-                <a href="#technical-support">Chat with Us</a>
-              </div>
-            )}
+            <div className="dropdown-menu">
+              <a href="#student-guide">Student Guide</a>
+              <a href="#technical-support">Technical Support</a>
+              <a href="#become-a-coach">Become a Coach</a>
+              <a href="#corporate-partnerships">Corporate Partnerships</a>
+              <a href="#book-a-call">Book a Call</a>
+              <a href="#chat-with-us">Chat with Us</a>
+            </div>
           </div>
 
           {/* Mobile Buttons */}

@@ -21,11 +21,11 @@ const CoachExplore = () => {
     <div className="coach-explore-container">
       {/* Hero Section */}
       <section className="coach-explore-hero">
-        <p>
+        <h1>
           Explore Our
           <br />
           Expert Coaches
-        </p>
+        </h1>
       </section>
 
       {/* Top Coaches Section */}
@@ -69,9 +69,14 @@ const CoachExplore = () => {
                   <img src={speakerImage} alt={title} />
                 </div>
                 <div className="coach-card-content">
-                  <h3>{title}</h3>
-                  <p>There are many variations of passages of engineer.</p>
-                  <a href="#">Request Custom Package</a>
+                  <div className="cont1">
+                    <h3>{title}</h3>
+                    <p>There are many variations of passages of engineer.</p>
+                    <a href="#">Request Custom Package</a>
+                  </div>
+                  <div className="cont2">
+                    <button>&#8599;</button>
+                  </div>
                 </div>
               </div>
             )
