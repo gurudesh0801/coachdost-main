@@ -77,7 +77,7 @@
 .coachDost-button2 {
   background: none;
   color: #1e105f;
-  padding: 1rem 1.3rem;
+  padding: 1rem 2rem;
   margin-top: 1rem;
   font-size: 1rem;
   border: 1px solid #1e105f;
@@ -126,6 +126,10 @@
     font-size: 1rem;
     padding: 10px 18px; /* Adjust button padding */
   }
+  .coachDost-button2 {
+    font-size: 1rem;
+    padding: 10px 18px; /* Adjust button padding */
+  }
 }
 
 @media (max-width: 480px) {
@@ -156,6 +160,11 @@
   }
 
   .coachDost-button {
+    font-size: 0.9rem;
+    padding: 12px 20px; /* Adjust button size */
+    margin-right: 0;
+  }
+  .coachDost-button2 {
     font-size: 0.9rem;
     padding: 12px 20px; /* Adjust button size */
     margin-right: 0;

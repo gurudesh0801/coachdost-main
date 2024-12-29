@@ -11,8 +11,14 @@ import EducationalCoaches from "../EducationalCoaches/EducationalCoaches";
 import OfferSection from "../OfferSection/OfferSection";
 import OurTeam from "../OurTeam/OurTeam";
 import TestimonialCard from "../TestimonialCard/TestimonialCard";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
+  const navigate = useNavigate();
+  const goto = () => {
+    navigate("/findcoaches");
+  };
+
   return (
     <>
       <section className="hero">
@@ -27,8 +33,8 @@ const Home = () => {
             high quality coaches to the people from the comfort of their home.
           </p>
           <div className="btns">
-            <button className="hero-button1">
-              Start Your Growth Journey ➔
+            <button className="hero-button1" onClick={goto}>
+              Start Your Growth Journey
             </button>
             <button className="hero-button2">Meet Our Coaches</button>
           </div>
@@ -45,7 +51,6 @@ const Home = () => {
       <OfferSection />
       <EducationalCoaches />
       <TestimonialsCoaches />
-      <OurTeam />
       <TestimonialCard />
       {/* <EducationalCoaches /> */}
     </>

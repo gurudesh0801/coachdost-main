@@ -8,6 +8,9 @@ const Whyus = () => {
   const goto = () => {
     navigate("/explorecoaches");
   };
+  const goto2 = () => {
+    navigate("/signup");
+  };
   return (
     <div className="coachDost-container" id="whyus">
       <div className="coachDost-left">
@@ -31,8 +34,8 @@ const Whyus = () => {
         <button className="coachDost-button" onClick={goto}>
           Explore Our Coaches
         </button>
-        <button className="coachDost-button2">
-          Schedule Free Consultation
+        <button className="coachDost-button2" onClick={goto2}>
+          Join Now
         </button>
       </div>
     </div>

@@ -1,6 +1,8 @@
 import React from "react";
 import "./EducationalCoaches.css";
-import img1 from "../../assets/images/slider_img1.jpg";
+import img1 from "../../assets/images/image.png";
+import img2 from "../../assets/images/image-1.png";
+import img3 from "../../assets/images/image-2.png";
 
 const EducationalCoaches = () => {
   return (
@@ -32,7 +34,7 @@ const EducationalCoaches = () => {
           </div>
         </div>
         <div className="profile">
-          <img src={img1} alt="IELTS Coaching" className="coachImg" />
+          <img src={img2} alt="IELTS Coaching" className="coachImg" />
           <div className="textBox">
             <h2 className="coachTitle">IELTS Coaching</h2>
             <p className="coachDesc">
@@ -44,7 +46,7 @@ const EducationalCoaches = () => {
           </div>
         </div>
         <div className="profile">
-          <img src={img1} alt="OET Coaching" className="coachImg" />
+          <img src={img3} alt="OET Coaching" className="coachImg" />
           <div className="textBox">
             <h2 className="coachTitle">OET Coaching</h2>
             <p className="coachDesc">

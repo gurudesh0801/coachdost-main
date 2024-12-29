@@ -12,19 +12,19 @@ const TestimonialsCoaches = () => {
     },
     {
       name: "PERSON 2",
-      image: "https://via.placeholder.com/150", // Replace with actual image URL
+      image: img, // Replace with actual image URL
       description:
         "Et purus duis sollicitudin dignissim habitant. Egestas nulla quis the venenatis cras sed eu",
     },
     {
       name: "PERSON 3",
-      image: "https://via.placeholder.com/150", // Replace with actual image URL
+      image: img, // Replace with actual image URL
       description:
         "Et purus duis sollicitudin dignissim habitant. Egestas nulla quis the venenatis cras sed eu",
     },
     {
       name: "PERSON 4",
-      image: "https://via.placeholder.com/150", // Replace with actual image URL
+      image: img, // Replace with actual image URL
       description:
         "Et purus duis sollicitudin dignissim habitant. Egestas nulla quis the venenatis cras sed eu",
     },

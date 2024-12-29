@@ -18,6 +18,7 @@ import CoachBookingProfile from "./Components/coachbookingprofile/CoachBookingPr
 import WhoWeAre from "./Components/whoweare/WhoWeAre";
 import OurTeam1 from "./Components/Team/OurTeam1";
 import CoachExplore from "./Components/CoachExplore/CoachExplore";
+import FAQ from "./Components/FAQ/FAQ";
 
 const AppContent = () => {
   const location = useLocation(); // Get the current location (path)
@@ -36,6 +37,7 @@ const AppContent = () => {
         <Route path="/who-we-are" element={<WhoWeAre />} />
         <Route path="/our-team" element={<OurTeam1 />} />
         <Route path="/explorecoaches" element={<CoachExplore />} />
+        <Route path="/faq" element={<FAQ />} />
       </Routes>
       {!isAdminRoute && <Footer />} <StickyFooterBar />
     </>

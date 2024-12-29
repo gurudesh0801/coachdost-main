@@ -10,28 +10,33 @@ const FindCoach = () => {
     timePreference: "",
   });
 
+  const handleNextStep = () => setStep(step + 1);
+  const handlePreviousStep = () => setStep(step - 1);
+
   return (
-    <div className="find-coach-container">
+    <div className="find-coach-wrapper">
       {/* Progress Bar */}
-      <div className="progress-bar">
+      <div className="find-coach-progress-bar">
         {["Goals", "Preferences", "Schedule", "Match"].map((label, index) => (
           <div
             key={index}
-            className={`step ${index + 1 <= step ? "active" : ""}`}
+            className={`find-coach-step ${index + 1 <= step ? "active" : ""}`}
           >
-            <div className="step-circle">{index + 1}</div>
-            <div className="step-label">{label}</div>
+            <div className="find-coach-step-circle">{index + 1}</div>
+            <div className="find-coach-step-label">{label}</div>
           </div>
         ))}
       </div>
 
       {/* Step Content */}
-      <div className="content-container">
+      <div className="find-coach-content">
         {step === 1 && (
-          <div className="step-content">
-            <h2>What are your goals?</h2>
-            <p>Select all that apply:</p>
-            <div className="options">
+          <div className="find-coach-step-content">
+            <h2 className="find-coach-step-title">What are your goals?</h2>
+            <p className="find-coach-step-description">
+              Select all that apply:
+            </p>
+            <div className="find-coach-options">
               {[
                 "Career Development",
                 "Leadership Skills",
@@ -40,7 +45,7 @@ const FindCoach = () => {
               ].map((goal) => (
                 <label
                   key={goal}
-                  className={`option ${
+                  className={`find-coach-option ${
                     answers.goals.includes(goal) ? "selected" : ""
                   }`}
                 >
@@ -64,91 +69,113 @@ const FindCoach = () => {
         )}
 
         {step === 2 && (
-          <div className="step-content">
-            <h2>Your Preferences</h2>
-            <label>
-              Preferred Language:
-              <select
-                value={answers.preferredLanguage}
-                onChange={(e) =>
-                  setAnswers({ ...answers, preferredLanguage: e.target.value })
-                }
-              >
-                <option value="">Select...</option>
-                <option>English</option>
-                <option>Hindi</option>
-                <option>Spanish</option>
-              </select>
-            </label>
-
-            <label>
-              Session Type:
-              <select
-                value={answers.sessionType}
-                onChange={(e) =>
-                  setAnswers({ ...answers, sessionType: e.target.value })
-                }
-              >
-                <option value="">Select...</option>
-                <option>One-on-One</option>
-                <option>Group Sessions</option>
-              </select>
-            </label>
+          <div className="find-coach-step-content">
+            <h2 className="find-coach-step-title">Your Preferences</h2>
+            <div className="find-coach-form-group">
+              <label className="find-coach-form-label">
+                Preferred Language:
+                <select
+                  className="find-coach-select"
+                  value={answers.preferredLanguage}
+                  onChange={(e) =>
+                    setAnswers({
+                      ...answers,
+                      preferredLanguage: e.target.value,
+                    })
+                  }
+                >
+                  <option value="">Select...</option>
+                  <option>English</option>
+                  <option>Hindi</option>
+                  <option>Spanish</option>
+                </select>
+              </label>
+              <label className="find-coach-form-label">
+                Session Type:
+                <select
+                  className="find-coach-select"
+                  value={answers.sessionType}
+                  onChange={(e) =>
+                    setAnswers({ ...answers, sessionType: e.target.value })
+                  }
+                >
+                  <option value="">Select...</option>
+                  <option>One-on-One</option>
+                  <option>Group Sessions</option>
+                </select>
+              </label>
+            </div>
           </div>
         )}
 
         {step === 3 && (
-          <div className="step-content">
-            <h2>When would you like to start?</h2>
-            {["As soon as possible", "Next week", "Just exploring"].map(
-              (time) => (
-                <label
-                  key={time}
-                  className={`option ${
-                    answers.timePreference === time ? "selected" : ""
-                  }`}
-                >
-                  <input
-                    type="radio"
-                    checked={answers.timePreference === time}
-                    onChange={() =>
-                      setAnswers({ ...answers, timePreference: time })
-                    }
-                  />
-                  {time}
-                </label>
-              )
-            )}
+          <div className="find-coach-step-content">
+            <h2 className="find-coach-step-title">
+              When would you like to start?
+            </h2>
+            <div className="find-coach-options">
+              {["As soon as possible", "Next week", "Just exploring"].map(
+                (time) => (
+                  <label
+                    key={time}
+                    className={`find-coach-option ${
+                      answers.timePreference === time ? "selected" : ""
+                    }`}
+                  >
+                    <input
+                      type="radio"
+                      checked={answers.timePreference === time}
+                      onChange={() =>
+                        setAnswers({ ...answers, timePreference: time })
+                      }
+                    />
+                    {time}
+                  </label>
+                )
+              )}
+            </div>
           </div>
         )}
 
         {step === 4 && (
-          <div className="step-content">
-            <h2>Finding Your Perfect Match!</h2>
-            <p>Based on your preferences, we've found these coaches for you.</p>
-            <div className="coach-list">
+          <div className="find-coach-step-content">
+            <h2 className="find-coach-step-title">
+              Finding Your Perfect Match!
+            </h2>
+            <p className="find-coach-step-description">
+              Based on your preferences, we've found these coaches for you.
+            </p>
+            <div className="find-coach-list">
               {[1, 2, 3].map((index) => (
-                <div key={index} className="coach-card">
-                  <div className="coach-icon">C{index}</div>
+                <div key={index} className="find-coach-card">
+                  <div className="find-coach-card-icon">C{index}</div>
                   <div>
-                    <h3>Coach {index}</h3>
-                    <p>Matches {90 - index * 10}% of your preferences</p>
+                    <h3 className="find-coach-card-title">Coach {index}</h3>
+                    <p className="find-coach-card-description">
+                      Matches {90 - index * 10}% of your preferences
+                    </p>
                   </div>
                 </div>
               ))}
             </div>
           </div>
         )}
+      </div>
 
-        {/* Navigation Buttons */}
-        <div className="navigation-buttons">
-          {step > 1 && <button onClick={() => setStep(step - 1)}>Back</button>}
-          {step < 4 ? (
-            <button onClick={() => setStep(step + 1)}>Continue</button>
-          ) : (
-            <button>Book Free Consultation</button>
-          )}
-        </div>
+      {/* Navigation Buttons */}
+      <div className="find-coach-buttons">
+        {step > 1 && (
+          <button className="find-coach-button" onClick={handlePreviousStep}>
+            Back
+          </button>
+        )}
+        {step < 4 ? (
+          <button className="find-coach-button" onClick={handleNextStep}>
+            Continue
+          </button>
+        ) : (
+          <button className="find-coach-button">Book Free Consultation</button>
+        )}
       </div>
     </div>
   );

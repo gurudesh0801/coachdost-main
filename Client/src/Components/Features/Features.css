@@ -40,6 +40,12 @@
   text-align: center;
   color: black; /* Ensure text inside the card is readable */
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  /* Flexbox for centering */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .feature-icon {
@@ -70,7 +76,7 @@
 
 /* Button */
 .features-button {
-  background-color: #1e105f;
+  background-color: #e08728;
   color: white;
   padding: 1rem 1rem;
   font-size: 1.2rem;
@@ -81,7 +87,7 @@
 }
 
 .features-button:hover {
-  background-color: #8e44ad;
+  background-color: #682501;
 }
 
 /* Responsive styles */

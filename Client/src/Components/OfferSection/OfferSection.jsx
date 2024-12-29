@@ -11,7 +11,6 @@ const OfferSection = () => {
           <img src={leftImg} alt="" />
         </div>
         <div className="rightSide">
-          <div className="circle"></div>
           <div className="text-btn">
             <div className="leftCont">
               <h1>Get our best offers quickly</h1>
@@ -19,7 +18,7 @@ const OfferSection = () => {
                 Lorem Ipsum is simply dummy text <br /> the printing and typese
                 Lorem Ipsum has been the industry's <br /> standard dummy
               </p>
-              <button>Contact us &rarr;</button>
+              <button className="btn2">Contact us &rarr;</button>
             </div>
             <div className="rightCont">
               <img src={rightImg} alt="" />

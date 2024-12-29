@@ -38,7 +38,7 @@ const CoreValues = () => {
       </div>
       <div className="core-values-right">
         {values.map((value, index) => (
-          <div className="value-card" key={index}>
+          <div className="value-card1" key={index}>
             <div className="value-icon">{value.icon}</div>
             <p className="value-title">{value.title}</p>
           </div>

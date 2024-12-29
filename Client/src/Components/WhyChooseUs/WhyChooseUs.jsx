@@ -34,7 +34,7 @@ const WhyChooseUs = () => {
             </div>
           ))}
         </div>
-        <button className="explore-button">Explore Our Platform</button>
+        <button className="explore-button1">Explore Our Platform</button>
       </section>
     </>
   );

@@ -8,13 +8,27 @@
   color: white;
   padding: 6rem 2rem;
   overflow: hidden;
-  gap: 30px; /* Add spacing between left and right sections */
+  /* Add spacing between left and right sections */
   margin: auto;
   font-family: "Plus Jakarta Sans", sans-serif;
   font-optical-sizing: auto;
   font-weight: 700;
   font-style: normal;
   margin-top: 2rem;
+  position: relative;
+}
+
+.core-values-container::before {
+  content: "";
+  background: url("../../assets/images/Vector.png") no-repeat center;
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0.3; /* Reduced overlay intensity for better visibility */
+  z-index: 0;
 }
 
 /* Left Section */
@@ -22,160 +36,151 @@
   flex: 1;
   min-width: 280px;
   max-width: 600px;
+  z-index: 1; /* Ensure content appears above the background */
 }
 
 .core-values-subtitle {
   font-size: 1rem;
   letter-spacing: 3px;
   text-transform: uppercase;
-  color: white; /* Subtle gold highlight */
+  color: white;
 }
 
 .core-values-title {
-  font-size: 3.5rem;
+  font-size: 4rem;
   font-weight: 700;
   margin-bottom: 20px;
   line-height: 1.2;
-  color: white; /* White text for clarity */
+  color: white;
 }
 
 .core-values-description {
   font-size: 1rem;
-  line-height: 1;
+  line-height: 1.5;
   max-width: 500px;
-  color: rgba(
-    255,
-    255,
-    255,
-    0.8
-  ); /* Slightly muted white for better readability */
+  color: rgba(255, 255, 255, 0.8);
   font-weight: 400;
 }
 
 /* Right Section - Grid Layout */
 .core-values-right {
   display: grid;
-  grid-template-columns: repeat(
-    auto-fit,
-    minmax(250px, 1fr)
-  ); /* Responsive grid */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
   flex: 1;
   min-width: 280px;
   max-width: 600px;
+  z-index: 1; /* Ensure cards appear above the background */
 }
 
-.value-card {
-  background: linear-gradient(
-    180deg,
-    #ffffff80,
-    #66666680
-  ); /* White card background */
-  color: #ffffff; /* Dark text for better contrast */
+.value-card1 {
+  background: linear-gradient(180deg, #dddddde3, #d5d5d5f3);
   border-radius: 15px;
   width: 16rem;
   height: 8rem;
+  text-align: center;
   padding: 20px;
   display: flex;
   align-items: center;
+  justify-content: center;
+  flex-direction: column; /* Center-align content vertically */
   gap: 15px;
+  color: #000000;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-.value-card:hover {
-  background-color: #2f00ff;
-  opacity: 1;
+
+.value-card1:hover {
+  background: #001c6f;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* Add subtle shadow on hover */
+  color: #fff;
 }
+
 .value-icon {
   width: 60px;
   height: 60px;
-  background: white; /* Gradient icon background */
+  background: white;
   color: #1e105f;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 50%;
   font-size: 1.8rem;
-  flex-shrink: 0; /* Prevent shrinking on smaller screens */
+  flex-shrink: 0;
 }
 
 .value-title {
   font-size: 1rem;
   font-weight: 500;
-  line-height: 1;
-  color: #ffffff; /* Dark title for emphasis */
+  line-height: 1.2;
 }
-
 /* Responsive Design */
 
 /* Medium Screens (Tablets) */
 @media (max-width: 768px) {
   .core-values-container {
-    flex-direction: column; /* Stack sections vertically */
-    padding: 30px 20px; /* Adjust padding */
-    gap: 30px; /* Maintain spacing */
+    flex-direction: column;
+    padding: 30px 20px;
+    gap: 30px;
   }
 
   .core-values-left {
-    text-align: center; /* Center-align text for better presentation */
-    max-width: 100%; /* Ensure full width */
+    text-align: center;
+    max-width: 100%;
   }
 
   .core-values-title {
-    font-size: 2.5rem; /* Adjust title size */
+    font-size: 2.5rem;
   }
 
   .core-values-description {
-    font-size: 1rem; /* Adjust description size */
-    line-height: 1.5; /* Improve readability */
+    font-size: 1rem;
+    line-height: 1.5;
   }
 
   .core-values-right {
-    grid-template-columns: repeat(2, 1fr); /* Two-column grid layout */
-    gap: 15px; /* Adjust spacing between cards */
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
   }
 
   .value-card {
-    padding: 15px; /* Adjust card padding */
-    text-align: center; /* Center-align card content */
+    padding: 15px;
   }
 
   .value-icon {
-    width: 50px; /* Smaller icon size */
+    width: 50px;
     height: 50px;
-    font-size: 1.4rem; /* Adjust icon font size */
-    margin: auto; /* Center icon */
+    font-size: 1.4rem;
   }
 }
 
 /* Small Screens (Mobile) */
 @media (max-width: 480px) {
   .core-values-container {
-    margin: 2rem auto; /* Adjust container margin */
+    margin: 2rem auto;
   }
 
   .core-values-title {
-    font-size: 2rem; /* Reduce title size */
+    font-size: 2rem;
   }
 
   .core-values-description {
-    font-size: 0.9rem; /* Smaller description size */
-    line-height: 1.4; /* Adjust line height */
+    font-size: 0.9rem;
+    line-height: 1.4;
   }
 
   .core-values-right {
-    grid-template-columns: 1fr; /* Single-column grid layout */
-    gap: 10px; /* Reduce gap between cards */
+    grid-template-columns: 1fr;
+    gap: 10px;
   }
 
   .value-card {
-    flex-direction: column; /* Stack card content vertically */
-    padding: 10px; /* Reduce padding */
+    flex-direction: column;
+    padding: 10px;
   }
 
   .value-icon {
-    width: 40px; /* Further reduce icon size */
+    width: 40px;
     height: 40px;
-    font-size: 1.2rem; /* Smaller font size */
-    margin: auto; /* Center icon */
+    font-size: 1.2rem;
   }
 }

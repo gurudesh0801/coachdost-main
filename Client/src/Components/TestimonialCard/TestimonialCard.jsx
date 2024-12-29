@@ -15,9 +15,10 @@ const TestimonialCard = () => {
       <div className="testimonial-content">
         <span className="quote-mark">“</span>
         <p className="testimonial-text">
-          We have been operating for over a decade, providing top-notch services
-          to our clients and building a strong track record in the industry. We
-          have been operating for over a decade, providing top-notch services.
+          We have been operating for over a decade, providing <br /> top-notch
+          services to our clients and building <br /> a strong track record in
+          the industry. We have <br /> been operating for over a decade,
+          providing <br /> top-notch services.
         </p>
         <div className="testimonial-buttons">
           <button className="nav-btn">

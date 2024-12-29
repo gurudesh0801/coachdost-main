@@ -2,7 +2,7 @@
 .hero {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   flex-wrap: wrap;
   padding: 2rem;
   background: linear-gradient(
@@ -15,19 +15,32 @@
   margin: 6rem auto;
   border-radius: 2rem;
   position: relative;
+  z-index: 1;
   overflow: hidden; /* Prevent content spill */
+}
+
+.hero::before {
+  content: "";
+  background: url("../../assets/images/Vector.png") no-repeat center;
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0.5; /* Adjust transparency */
+  z-index: 0;
 }
 
 .hero-content {
   flex: 1;
-  max-width: 50%;
+  max-width: 60%;
   margin-left: 3rem;
   z-index: 2;
 }
 
 .hero-content h1 {
   font-size: 3rem;
-  margin-bottom: 1.5rem;
   font-family: "Roboto", sans-serif;
   font-weight: 500;
 }
@@ -38,7 +51,7 @@
 }
 
 .hero-content p {
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   line-height: 1.6;
   margin-bottom: 2rem;
   color: rgba(241, 241, 241, 0.9);
@@ -52,7 +65,7 @@
 
 .hero-button1,
 .hero-button2 {
-  padding: 0.8rem 2rem;
+  padding: 1rem 2rem;
   border: none;
   border-radius: 25px;
   font-size: 1rem;
@@ -92,6 +105,7 @@
 .hero-image img {
   width: 100%;
   height: auto;
+  margin-bottom: -2.3rem;
   border-radius: 1.5rem;
 }
 

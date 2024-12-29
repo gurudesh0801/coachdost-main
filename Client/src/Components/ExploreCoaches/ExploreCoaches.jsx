@@ -77,7 +77,7 @@ const ExploreCoaches = () => {
       {/* Header */}
       <header className="explore-coaches-header">
         <div className="explore-coaches-title-section">
-          <p className="explore-coaches-subtitle">OUR COUNTRIES</p>
+          <p className="explore-coaches-subtitle">OUR COACHES</p>
           <h2 className="explore-coaches-main-title">Explore Coaches</h2>
         </div>
         <div className="explore-coaches-title-section2">

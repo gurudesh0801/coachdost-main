@@ -51,7 +51,6 @@ const Navbar = () => {
               <a href="/our-team">Our Team</a>
               <a href="#success-stories">Success Stories</a>
               <a href="#joinascoach">Join as Coach</a>
-              <a href="#career-opportunities">Career Opportunities</a>
             </div>
           </div>
 
@@ -71,28 +70,6 @@ const Navbar = () => {
               <div className="dropdown-menu">
                 <a href="/findcoaches">Find Coach</a>
                 <a href="/booksession">Book a Session</a>
-
-                {/* Nested Dropdown: Coach Categories */}
-                <div
-                  className={`dropdown ${
-                    activeDropdown === "coachcategories" ? "open" : ""
-                  }`}
-                >
-                  <span
-                    className="dropdown-link nested"
-                    onClick={() => toggleDropdown("coachcategories")}
-                  >
-                    Coach Categories ▾
-                  </span>
-                  {activeDropdown === "coachcategories" && (
-                    <div className="dropdown-menu nested-menu">
-                      <a href="#life-coach">Life Coaching</a>
-                      <a href="#career-coaching">Career Coaching</a>
-                      <a href="#leadership-coaching">Leadership Development</a>
-                      <a href="#educationalcoaches">IELTS/TOEFL/OET</a>
-                    </div>
-                  )}
-                </div>
                 <a href="#corporate">Corporate Solutions</a>
                 <a href="#pricingplanes">Pricing Plans</a>
               </div>
@@ -111,49 +88,13 @@ const Navbar = () => {
             </span>
             <div className="dropdown-menu">
               <a href="#latest-articles">Latest Articles</a>
-              <a href="#coach-insights">Coach Insights</a>
-              <a href="#success-stories">Success Stories</a>
-              <a href="#industry-updates">Industry Updates</a>
               <a href="#video-resources">Video Resources</a>
               <a href="#newsletter">Newsletter</a>
             </div>
           </div>
 
-          {/* Dropdown: FAQ */}
-          <div className={`dropdown ${activeDropdown === "faq" ? "open" : ""}`}>
-            <span
-              className="dropdown-link"
-              onClick={() => toggleDropdown("faq")}
-            >
-              FAQ ▾
-            </span>
-            <div className="dropdown-menu">
-              <a href="#student-guide">Student Guide</a>
-              <a href="#technical-support">Technical Support</a>
-              <a href="#payment-faqs">Payment FAQs</a>
-              <a href="#our-policies">Our Policies</a>
-            </div>
-          </div>
-
-          {/* Dropdown: Contact */}
-          <div
-            className={`dropdown ${activeDropdown === "contact" ? "open" : ""}`}
-          >
-            <span
-              className="dropdown-link"
-              onClick={() => toggleDropdown("contact")}
-            >
-              Contact ▾
-            </span>
-            <div className="dropdown-menu">
-              <a href="#student-guide">Student Guide</a>
-              <a href="#technical-support">Technical Support</a>
-              <a href="#become-a-coach">Become a Coach</a>
-              <a href="#corporate-partnerships">Corporate Partnerships</a>
-              <a href="#book-a-call">Book a Call</a>
-              <a href="#chat-with-us">Chat with Us</a>
-            </div>
-          </div>
+          <a href="/faq">FAQ's</a>
+          <a href="/contact">Contact</a>
 
           {/* Mobile Buttons */}
           <div className="mobile-buttons">

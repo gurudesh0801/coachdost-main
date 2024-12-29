@@ -61,7 +61,6 @@
   position: relative;
   width: 300px;
   height: 400px;
-  overflow: hidden;
 }
 
 .coachImg {
@@ -74,14 +73,9 @@
 /* Text box at the bottom of the image */
 .textBox {
   position: absolute;
-  bottom: 0;
+  bottom: -1.5rem;
   left: 20px; /* Left margin */
-  background-color: rgba(
-    226,
-    226,
-    226,
-    0.885
-  ); /* Semi-transparent background */
+  background-color: rgb(255, 255, 255); /* Semi-transparent background */
   color: #1e105f;
   padding: 15px;
   border-radius: 10px;
