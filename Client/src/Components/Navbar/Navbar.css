@@ -104,6 +104,26 @@
   font-size: 0.9rem;
   transition: background 0.3s ease-in-out;
 }
+.login-dropdown .dropdown-menu {
+  position: absolute;
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  color: #f0f0f0;
+}
+
+.login-dropdown .dropdown-menu span {
+  padding: 5px 10px;
+  cursor: pointer;
+  color: black;
+}
+
+.login-dropdown .dropdown-menu span:hover {
+  background-color: #f0f0f0;
+}
 
 .join-btn:hover,
 .login-btn:hover {
@@ -189,6 +209,28 @@
     width: 90%;
     text-align: center;
   }
+  .login-dropdown .dropdown-menu {
+    position: static; /* Ensure dropdown aligns properly in mobile view */
+    width: 100%; /* Take full width of the parent container */
+    box-shadow: none; /* Remove shadow for a cleaner mobile look */
+    border: none; /* Remove border for consistency */
+    padding: 0; /* Remove padding for alignment */
+  }
+
+  .login-dropdown .dropdown-menu span {
+    padding: 10px 15px; /* Adjust padding for touch-friendly buttons */
+    font-size: 14px; /* Slightly smaller text for mobile */
+    background-color: #fff; /* Ensure background remains white */
+    border-bottom: 1px solid #ddd; /* Add divider between options */
+  }
+
+  .login-dropdown .dropdown-menu span:last-child {
+    border-bottom: none; /* Remove divider for the last item */
+  }
+
+  .login-dropdown .dropdown-menu span:hover {
+    background-color: #f9f9f9; /* Subtle hover effect */
+  }
 }
 
 @media (max-width: 480px) {
@@ -210,6 +252,10 @@
     font-size: 0.8rem;
     padding: 0.5rem 1rem;
     width: 10rem;
+  }
+  .login-dropdown .dropdown-menu span {
+    font-size: 12px; /* Smaller font for very small screens */
+    padding: 8px 10px; /* Adjust padding for compact layout */
   }
 }
 

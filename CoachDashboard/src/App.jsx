@@ -7,12 +7,10 @@ import UsersPage from "./pages/UsersPage";
 import SalesPage from "./pages/SalesPage";
 import AnalyticsPage from "./pages/AnalyticsPage";
 import SettingsPage from "./pages/SettingsPage";
-import NewCoachForm from "./components/sessions/SessionsTable";
 import { useEffect, useState } from "react";
 import Login from "./components/login/Login";
 import WriteBlogPage from "./pages/WriteBlogPage";
 import CalendarPage from "./pages/CalendarPage";
-import UnapprovedSessionsPage from "./pages/UnapprovedSessionsPage ";
 
 function App() {
   const [token, setToken] = useState(
@@ -56,12 +54,6 @@ function App() {
             <Route
               path="/"
               element={<OverviewPage token={token} coachInfo={coachInfo} />}
-            />
-            <Route
-              path="/sessions"
-              element={
-                <UnapprovedSessionsPage token={token} coachInfo={coachInfo} />
-              }
             />
             <Route
               path="/users"

@@ -10,9 +10,9 @@ import OrdersPage from "./pages/OrdersPage";
 import AnalyticsPage from "./pages/AnalyticsPage";
 import SettingsPage from "./pages/SettingsPage";
 import { useEffect, useState } from "react";
-import Login from "./components/login/Login";
 import TotalSessionsPage from "./pages/UpcomingSessionCard";
 import FindCoachPage from "./pages/FindCoachPage";
+import Login from "./components/login/Login";
 
 function App() {
   const [token, setToken] = useState(

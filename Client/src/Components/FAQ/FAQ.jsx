@@ -1,51 +1,47 @@
-// FAQ.jsx
-import { useState } from "react";
+import React, { useState } from "react";
 import "./FAQ.css";
 
 const FAQ = () => {
-  const [openCategory, setOpenCategory] = useState("general");
+  const [activeCategory, setActiveCategory] = useState("about");
   const [openQuestions, setOpenQuestions] = useState([]);
 
-  const faqs = {
-    general: {
-      title: "General Questions",
-      questions: [
-        {
-          q: "What is CoachDost?",
-          a: "CoachDost is a global coaching platform connecting professionals with expert coaches.",
-        },
-        {
-          q: "How does coaching work?",
-          a: "Online sessions matched with a coach based on your goals. Sessions last 60 minutes.",
-        },
-      ],
-    },
-    sessions: {
-      title: "Sessions & Booking",
-      questions: [
-        {
-          q: "How do I book a session?",
-          a: "Select your coach, choose an available time slot, and complete payment.",
-        },
-        {
-          q: "What's the rescheduling policy?",
-          a: "Free rescheduling up to 24 hours before session.",
-        },
-      ],
-    },
-    payment: {
-      title: "Payment & Pricing",
-      questions: [
-        {
-          q: "What payment methods do you accept?",
-          a: "All major credit/debit cards with secure processing.",
-        },
-        {
-          q: "Do you offer refunds?",
-          a: "100% satisfaction guarantee on first session.",
-        },
-      ],
-    },
+  const categories = {
+    about: "About CoachDost",
+    coaching: "Coaching Process",
+    platform: "Platform & Security",
+  };
+
+  const faqData = {
+    about: [
+      {
+        q: "What is CoachDost?",
+        a: "CoachDost is a global coaching platform focused on providing a safe, private, and high-quality environment to people all around the world.",
+      },
+      {
+        q: "What makes CoachDost unique?",
+        a: "Our range of experienced coaches, end-to-end solutions, and 24/7 accessibility make us unique.",
+      },
+    ],
+    coaching: [
+      {
+        q: "How does coaching work at CoachDost?",
+        a: "Our coaching process focuses on one-to-one sessions, measurable goals, confidentiality, and accountability.",
+      },
+      {
+        q: "What are CoachDost's core values?",
+        a: "Our core values include commitment, growth, fortitude, knowledge sharing, and synergy.",
+      },
+    ],
+    platform: [
+      {
+        q: "How do I get started with CoachDost?",
+        a: "Create an account, browse coaches, book a session, and start your journey.",
+      },
+      {
+        q: "Is my information secure?",
+        a: "Yes, we prioritize privacy and employ robust security measures.",
+      },
+    ],
   };
 
   const toggleQuestion = (id) => {
@@ -55,63 +51,37 @@ const FAQ = () => {
   };
 
   return (
-    <div className="faq-wrapper">
-      <div className="faq-header">
-        <h1>Frequently Asked Questions</h1>
-        <div className="faq-search">
-          <input
-            type="text"
-            placeholder="Search questions..."
-            className="search-input"
-          />
-        </div>
+    <div className="faq-container">
+      <h1 className="faq-title">FAQ</h1>
+
+      <div className="faq-categories">
+        {Object.keys(categories).map((key) => (
+          <button
+            key={key}
+            onClick={() => setActiveCategory(key)}
+            className={`faq-category-button ${
+              activeCategory === key ? "active" : ""
+            }`}
+          >
+            {categories[key]}
+          </button>
+        ))}
       </div>
 
-      <div className="faq-sections">
-        {Object.entries(faqs).map(([category, { title, questions }]) => (
-          <div key={category} className="faq-category">
+      <div className="faq-content">
+        {faqData[activeCategory].map((faq, index) => (
+          <div key={index} className="faq-item">
             <button
-              onClick={() => setOpenCategory(category)}
-              className="category-toggle"
+              onClick={() => toggleQuestion(index)}
+              className="faq-question"
             >
-              <h2>{title}</h2>
-              <span className="toggle-icon">
-                {openCategory === category ? "-" : "+"}
-              </span>
+              {faq.q}
             </button>
-
-            {openCategory === category && (
-              <div className="faq-questions">
-                {questions.map((faq, index) => (
-                  <div key={index} className="faq-item">
-                    <button
-                      onClick={() => toggleQuestion(`${category}-${index}`)}
-                      className="question-toggle"
-                    >
-                      <span>{faq.q}</span>
-                      <span className="toggle-icon">
-                        {openQuestions.includes(`${category}-${index}`)
-                          ? "-"
-                          : "+"}
-                      </span>
-                    </button>
-
-                    {openQuestions.includes(`${category}-${index}`) && (
-                      <div className="faq-answer">
-                        <p>{faq.a}</p>
-                      </div>
-                    )}
-                  </div>
-                ))}
-              </div>
+            {openQuestions.includes(index) && (
+              <div className="faq-answer">{faq.a}</div>
             )}
           </div>
         ))}
-
-        <div className="faq-contact">
-          <h3>Still have questions?</h3>
-          <button className="contact-button">Contact Support</button>
-        </div>
       </div>
     </div>
   );

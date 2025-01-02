@@ -24,6 +24,14 @@ const Navbar = () => {
     navigate("/signup");
   };
 
+  // Navigate to login pages
+  const gotoLoginAsUser = () => {
+    window.location.href = "http://localhost:5176/";
+  };
+  const gotoLoginAsCoach = () => {
+    window.location.href = "http://localhost:5175/";
+  };
+
   return (
     <nav className="navbar">
       <div className="navbar-container">
@@ -101,7 +109,21 @@ const Navbar = () => {
             <button className="join-btn" onClick={gotoSignup}>
               Join Now
             </button>
-            <button className="login-btn">Login</button>
+            <div className="dropdown login-btn login-dropdown">
+              <span
+                className="dropdown-link"
+                onClick={() => toggleDropdown("login")}
+                style={{ color: "white" }}
+              >
+                Login ▾
+              </span>
+              {activeDropdown === "login" && (
+                <div className="dropdown-menu">
+                  <span onClick={gotoLoginAsUser}>Login as User</span>
+                  <span onClick={gotoLoginAsCoach}>Login as Coach</span>
+                </div>
+              )}
+            </div>
           </div>
         </div>
 
@@ -110,7 +132,21 @@ const Navbar = () => {
           <button className="join-btn" onClick={gotoSignup}>
             Join Now
           </button>
-          <button className="login-btn">Login</button>
+          <div className="dropdown login-btn login-dropdown">
+            <span
+              className="dropdown-link"
+              onClick={() => toggleDropdown("login")}
+              style={{ color: "white" }}
+            >
+              Login ▾
+            </span>
+            {activeDropdown === "login" && (
+              <div className="dropdown-menu">
+                <span onClick={gotoLoginAsUser}>Login as User</span>
+                <span onClick={gotoLoginAsCoach}>Login as Coach</span>
+              </div>
+            )}
+          </div>
         </div>
 
         {/* Mobile Hamburger Icon */}

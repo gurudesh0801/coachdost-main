@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   BrowserRouter as Router,
   Routes,
@@ -25,6 +25,24 @@ const AppContent = () => {
 
   // Check if the current route is the admin dashboard
   const isAdminRoute = location.pathname === "/admindashboard";
+  const [token, setToken] = useState(
+    sessionStorage.getItem("token") ? sessionStorage.getItem("token") : ""
+  );
+  const [user, setUser] = useState(
+    sessionStorage.getItem("user")
+      ? JSON.parse(sessionStorage.getItem("user"))
+      : ""
+  );
+  console.log(user);
+  console.log(token);
+  useEffect(() => {
+    sessionStorage.setItem("token", token);
+
+    // Store user properly as a JSON string
+    if (user) {
+      sessionStorage.setItem("user", JSON.stringify(user));
+    }
+  }, [token, user]);
 
   return (
     <>
