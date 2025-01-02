@@ -26,10 +26,10 @@ const Navbar = () => {
 
   // Navigate to login pages
   const gotoLoginAsUser = () => {
-    window.location.href = "http://localhost:5176/";
+    window.location.href = "https://user.coachdost.com";
   };
   const gotoLoginAsCoach = () => {
-    window.location.href = "http://localhost:5175/";
+    window.location.href = "https://coach.coachdost.com";
   };
 
   return (
