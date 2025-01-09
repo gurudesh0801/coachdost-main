@@ -11,39 +11,39 @@ const Footer = () => {
           <div className="icon-support">
             <FaPassport />
           </div>
-          <h3>Need Any Support For Tour And Visa?</h3>
+          <h3>NEED ANY SUPPORT?</h3>
         </div>
         <div className="footer-section">
           <div className="icon-travel">
             <FaGlobe />
           </div>
-          <h3>Are You Ready For Get Started Travelling?</h3>
+          <h3>READY TO GET STARTED?</h3>
         </div>
       </div>
 
       {/* Middle Section */}
       <div className="footer-middle">
         <div className="footer-column">
-          <h4>RouteX</h4>
+          <h4>COACHDOST</h4>
           <p>
-            Corporate business typically refers to large-scale enterprises or
-            organizations.
+            A Global Coaching Platform Offering High-quality Guidance To You,
+            Anytime, Anywhere
           </p>
         </div>
         <div className="footer-column">
           <h4>Services</h4>
           <ul>
-            <li>Mistakes to Avoid</li>
-            <li>Your Startup</li>
-            <li>Know About Funds</li>
+            <li>FIND COACH</li>
+            <li>CORPORATE COACHING</li>
+            <li>CUSTOM SESSIONS</li>
           </ul>
         </div>
         <div className="footer-column">
           <h4>Useful Links</h4>
           <ul>
-            <li>Latest News</li>
-            <li>Careers</li>
-            <li>Case Studies</li>
+            <li>BLOGS</li>
+            <li>SUPPORT</li>
+            <li>TESTIMONIALS</li>
           </ul>
         </div>
         <div className="footer-column">
@@ -59,7 +59,7 @@ const Footer = () => {
 
       {/* Bottom Section */}
       <div className="footer-bottom">
-        <p>© Yourcompany 2024. All Rights Reserved</p>
+        <p>© CoachDost 2025. All Rights Reserved</p>
         <ul>
           <li>Terms & Conditions</li>
           <li>Privacy Policy</li>

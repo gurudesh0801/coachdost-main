@@ -63,7 +63,7 @@ const TestimonialsCoaches = () => {
       {/* Footer Buttons */}
       <div className="testimonials-footer">
         <button className="join-button">JOIN THEM NOW</button>
-        <button className="read-more-stories">Read More Success Stories</button>
+        <button className="read-more-stories">Read More</button>
       </div>
     </div>
   );

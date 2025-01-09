@@ -48,27 +48,27 @@ const coaches = [
 const cardsData = [
   {
     id: 1,
-    country: "Canada",
+    country: "Career Coaching",
     image: "https://via.placeholder.com/100", // Replace with actual image URL
-    topics: ["Mistakes To Avoid", "Your Startup", "Know About Fonts"],
+    topics: ["Land your dream job with personalized career guidance."],
   },
   {
     id: 2,
-    country: "Bangladesh",
+    country: "Startup Coaching",
     image: "https://via.placeholder.com/100", // Replace with actual image URL
-    topics: ["Mistakes To Avoid", "Your Startup", "Know About Fonts"],
+    topics: [" Turn your business idea into reality with expert mentors"],
   },
   {
     id: 3,
-    country: "Australia",
+    country: "Fitness Coaching",
     image: "https://via.placeholder.com/100", // Replace with actual image URL
-    topics: ["Mistakes To Avoid", "Your Startup", "Know About Fonts"],
+    topics: ["Achieve your health and fitness goals with top coaches."],
   },
   {
     id: 4,
-    country: "United Kingdom",
+    country: "Language Coaching",
     image: "https://via.placeholder.com/100", // Replace with actual image URL
-    topics: ["Mistakes To Avoid", "Your Startup", "Know About Fonts"],
+    topics: [" Improve your communication skills with language experts."],
   },
 ];
 const ExploreCoaches = () => {
@@ -77,8 +77,9 @@ const ExploreCoaches = () => {
       {/* Header */}
       <header className="explore-coaches-header">
         <div className="explore-coaches-title-section">
-          <p className="explore-coaches-subtitle">OUR COACHES</p>
-          <h2 className="explore-coaches-main-title">Explore Coaches</h2>
+          <h2 className="explore-coaches-main-title">
+            Popular Coaching Categories
+          </h2>
         </div>
         <div className="explore-coaches-title-section2">
           <ul>
@@ -117,7 +118,7 @@ const ExploreCoaches = () => {
 
       <div className="textCont">
         <h1 className="texth1">OUR TOP COACHES</h1>
-        <button className="textbtn">View More</button>
+        <button className="textbtn">Explore Now</button>
       </div>
       <div className="cards-container">
         {cardsData.map((card) => (

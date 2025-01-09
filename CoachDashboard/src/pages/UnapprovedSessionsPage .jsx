@@ -5,7 +5,7 @@ import StatCard from "../components/common/StatCard";
 import SessionsTable from "../components/sessions/SessionsTable";
 import { useEffect, useState } from "react";
 
-const UnapprovedSessionsPage = ({ token, coachInfo }) => {
+const UnapprovedSessionsPage = ({ token, coach }) => {
   const [unapprovedSessions, setUnapprovedSessions] = useState([]);
   const [totalUnapproved, setTotalUnapproved] = useState(0);
   const [totalApproved, setTotalApproved] = useState(0);
@@ -25,7 +25,7 @@ const UnapprovedSessionsPage = ({ token, coachInfo }) => {
       setUnapprovedSessions(result || []);
       console.log();
       setTotalUnapproved(
-        result?.filter((session) => session.coach === coachInfo._id).length || 0
+        result?.filter((session) => session.coach === coach._id).length || 0
       );
     } catch (error) {
       console.error("Error fetching unapproved sessions:", error);
@@ -34,7 +34,7 @@ const UnapprovedSessionsPage = ({ token, coachInfo }) => {
 
   useEffect(() => {
     fetchUnapprovedSessions(); // Fetch once on mount
-  }, [coachInfo]);
+  }, [coach]);
 
   const handleApprovalUpdate = (id) => {
     // Update state after approving or rejecting a session
@@ -71,7 +71,7 @@ const UnapprovedSessionsPage = ({ token, coachInfo }) => {
 
         <SessionsTable
           sessions={unapprovedSessions}
-          coachId={coachInfo} // Pass logged-in coach ID
+          coachId={coach} // Pass logged-in coach ID
           showApprovalActions={true}
           onApprove={handleApprovalUpdate}
           onReject={handleApprovalUpdate}

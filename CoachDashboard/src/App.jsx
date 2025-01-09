@@ -11,14 +11,15 @@ import { useEffect, useState } from "react";
 import Login from "./components/login/Login";
 import WriteBlogPage from "./pages/WriteBlogPage";
 import CalendarPage from "./pages/CalendarPage";
+import UnapprovedSessionsPage from "./pages/UnapprovedSessionsPage ";
 
 function App() {
   const [token, setToken] = useState(
     sessionStorage.getItem("token") ? sessionStorage.getItem("token") : ""
   );
-  const [coachInfo, setCoachInfo] = useState(
-    sessionStorage.getItem("coachInfo")
-      ? JSON.parse(sessionStorage.getItem("coachInfo"))
+  const [coach, setCoach] = useState(
+    sessionStorage.getItem("coach")
+      ? JSON.parse(sessionStorage.getItem("coach"))
       : ""
   );
   // console.log(coachInfo, "App");
@@ -27,16 +28,16 @@ function App() {
     sessionStorage.setItem("token", token);
 
     // Store coachInfo properly as a JSON string
-    if (coachInfo) {
-      sessionStorage.setItem("coachInfo", JSON.stringify(coachInfo));
+    if (coach) {
+      sessionStorage.setItem("coach", JSON.stringify(coach));
     }
-  }, [token, coachInfo]);
-  console.log(coachInfo, "App.jsx");
+  }, [token, coach]);
+  console.log(coach, "App.jsx");
 
   return (
     <>
       {token === "" ? (
-        <Login setToken={setToken} setCoachInfo={setCoachInfo} />
+        <Login setToken={setToken} setCoach={setCoach} />
       ) : (
         <div className="flex h-screen bg-gray-900 text-gray-100 overflow-hidden">
           {/* BG */}
@@ -45,27 +46,23 @@ function App() {
             <div className="absolute inset-0 backdrop-blur-sm" />
           </div>
 
-          <Sidebar
-            setToken={setToken}
-            coachInfo={coachInfo}
-            setCoachInfo={setCoachInfo}
-          />
+          <Sidebar setToken={setToken} coach={coach} setCoach={setCoach} />
           <Routes>
             <Route
               path="/"
-              element={<OverviewPage token={token} coachInfo={coachInfo} />}
+              element={<OverviewPage token={token} coach={coach} />}
             />
             <Route
               path="/users"
-              element={<UsersPage token={token} coachInfo={coachInfo} />}
+              element={<UsersPage token={token} coach={coach} />}
             />
             <Route
               path="/sales"
-              element={<SalesPage token={token} coachInfo={coachInfo} />}
+              element={<SalesPage token={token} coach={coach} />}
             />
             <Route
               path="/calendar"
-              element={<CalendarPage token={token} coachInfo={coachInfo} />}
+              element={<CalendarPage token={token} coach={coach} />}
             />
             <Route
               path="/analytics"
@@ -73,11 +70,15 @@ function App() {
             />
             <Route
               path="/settings"
-              element={<SettingsPage token={token} coachInfo={coachInfo} />}
+              element={<SettingsPage token={token} coach={coach} />}
             />
             <Route
               path="/blogpage"
-              element={<WriteBlogPage token={token} coachInfo={coachInfo} />}
+              element={<WriteBlogPage token={token} coach={coach} />}
+            />
+            <Route
+              path="/sessions"
+              element={<UnapprovedSessionsPage token={token} coach={coach} />}
             />
           </Routes>
         </div>

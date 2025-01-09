@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./Login.css";
 import { useNavigate } from "react-router-dom";
 
-const Login = ({ setToken, setUser }) => {
+const Login = ({ setToken, setCoach }) => {
   // State to track the active button
   const [activeRole, setActiveRole] = useState("Coach");
   const navigate = useNavigate();
@@ -50,7 +50,8 @@ const Login = ({ setToken, setUser }) => {
         alert(`${activeRole} login successful!`);
         console.log("User data:", result); // Handle successful login
         setToken(result.token);
-        setUser(result.user);
+        setCoach(result.coach);
+        console.log(result);
       } else {
         setError(result.message || "Login failed. Please try again.");
       }

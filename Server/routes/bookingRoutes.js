@@ -36,7 +36,6 @@ router.post("/book-session", async (req, res) => {
     await booking.save();
 
     // Send approval request to the coach (mock notification or email)
-    // In a real application, integrate email or notification services here.
     console.log(
       `Approval request sent to Coach ${selectedCoach.username} for booking ${booking._id}`
     );
@@ -47,6 +46,17 @@ router.post("/book-session", async (req, res) => {
     });
   } catch (error) {
     console.error("Error creating booking:", error);
+    res.status(500).json({ message: "Server error. Please try again later." });
+  }
+});
+
+// Get all bookings
+router.get("/bookings", async (req, res) => {
+  try {
+    const bookings = await Booking.find().populate("coach"); // Use populate if needed
+    res.status(200).json(bookings);
+  } catch (error) {
+    console.error("Error fetching bookings:", error);
     res.status(500).json({ message: "Server error. Please try again later." });
   }
 });

@@ -13,10 +13,10 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
-const Sidebar = ({ setToken, coachInfo, setCoachInfo }) => {
+const Sidebar = ({ setToken, coach, setCoach }) => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
   // console.log(coachInfo, "Sidebar");
-
+  console.log("This is coach", coach);
   return (
     <motion.div
       className={`relative z-10 transition-all duration-300 ease-in-out flex-shrink-0 ${
@@ -41,7 +41,7 @@ const Sidebar = ({ setToken, coachInfo, setCoachInfo }) => {
               isSidebarOpen ? "opacity-100 visible" : "opacity-0 invisible"
             } transition-all duration-300 ml-4`}
           >
-            Hi, {coachInfo?.username || "Coach"}
+            Hi, {coach?.username || "Coach"}
           </motion.div>
         </div>
 
@@ -223,9 +223,9 @@ const Sidebar = ({ setToken, coachInfo, setCoachInfo }) => {
           <button
             onClick={() => {
               setToken("");
-              setCoachInfo("");
+              setCoach("");
               localStorage.removeItem("token"); // Clear token from localStorage
-              localStorage.removeItem("coachInfo"); // Clear coachInfo from localStorage
+              localStorage.removeItem("coach"); // Clear coachInfo from localStorage
             }}
           >
             <motion.div className="flex items-center p-4 text-sm font-medium rounded-lg hover:bg-gray-700 transition-colors mb-2">

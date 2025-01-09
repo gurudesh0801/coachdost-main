@@ -118,7 +118,7 @@
   background-color: #dc762c;
   color: #ffffff;
   font-size: 1rem;
-  padding: 0.8rem 1.5rem;
+  padding: 1rem 2rem;
   border: none;
   border-radius: 2rem;
   cursor: pointer;
@@ -132,10 +132,10 @@
 
 .read-more-stories {
   background-color: #ffffff;
-  color: #dc762c;
+  color: #480c84;
   font-size: 1rem;
   padding: 0.8rem 1.5rem;
-  border: 2px solid #dc762c;
+  border: 2px solid #480c84;
   border-radius: 2rem;
   cursor: pointer;
   font-weight: bold;
@@ -143,7 +143,7 @@
 }
 
 .read-more-stories:hover {
-  background-color: #dc762c;
+  background-color: #480c84;
   color: #ffffff;
 }
 

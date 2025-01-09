@@ -7,9 +7,7 @@ import CoreValues from "../CoreValues/CoreValues";
 import Coaches from "../ExploreCoaches/ExploreCoaches";
 import WhyChooseUs from "../WhyChooseUs/WhyChooseUs";
 import TestimonialsCoaches from "../TestimonialsCoaches/TestimonialsCoaches";
-import EducationalCoaches from "../EducationalCoaches/EducationalCoaches";
 import OfferSection from "../OfferSection/OfferSection";
-import OurTeam from "../OurTeam/OurTeam";
 import TestimonialCard from "../TestimonialCard/TestimonialCard";
 import { useNavigate } from "react-router-dom";
 
@@ -49,7 +47,6 @@ const Home = () => {
       <WhyChooseUs />
       <Coaches />
       <OfferSection />
-      <EducationalCoaches />
       <TestimonialsCoaches />
       <TestimonialCard />
       {/* <EducationalCoaches /> */}
