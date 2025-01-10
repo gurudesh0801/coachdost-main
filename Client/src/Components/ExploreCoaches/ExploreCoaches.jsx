@@ -77,9 +77,7 @@ const ExploreCoaches = () => {
       {/* Header */}
       <header className="explore-coaches-header">
         <div className="explore-coaches-title-section">
-          <h2 className="explore-coaches-main-title">
-            Popular Coaching Categories
-          </h2>
+          <h2 className="explore-coaches-main-title">Exolore Coaches</h2>
         </div>
         <div className="explore-coaches-title-section2">
           <ul>
@@ -117,7 +115,7 @@ const ExploreCoaches = () => {
       </div>
 
       <div className="textCont">
-        <h1 className="texth1">OUR TOP COACHES</h1>
+        <h1 className="texth1">Popular Coaching Categories</h1>
         <button className="textbtn">Explore Now</button>
       </div>
       <div className="cards-container">

@@ -64,7 +64,7 @@
 }
 
 .coachDost-button {
-  background-color: #dc762c;
+  background-color: #f08c3a;
   color: white;
   padding: 1rem 2rem;
   margin-top: 1rem;
@@ -87,6 +87,11 @@
 
 .coachDost-button:hover {
   background-color: #e06c23;
+}
+.coachDost-button2:hover {
+  transition: 0.5s;
+  color: aliceblue;
+  background-color: #6c11ff;
 }
 
 /* Responsive Styles */

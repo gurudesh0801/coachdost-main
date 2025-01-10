@@ -70,7 +70,7 @@
 
 /* Explore Button */
 .explore-button1 {
-  background-color: #dc762c;
+  background-color: #f08c3a;
   color: #ffffff;
   border: none;
   padding: 1rem 2rem;
@@ -80,6 +80,9 @@
   cursor: pointer;
   transition: background 0.3s ease, transform 0.3s ease;
   margin: 2rem 0;
+}
+.explore-button1:hover {
+  background-color: #f56e00;
 }
 
 /* ================================= */
