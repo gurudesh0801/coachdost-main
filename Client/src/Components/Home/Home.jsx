@@ -26,9 +26,9 @@ const Home = () => {
             Anytime, Anywhere
           </h1>
           <p>
-            A coaching platform focused on providing a safe, private and high
-            quality environment to people all around the world. We will provide
-            high quality coaches to the people from the comfort of their home.
+            We are focused on providing a safe, private and high quality
+            environment to people all around the world. We will provide high
+            quality coaches to the people from the comfort of their home.
           </p>
           <div className="btns">
             <button className="hero-button1" onClick={goto}>
