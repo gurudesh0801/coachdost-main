@@ -108,7 +108,7 @@ const Signup = () => {
   return (
     <div className="signup-container">
       <div className="signup-card">
-        <h2>Signup</h2>
+        <h2>Signup CoachDost</h2>
         {message && <p className={`message ${message.type}`}>{message.text}</p>}
 
         <div className="role-selection">

@@ -54,19 +54,19 @@ const cardsData = [
   },
   {
     id: 2,
-    country: "Startup Coaching",
+    country: "Executive Coaching",
     image: "https://via.placeholder.com/100", // Replace with actual image URL
     topics: [" Turn your business idea into reality with expert mentors"],
   },
   {
     id: 3,
-    country: "Fitness Coaching",
+    country: "Anger Management Coaching",
     image: "https://via.placeholder.com/100", // Replace with actual image URL
     topics: ["Achieve your health and fitness goals with top coaches."],
   },
   {
     id: 4,
-    country: "Language Coaching",
+    country: "Self Confidence Coaching",
     image: "https://via.placeholder.com/100", // Replace with actual image URL
     topics: [" Improve your communication skills with language experts."],
   },
@@ -77,14 +77,14 @@ const ExploreCoaches = () => {
       {/* Header */}
       <header className="explore-coaches-header">
         <div className="explore-coaches-title-section">
-          <h2 className="explore-coaches-main-title">Exolore Coaches</h2>
+          <h2 className="explore-coaches-main-title">Meet Your Coaches</h2>
         </div>
         <div className="explore-coaches-title-section2">
           <ul>
             <li>Life</li>
-            <li>Language</li>
+            <li>Self Confidence</li>
             <li>Relationship</li>
-            <li>Fitness</li>
+            <li>Executive</li>
           </ul>
           <button className="explore-coaches-view-all-btn">
             View All Coaches

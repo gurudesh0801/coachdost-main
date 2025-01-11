@@ -22,7 +22,7 @@ const CoachExplore = () => {
       {/* Hero Section */}
       <section className="coach-explore-hero">
         <h1>
-          Explore Our
+          Meet your
           <br />
           Expert Coaches
         </h1>
@@ -31,7 +31,7 @@ const CoachExplore = () => {
       {/* Top Coaches Section */}
       <section className="top-coaches-section">
         <div className="top-coaches-header">
-          <h2>Top Educational Coaches</h2>
+          <h2>Top Coaches</h2>
           <div className="pagination-wrapper">
             <button
               className="pagination-button prev"
@@ -62,25 +62,27 @@ const CoachExplore = () => {
         </div>
 
         <div className="coaches-card-container">
-          {["OET Coaching", "IELTS Coaching", "OET Coaching"].map(
-            (title, index) => (
-              <div key={index} className="coach-card">
-                <div className="coach-card-image">
-                  <img src={speakerImage} alt={title} />
+          {[
+            "Life Coaching",
+            "Anger Management Coaching",
+            "Health Coaching",
+          ].map((title, index) => (
+            <div key={index} className="coach-card">
+              <div className="coach-card-image">
+                <img src={speakerImage} alt={title} />
+              </div>
+              <div className="coach-card-content">
+                <div className="cont1">
+                  <h3>{title}</h3>
+                  <p>There are many variations of passages of engineer.</p>
+                  <a href="#">Request Custom Package</a>
                 </div>
-                <div className="coach-card-content">
-                  <div className="cont1">
-                    <h3>{title}</h3>
-                    <p>There are many variations of passages of engineer.</p>
-                    <a href="#">Request Custom Package</a>
-                  </div>
-                  <div className="cont2">
-                    <button>&#8599;</button>
-                  </div>
+                <div className="cont2">
+                  <button>&#8599;</button>
                 </div>
               </div>
-            )
-          )}
+            </div>
+          ))}
         </div>
       </section>
 
@@ -91,11 +93,8 @@ const CoachExplore = () => {
             "Life",
             "Career",
             "Relationships",
-            "Skills Exam",
             "Health",
             "Self Confidence",
-            "Fitness",
-            "Education",
             "Money",
           ].map((category, index) => (
             <div key={index} className="sidebar-item">
@@ -107,12 +106,12 @@ const CoachExplore = () => {
 
         <div className="coaching-list">
           {[
-            "OET Coaching",
-            "IELTS Coaching",
-            "TOFEL Coaching",
-            "OET Coaching",
-            "PTE Coaching",
-            "Skills Exam",
+            "Health Coaching",
+            "Health Coaching",
+            "Health Coaching",
+            "Health Coaching",
+            "Health Coaching",
+            "Health Coaching",
           ].map((title, index) => (
             <div key={index} className="coaching-card">
               <img

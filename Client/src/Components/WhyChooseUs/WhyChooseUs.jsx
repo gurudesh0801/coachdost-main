@@ -24,7 +24,7 @@ const WhyChooseUs = () => {
 
   return (
     <>
-      <h2 className="why-choose-us-title">Your Success, Our Priority</h2>
+      <h2 className="why-choose-us-title">Your Success Is Our Priority</h2>
       <section className="why-choose-us-container">
         <div className="cards-container1">
           {cards.map((card, index) => (

@@ -7,7 +7,7 @@
 
 /* Hero Section */
 .who-hero {
-  background-color: #6a0dad;
+  background: linear-gradient(220deg, #7907ae, #031248);
   color: white;
   text-align: center;
   padding: 4rem 1rem;
