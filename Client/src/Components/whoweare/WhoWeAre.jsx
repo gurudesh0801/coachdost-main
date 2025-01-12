@@ -9,7 +9,7 @@ const WhoWeAre = () => {
         <h1 className="who-hero-title">A Global Coaching Platform</h1>
         <p className="who-hero-description">
           Providing high-quality, personalized guidance in a secure and
-          confidential environment.
+          confidential environment. Best Online Coaching Platforms.
         </p>
         <button className="who-hero-button">Explore Our Platform</button>
       </section>
@@ -49,8 +49,8 @@ const WhoWeAre = () => {
           <h3 className="who-mission-title">Our Mission</h3>
           <p className="who-mission-description">
             To make professional coaching accessible to everyone, enabling
-            personal and professional growth through expert guidance and
-            support.
+            personal and professional growth through expert guidance and support
+            and to make best online coaching programs.
           </p>
         </div>
         <div className="who-vision">

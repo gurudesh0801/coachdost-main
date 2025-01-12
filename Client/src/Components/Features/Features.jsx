@@ -17,7 +17,7 @@ const Features = () => {
       icon: <FaCalendarAlt />,
     },
     {
-      title: "One Platform for All Coaching Needs",
+      title: "Best Online Coaching",
       description:
         "A comprehensive solution to meet all your coaching-related requirements, all in one place.",
       icon: <FaBook />,
