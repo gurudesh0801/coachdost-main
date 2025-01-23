@@ -137,7 +137,7 @@ const Sidebar = ({ setToken, user, setUser }) => {
               setUser("");
               localStorage.removeItem("token"); // Clear token from localStorage
               localStorage.removeItem("user"); // Clear coachInfo from localStorage
-              window.location.href = "http://localhost:5173";
+              window.location.href = "https://coachdost.com";
             }}
           >
             <motion.div className="flex items-center p-4 text-sm font-medium rounded-lg hover:bg-gray-700 transition-colors mb-2">
