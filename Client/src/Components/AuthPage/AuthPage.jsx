@@ -26,13 +26,13 @@ const AuthPage = ({ setToken, setUser, user }) => {
     if (isLogin) {
       endpoint =
         userType === "client"
-          ? `${import.meta.env.VITE_API_BASE_URL}/users/login`
-          : `${import.meta.env.VITE_API_BASE_URL}/coaches/login`;
+          ? `${import.meta.env.VITE_API_BASE_URL}/api/users/login`
+          : `${import.meta.env.VITE_API_BASE_URL}/api/coaches/login`;
     } else {
       endpoint =
         userType === "client"
-          ? `${import.meta.env.VITE_API_BASE_URL}/users/signup`
-          : `${import.meta.env.VITE_API_BASE_URL}/coaches/signup`;
+          ? `${import.meta.env.VITE_API_BASE_URL}/api/users/signup`
+          : `${import.meta.env.VITE_API_BASE_URL}/api/coaches/signup`;
     }
 
     // Prepare the request payload
