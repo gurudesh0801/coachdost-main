@@ -71,7 +71,7 @@ const AuthPage = ({ setToken, setUser, user }) => {
         setToken(data.token);
         setUser(data.user);
         if (data.user.role === "Client") {
-          window.location.href = `https://client.coachdost.com?token=${
+          window.location.href = `https://user.coachdost.com?token=${
             data.token
           }&user=${encodeURIComponent(JSON.stringify(data.user))}`;
         } else {
