@@ -11,6 +11,7 @@ const Overview = ({ token, user }) => {
   const [recentActivities, setRecentActivities] = useState([]);
 
   // Fetch data from API
+  console.log(user);
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -64,7 +65,7 @@ const Overview = ({ token, user }) => {
     };
 
     fetchData();
-  }, [user.id]);
+  }, [user]);
 
   const statsCards = [
     {

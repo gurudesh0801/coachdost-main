@@ -23,6 +23,9 @@ const Navbar = () => {
   const gotoSignup = () => {
     navigate("/signup");
   };
+  const gotoLogin = () => {
+    navigate("/login");
+  };
 
   // Navigate to login pages
   const gotoLoginAsUser = () => {
@@ -109,7 +112,10 @@ const Navbar = () => {
             <button className="join-btn" onClick={gotoSignup}>
               Join Now
             </button>
-            <div className="dropdown login-btn login-dropdown">
+            <button className="join-btn" onClick={gotoLogin}>
+              Login
+            </button>
+            {/* <div className="dropdown login-btn login-dropdown">
               <span
                 className="dropdown-link"
                 onClick={() => toggleDropdown("login")}
@@ -123,7 +129,7 @@ const Navbar = () => {
                   <span onClick={gotoLoginAsCoach}>Login as Coach</span>
                 </div>
               )}
-            </div>
+            </div> */}
           </div>
         </div>
 
@@ -132,7 +138,10 @@ const Navbar = () => {
           <button className="join-btn" onClick={gotoSignup}>
             Join Now
           </button>
-          <div className="dropdown login-btn login-dropdown">
+          <button className="join-btn" onClick={gotoLogin}>
+            Login
+          </button>
+          {/* <div className="dropdown login-btn login-dropdown">
             <span
               className="dropdown-link"
               onClick={() => toggleDropdown("login")}
@@ -146,7 +155,7 @@ const Navbar = () => {
                 <span onClick={gotoLoginAsCoach}>Login as Coach</span>
               </div>
             )}
-          </div>
+          </div>*/}
         </div>
 
         {/* Mobile Hamburger Icon */}

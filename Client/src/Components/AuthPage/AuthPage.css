@@ -1,0 +1,271 @@
+/* Main container styles */
+.auth-container {
+  min-height: 100vh;
+  background: linear-gradient(to bottom right, #44337a, #382f6c);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Background pattern */
+.background-pattern {
+  position: absolute;
+  inset: 0;
+}
+
+.pattern-line {
+  position: absolute;
+  width: 140%;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.05);
+  left: -20%;
+  right: -20%;
+  transform: rotate(-15deg);
+}
+
+/* Main content */
+.main-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 1rem;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.content-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+/* Title section */
+.title-section {
+  color: white;
+}
+
+.main-title {
+  font-size: 4.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+/* Auth card */
+.auth-card {
+  background-color: rgba(126, 34, 206, 0.3);
+  backdrop-filter: blur(4px);
+  border-radius: 1.5rem;
+  padding: 2rem;
+  width: 100%;
+  max-width: 28rem;
+}
+
+.auth-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.auth-title {
+  font-size: 1.5rem;
+  color: white;
+  font-weight: 600;
+}
+
+/* Toggle buttons */
+.toggle-container {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.toggle-button {
+  flex: 1;
+  padding: 1rem 1.5rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  border: none;
+  transition: all 0.3s;
+}
+
+.toggle-button.active {
+  background-color: #f97316;
+  color: white;
+}
+
+.toggle-button.inactive {
+  background-color: rgba(126, 34, 206, 0.5);
+  color: white;
+}
+
+/* Form styles */
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-label {
+  display: block;
+  color: white;
+  margin-bottom: 0.5rem;
+}
+
+.form-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  background-color: white;
+  color: #111827;
+}
+
+.form-input::placeholder {
+  color: #6b7280;
+}
+
+.form-input:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #f97316;
+}
+
+/* Footer */
+.form-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1rem;
+}
+
+.footer-links {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.submit-button {
+  background-color: #f97316;
+  color: white;
+  padding: 0.5rem 1.5rem;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: background-color 0.3s;
+}
+
+.submit-button:hover {
+  background-color: #ea580c;
+}
+
+/* Social login */
+.social-login {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.social-button {
+  padding: 0.5rem;
+  border-radius: 9999px;
+  background-color: white;
+  transition: background-color 0.3s;
+}
+
+.social-button:hover {
+  background-color: #f3f4f6;
+}
+
+.social-button svg {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.social-button.linkedin svg {
+  color: #0077b5;
+}
+
+.social-button.google svg {
+  color: #4b5563;
+}
+
+/* Responsive Styles */
+
+/* For small screens (mobile devices) */
+@media (max-width: 640px) {
+  .main-content {
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 1rem;
+  }
+
+  .content-wrapper {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .title-section {
+    text-align: center;
+  }
+
+  .main-title {
+    font-size: 2.5rem;
+  }
+
+  .auth-card {
+    max-width: 100%;
+    padding: 1.5rem;
+  }
+
+  .toggle-container {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .toggle-button {
+    width: 100%;
+  }
+
+  .form-footer {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .footer-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+}
+
+/* For medium screens (tablets) */
+@media (max-width: 1024px) {
+  .main-title {
+    font-size: 3.5rem;
+  }
+
+  .auth-card {
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-title {
+    font-size: 2rem;
+  }
+
+  .form-input {
+    padding: 0.5rem 0.75rem;
+  }
+
+  .submit-button {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+  }
+
+  .social-button svg {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+}

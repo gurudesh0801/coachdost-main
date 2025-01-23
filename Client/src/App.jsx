@@ -19,6 +19,7 @@ import WhoWeAre from "./Components/whoweare/WhoWeAre";
 import OurTeam1 from "./Components/Team/OurTeam1";
 import CoachExplore from "./Components/CoachExplore/CoachExplore";
 import FAQ from "./Components/FAQ/FAQ";
+import AuthPage from "./Components/AuthPage/AuthPage";
 
 const AppContent = () => {
   const location = useLocation(); // Get the current location (path)
@@ -26,21 +27,21 @@ const AppContent = () => {
   // Check if the current route is the admin dashboard
   const isAdminRoute = location.pathname === "/admindashboard";
   const [token, setToken] = useState(
-    sessionStorage.getItem("token") ? sessionStorage.getItem("token") : ""
+    localStorage.getItem("token") ? localStorage.getItem("token") : ""
   );
+
   const [user, setUser] = useState(
-    sessionStorage.getItem("user")
-      ? JSON.parse(sessionStorage.getItem("user"))
-      : ""
+    localStorage.getItem("user") ? JSON.parse(localStorage.getItem("user")) : ""
   );
   console.log(user);
-  console.log(token);
   useEffect(() => {
-    sessionStorage.setItem("token", token);
+    console.log("Token updated:", token);
+    console.log("User updated:", user);
+    localStorage.setItem("token", token);
 
     // Store user properly as a JSON string
     if (user) {
-      sessionStorage.setItem("user", JSON.stringify(user));
+      localStorage.setItem("user", JSON.stringify(user));
     }
   }, [token, user]);
 
@@ -56,6 +57,12 @@ const AppContent = () => {
         <Route path="/our-team" element={<OurTeam1 />} />
         <Route path="/explorecoaches" element={<CoachExplore />} />
         <Route path="/faq" element={<FAQ />} />
+        <Route
+          path="/login"
+          element={
+            <AuthPage setToken={setToken} setUser={setUser} user={user} />
+          }
+        />
       </Routes>
       {!isAdminRoute && <Footer />} <StickyFooterBar />
     </>

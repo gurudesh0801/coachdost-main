@@ -1,7 +1,7 @@
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
+import { useEffect, useState } from "react";
 
 import Sidebar from "./components/common/Sidebar";
-
 import OverviewPage from "./pages/OverviewPage";
 import ProductsPage from "./pages/ProductsPage";
 import UsersPage from "./pages/UsersPage";
@@ -9,83 +9,97 @@ import SalesPage from "./pages/SalesPage";
 import OrdersPage from "./pages/OrdersPage";
 import AnalyticsPage from "./pages/AnalyticsPage";
 import SettingsPage from "./pages/SettingsPage";
-import { useEffect, useState } from "react";
 import TotalSessionsPage from "./pages/UpcomingSessionCard";
 import FindCoachPage from "./pages/FindCoachPage";
 import Login from "./components/login/Login";
 
 function App() {
-  const [token, setToken] = useState(
-    sessionStorage.getItem("token") ? sessionStorage.getItem("token") : ""
-  );
+  const location = useLocation();
+  const [token, setToken] = useState(localStorage.getItem("token") || "");
   const [user, setUser] = useState(
-    sessionStorage.getItem("user")
-      ? JSON.parse(sessionStorage.getItem("user"))
-      : ""
+    localStorage.getItem("user")
+      ? JSON.parse(localStorage.getItem("user"))
+      : null
   );
-  console.log(user);
+  console.log("Name is Prasad");
 
   useEffect(() => {
-    sessionStorage.setItem("token", token);
+    const params = new URLSearchParams(location.search);
+    const urlToken = params.get("token");
+    const urlUser = params.get("user");
+    console.log(urlToken);
 
-    // Store user properly as a JSON string
+    if (urlToken) {
+      setToken(urlToken);
+      localStorage.setItem("token", urlToken);
+    }
+
+    if (urlUser) {
+      try {
+        const parsedUser = JSON.parse(decodeURIComponent(urlUser));
+        setUser(parsedUser);
+        localStorage.setItem("user", JSON.stringify(parsedUser));
+      } catch (err) {
+        console.error("Failed to parse user data from URL:", err);
+      }
+    }
+  }, [location.search]);
+
+  useEffect(() => {
+    if (token) {
+      localStorage.setItem("token", token);
+    }
+
     if (user) {
-      sessionStorage.setItem("user", JSON.stringify(user));
+      localStorage.setItem("user", JSON.stringify(user));
     }
   }, [token, user]);
+
   return (
     <>
-      {token === "" ? (
-        <Login setToken={setToken} setUser={setUser} />
-      ) : (
-        <div className="flex h-screen bg-gray-900 text-gray-100 overflow-hidden">
-          {/* BG */}
-          <div className="fixed inset-0 z-0">
-            <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 opacity-80" />
-            <div className="absolute inset-0 backdrop-blur-sm" />
-          </div>
-
-          <Sidebar setToken={setToken} user={user} setUser={setUser} />
-          <Routes>
-            <Route
-              path="/"
-              element={<OverviewPage token={token} user={user} />}
-            />
-            <Route
-              path="/products"
-              element={<ProductsPage token={token} user={user} />}
-            />
-            <Route
-              path="/users"
-              element={<UsersPage token={token} user={user} />}
-            />
-            <Route
-              path="/sales"
-              element={<SalesPage token={token} user={user} />}
-            />
-            <Route
-              path="/orders"
-              element={<OrdersPage token={token} user={user} />}
-            />
-            <Route
-              path="/analytics"
-              element={<AnalyticsPage token={token} />}
-            />
-            <Route
-              path="/settings"
-              element={<SettingsPage token={token} user={user} />}
-            />
-            <Route
-              path="/find-coach"
-              element={<FindCoachPage token={token} user={user} />}
-            />
-            <Route
-              path="/total-sessions"
-              element={<TotalSessionsPage token={token} user={user} />}
-            />
-          </Routes>
+      <div className="flex h-screen bg-gray-900 text-gray-100 overflow-hidden">
+        <div className="fixed inset-0 z-0">
+          <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 opacity-80" />
+          <div className="absolute inset-0 backdrop-blur-sm" />
         </div>
-      )}
+
+        <Sidebar setToken={setToken} user={user} setUser={setUser} />
+        <Routes>
+          <Route
+            path="/"
+            element={<OverviewPage token={token} user={user} />}
+          />
+          <Route
+            path="/products"
+            element={<ProductsPage token={token} user={user} />}
+          />
+          <Route
+            path="/users"
+            element={<UsersPage token={token} user={user} />}
+          />
+          <Route
+            path="/sales"
+            element={<SalesPage token={token} user={user} />}
+          />
+          <Route
+            path="/orders"
+            element={<OrdersPage token={token} user={user} />}
+          />
+          <Route path="/analytics" element={<AnalyticsPage token={token} />} />
+          <Route
+            path="/settings"
+            element={<SettingsPage token={token} user={user} />}
+          />
+          <Route
+            path="/find-coach"
+            element={<FindCoachPage token={token} user={user} />}
+          />
+          <Route
+            path="/total-sessions"
+            element={<TotalSessionsPage token={token} user={user} />}
+          />
+        </Routes>
+      </div>
     </>
   );
 }
