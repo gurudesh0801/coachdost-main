@@ -99,7 +99,13 @@ const AuthPage = ({ setToken, setUser, user }) => {
             data.token
           }&user=${encodeURIComponent(JSON.stringify(data.user))}`;
         } else {
-          window.location.href = `https://coachdost.com`;
+          if (isLogin) {
+            window.location.href = `http://localhost:5175?token=${
+              data.token
+            }&coach=${encodeURIComponent(JSON.stringify(data.coach))}`;
+          } else {
+            window.location.href = "https://coachdost.com";
+          }
         }
       } else {
         alert(`Error: ${data.message}`);
