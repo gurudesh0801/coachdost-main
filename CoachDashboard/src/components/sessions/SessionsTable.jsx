@@ -7,6 +7,7 @@ const SessionsTable = ({
   onApprove,
   onReject,
 }) => {
+  console.log(coachId);
   const handleApprove = async (id, studentId) => {
     try {
       const response = await fetch(
@@ -76,7 +77,7 @@ const SessionsTable = ({
         </thead>
         <tbody>
           {sessions
-            .filter((session) => session.coach === coachId._id) // Filter sessions based on coach ID
+            .filter((session) => session.coach === coachId._id)
             .map((session) => (
               <tr key={session._id} className="hover:bg-gray-700">
                 <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-700">

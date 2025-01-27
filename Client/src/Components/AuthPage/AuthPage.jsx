@@ -3,16 +3,29 @@ import { ArrowRight } from "lucide-react";
 import "./AuthPage.css";
 
 const AuthPage = ({ setToken, setUser, user }) => {
-  const [userType, setUserType] = useState("client");
+  const [userType, setUserType] = useState("Client");
   const [isLogin, setIsLogin] = useState(true);
   const [formData, setFormData] = useState({
-    fullName: "",
-    email: "",
+    username: "",
     phone: "",
+    email: "",
     password: "",
-    confirmPassword: "",
+    experience: "",
+    categories: "",
+    role: userType,
+    profilePicture: null, // For profile picture upload
   });
 
+  console.log(
+    "Categories:",
+    formData.categories,
+    "Experience :",
+    formData.experience,
+    "profilePicture:",
+    formData.profilePicture
+  );
+
+  console.log("This is UserType", userType);
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
@@ -20,32 +33,44 @@ const AuthPage = ({ setToken, setUser, user }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    const updatedFormData = {
+      ...formData,
+      role: userType === "Client" ? "Client" : "Coach",
+    };
+
+    console.log(userType);
+
     let endpoint = "";
 
-    // Determine the API endpoint
     if (isLogin) {
       endpoint =
-        userType === "client"
+        userType === "Client"
           ? `${import.meta.env.VITE_API_BASE_URL}/api/users/login`
           : `${import.meta.env.VITE_API_BASE_URL}/api/coaches/login`;
     } else {
       endpoint =
-        userType === "client"
+        userType === "Client"
           ? `${import.meta.env.VITE_API_BASE_URL}/api/users/signup`
           : `${import.meta.env.VITE_API_BASE_URL}/api/coaches/signup`;
     }
 
-    // Prepare the request payload
     const payload = {
-      email: formData.email,
-      password: formData.password,
+      email: updatedFormData.email,
+      password: updatedFormData.password,
+      role: updatedFormData.role,
+      experience: updatedFormData.experience,
+      categories: updatedFormData.categories,
+      profilePicture: updatedFormData.profilePicture,
     };
 
     if (!isLogin) {
-      payload.fullName = formData.fullName;
+      payload.username = updatedFormData.username;
+      payload.phone = updatedFormData.phone;
+
       if (
-        userType === "client" &&
-        formData.password !== formData.confirmPassword
+        userType === "Client" &&
+        updatedFormData.password !== updatedFormData.confirmPassword
       ) {
         alert("Passwords do not match!");
         return;
@@ -53,7 +78,6 @@ const AuthPage = ({ setToken, setUser, user }) => {
     }
 
     try {
-      // Send the request
       const response = await fetch(endpoint, {
         method: "POST",
         headers: {
@@ -63,21 +87,19 @@ const AuthPage = ({ setToken, setUser, user }) => {
       });
 
       const data = await response.json();
-      console.log(data.token);
+      console.log(data);
 
-      console.log(data.role);
       if (response.ok) {
         alert(`Success: ${data.message}`);
         setToken(data.token);
         setUser(data.user);
-        if (data.user.role === "Client") {
+
+        if (userType === "Client") {
           window.location.href = `https://user.coachdost.com?token=${
             data.token
           }&user=${encodeURIComponent(JSON.stringify(data.user))}`;
         } else {
-          window.location.href = `https://coach.coachdost.com?token=${
-            data.token
-          }&user=${encodeURIComponent(JSON.stringify(data.user))}`;
+          window.location.href = `https://coachdost.com`;
         }
       } else {
         alert(`Error: ${data.message}`);
@@ -133,18 +155,18 @@ const AuthPage = ({ setToken, setUser, user }) => {
             <div className="toggle-container">
               <button
                 type="button"
-                onClick={() => setUserType("client")}
+                onClick={() => setUserType("Client")}
                 className={`toggle-button ${
-                  userType === "client" ? "active" : "inactive"
+                  userType === "Client" ? "active" : "inactive"
                 }`}
               >
                 User
               </button>
               <button
                 type="button"
-                onClick={() => setUserType("coach")}
+                onClick={() => setUserType("Coach")}
                 className={`toggle-button ${
-                  userType === "coach" ? "active" : "inactive"
+                  userType === "Coach" ? "active" : "inactive"
                 }`}
               >
                 Coach
@@ -157,10 +179,10 @@ const AuthPage = ({ setToken, setUser, user }) => {
                   <label className="form-label">Full Name</label>
                   <input
                     type="text"
-                    name="fullName"
+                    name="username"
                     className="form-input"
                     placeholder="Enter your full name"
-                    value={formData.fullName}
+                    value={formData.username}
                     onChange={handleInputChange}
                   />
                 </div>
@@ -213,6 +235,45 @@ const AuthPage = ({ setToken, setUser, user }) => {
                     className="form-input"
                     placeholder="Confirm your password"
                     value={formData.confirmPassword}
+                    onChange={handleInputChange}
+                  />
+                </div>
+              )}
+              {!isLogin && userType === "Coach" && (
+                <div className="form-group">
+                  <label className="form-label">Categories</label>
+                  <input
+                    type="text"
+                    name="categories"
+                    className="form-input"
+                    placeholder="Categories"
+                    value={formData.categories}
+                    onChange={handleInputChange}
+                  />
+                </div>
+              )}
+              {!isLogin && userType === "Coach" && (
+                <div className="form-group">
+                  <label className="form-label">Experience</label>
+                  <input
+                    type="text"
+                    name="experience"
+                    className="form-input"
+                    placeholder="Experience"
+                    value={formData.experience}
+                    onChange={handleInputChange}
+                  />
+                </div>
+              )}
+              {!isLogin && userType === "Coach" && (
+                <div className="form-group">
+                  <label className="form-label">Profile Picture</label>
+                  <input
+                    type="file"
+                    name="profilePicture"
+                    className="form-input"
+                    placeholder="Profile Picture"
+                    value={formData.profilePicture}
                     onChange={handleInputChange}
                   />
                 </div>

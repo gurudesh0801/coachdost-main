@@ -105,6 +105,7 @@ const getGroupingField = (timePeriod) => {
 
 const loginUser = async (req, res) => {
   const { email, password } = req.body;
+  console.log(req.body);
 
   // Validate input
   if (!email || !password) {
@@ -126,8 +127,6 @@ const loginUser = async (req, res) => {
 
     // Generate JWT token
     const token = generateToken(user);
-
-    console.log(user);
     // Respond with user info and token
     return res.status(200).json({
       message: "Login successful",

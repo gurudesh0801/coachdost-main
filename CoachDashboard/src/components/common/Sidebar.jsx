@@ -224,8 +224,9 @@ const Sidebar = ({ setToken, coach, setCoach }) => {
             onClick={() => {
               setToken("");
               setCoach("");
-              localStorage.removeItem("token"); // Clear token from localStorage
-              localStorage.removeItem("coach"); // Clear coachInfo from localStorage
+              localStorage.removeItem("token");
+              localStorage.removeItem("coach");
+              window.location.href = "https:coachdost.com";
             }}
           >
             <motion.div className="flex items-center p-4 text-sm font-medium rounded-lg hover:bg-gray-700 transition-colors mb-2">

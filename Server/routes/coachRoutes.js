@@ -92,7 +92,6 @@ router.post("/approve-session", async (req, res) => {
       { status: "Approved" },
       { new: true }
     );
-    console.log(session.coach);
 
     if (!session) {
       return res.status(404).json({ message: "Session not found" });
@@ -105,7 +104,6 @@ router.post("/approve-session", async (req, res) => {
     if (!coach) {
       return res.status(404).json({ message: "Coach not found" });
     }
-    console.log(coach);
     const meetLink = await createGoogleMeetLink(coach.email);
 
     // Perform additional actions with the studentId if needed

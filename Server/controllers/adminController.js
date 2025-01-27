@@ -12,6 +12,7 @@ const getUnapprovedCoaches = async (req, res) => {
 };
 
 // Approve a coach
+
 const approveCoach = async (req, res) => {
   try {
     const { id } = req.params;

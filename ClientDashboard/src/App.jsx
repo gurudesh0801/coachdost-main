@@ -11,7 +11,6 @@ import AnalyticsPage from "./pages/AnalyticsPage";
 import SettingsPage from "./pages/SettingsPage";
 import TotalSessionsPage from "./pages/UpcomingSessionCard";
 import FindCoachPage from "./pages/FindCoachPage";
-import Login from "./components/login/Login";
 
 function App() {
   const location = useLocation();

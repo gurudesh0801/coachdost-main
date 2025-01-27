@@ -33,15 +33,23 @@ const AppContent = () => {
   const [user, setUser] = useState(
     localStorage.getItem("user") ? JSON.parse(localStorage.getItem("user")) : ""
   );
-  console.log(user);
+  const [coach, setCoach] = useState(
+    localStorage.getItem("coach")
+      ? JSON.parse(localStorage.getItem("coach"))
+      : ""
+  );
   useEffect(() => {
     console.log("Token updated:", token);
     console.log("User updated:", user);
+    console.log("Coach updated:", coach);
     localStorage.setItem("token", token);
 
     // Store user properly as a JSON string
     if (user) {
       localStorage.setItem("user", JSON.stringify(user));
+    }
+    if (coach) {
+      localStorage.setItem("coach", JSON.stringify(coach));
     }
   }, [token, user]);
 

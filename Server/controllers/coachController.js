@@ -18,16 +18,15 @@ const upload = multer({ storage });
 // Updated registerCoach function
 const registerCoach = async (req, res) => {
   try {
-    // Handle file upload with Multer
     upload.single("profilePicture")(req, res, async (err) => {
       if (err) {
         console.error("Error uploading file:", err);
         return res.status(400).json({ message: err.message });
       }
 
-      console.log("Uploaded file:", req.file);
       const { username, phone, email, password, categories, experience } =
         req.body;
+      console.log(req.body);
 
       if (
         !username ||
