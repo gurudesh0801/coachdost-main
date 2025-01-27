@@ -100,7 +100,7 @@ const AuthPage = ({ setToken, setUser, user }) => {
           }&user=${encodeURIComponent(JSON.stringify(data.user))}`;
         } else {
           if (isLogin) {
-            window.location.href = `http://localhost:5175?token=${
+            window.location.href = `https://coach.coachdost.com?token=${
               data.token
             }&coach=${encodeURIComponent(JSON.stringify(data.coach))}`;
           } else {
