@@ -80,6 +80,7 @@
   color: white;
   padding: 1rem 2rem;
   font-size: 1.2rem;
+  font-weight: 600;
   border: none;
   border-radius: 2rem;
   cursor: pointer;
@@ -87,7 +88,7 @@
 }
 
 .features-button:hover {
-  background-color: #682501;
+  background-color: #e06c23;
 }
 
 /* Responsive styles */

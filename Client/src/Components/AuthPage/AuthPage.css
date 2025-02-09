@@ -177,9 +177,9 @@
   background-color: #f3f4f6;
 }
 
-.social-button svg {
-  width: 1.5rem;
-  height: 1.5rem;
+.social-button img {
+  width: 2rem;
+  height: 2rem;
 }
 
 .social-button.linkedin svg {

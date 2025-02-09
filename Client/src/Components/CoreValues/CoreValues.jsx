@@ -8,6 +8,16 @@ import {
 } from "react-icons/fa"; // Import different icons
 
 const CoreValues = () => {
+  let val = document.querySelector(".core-values-title");
+
+  gsap.to(val, {
+    x: 10,
+    stagger: 1,
+  });
+  gsap.from(val, {
+    x: 100,
+    stagger: 1,
+  });
   const values = [
     {
       title: "Unwavering Support Throughout Your Journey",

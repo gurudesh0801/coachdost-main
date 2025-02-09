@@ -1,7 +1,7 @@
 /* Explore Coaches Section */
 .explore-coaches-section {
   background: linear-gradient(135deg, #1e105f, #660a9e);
-  padding: 3rem 2rem;
+  padding: 4rem 4rem;
   color: #fff;
   border-radius: 50px;
   max-width: 1300px;
@@ -57,8 +57,9 @@
   color: #fff;
   padding: 1rem 2rem;
   border: none;
-  border-radius: 20px;
+  border-radius: 2rem;
   font-size: 1rem;
+  font-weight: 600;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
@@ -70,6 +71,7 @@
 /* Coaches Slider */
 .explore-coaches-slider {
   margin-bottom: 4rem;
+  padding: 3rem auto;
   display: flex;
   gap: 1rem;
   overflow-x: auto;
@@ -113,6 +115,37 @@
 .explore-coach-card:hover .explore-coach-hover-content {
   transform: translateY(0);
 }
+.btnSide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  font-size: 2rem;
+}
+.btnSide .textbtn1 {
+  padding: 1rem 1.2rem;
+  background: transparent;
+  border-radius: 2rem;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #ddd;
+  border: 2px solid white;
+}
+.btnSide .textbtn2 {
+  padding: 1rem 1.2rem;
+  background: transparent;
+  border-radius: 2rem;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #ddd;
+  border: 2px solid white;
+}
+
+.textbtn1:hover,
+.textbtn2:hover {
+  background: #e86f1a;
+  transition: 0.5s;
+}
 
 .explore-coach-hover-title {
   margin: 0 0 0.5rem;
@@ -144,7 +177,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 2rem;
+  margin: 3rem 2rem;
 }
 .textCont .texth1 {
   text-align: start;

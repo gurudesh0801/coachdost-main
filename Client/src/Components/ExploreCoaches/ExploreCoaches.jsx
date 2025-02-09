@@ -1,6 +1,10 @@
 import React from "react";
 import "./ExploreCoaches.css";
 import img1 from "../../assets/images/slider_img1.jpg";
+import img2 from "../../assets/images/img3.jpg";
+import img3 from "../../assets/images/img6.jpg";
+import img4 from "../../assets/images/img7.jpg";
+import img5 from "../../assets/images/img8.jpg";
 
 const coaches = [
   {
@@ -13,15 +17,15 @@ const coaches = [
   },
   {
     id: 2,
-    image: "https://via.placeholder.com/300x400",
+    image: img2,
     title: "Language Coaching",
     description:
-      "Enhance your language skills with customized lessons tailored to your learning pace and needs. Speak fluently and confidently.",
+      "Enhance your language skills with customized lessons tailored to your learning pace and needs.",
     button: "Learn More",
   },
   {
     id: 3,
-    image: "https://via.placeholder.com/300x400",
+    image: img3,
     title: "Fitness Coaching",
     description:
       "Transform your body and mind with personalized fitness plans, guided workouts, and nutritional advice to achieve your health goals.",
@@ -29,7 +33,7 @@ const coaches = [
   },
   {
     id: 4,
-    image: "https://via.placeholder.com/300x400",
+    image: img4,
     title: "Relationship Coaching",
     description:
       "Build stronger, healthier relationships by developing communication skills, emotional intelligence, and conflict resolution strategies.",
@@ -37,7 +41,7 @@ const coaches = [
   },
   {
     id: 5,
-    image: "https://via.placeholder.com/300x400",
+    image: img5,
     title: "Career Coaching",
     description:
       "Advance your professional career with mentorship, guidance, and actionable strategies to achieve your dream job or promotion.",
@@ -49,25 +53,25 @@ const cardsData = [
   {
     id: 1,
     country: "Career Coaching",
-    image: "https://via.placeholder.com/100", // Replace with actual image URL
+    image: img1, // Replace with actual image URL
     topics: ["Land your dream job with personalized career guidance."],
   },
   {
     id: 2,
     country: "Executive Coaching",
-    image: "https://via.placeholder.com/100", // Replace with actual image URL
+    image: img2, // Replace with actual image URL
     topics: [" Turn your business idea into reality with expert mentors"],
   },
   {
     id: 3,
     country: "Anger Management Coaching",
-    image: "https://via.placeholder.com/100", // Replace with actual image URL
+    image: img3, // Replace with actual image URL
     topics: ["Achieve your health and fitness goals with top coaches."],
   },
   {
     id: 4,
     country: "Self Confidence Coaching",
-    image: "https://via.placeholder.com/100", // Replace with actual image URL
+    image: img4, // Replace with actual image URL
     topics: [" Improve your communication skills with language experts."],
   },
 ];
@@ -112,6 +116,14 @@ const ExploreCoaches = () => {
             </div>
           </div>
         ))}
+      </div>
+      <div className="btnSide">
+        <button className="textbtn2">
+          <i class="ri-arrow-left-line"></i>
+        </button>
+        <button className="textbtn1">
+          <i class="ri-arrow-right-line"></i>
+        </button>
       </div>
 
       <div className="textCont">

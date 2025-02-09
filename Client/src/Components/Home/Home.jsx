@@ -34,7 +34,7 @@ const Home = () => {
             <button className="hero-button1" onClick={goto}>
               Start Your Growth Journey
             </button>
-            <button className="hero-button2">Meet Your Coaches</button>
+            <button className="hero-button2">Meet Our Coaches</button>
           </div>
         </div>
         <div className="hero-image">

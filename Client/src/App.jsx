@@ -20,6 +20,7 @@ import OurTeam1 from "./Components/Team/OurTeam1";
 import CoachExplore from "./Components/CoachExplore/CoachExplore";
 import FAQ from "./Components/FAQ/FAQ";
 import AuthPage from "./Components/AuthPage/AuthPage";
+import { GoogleOAuthProvider } from "@react-oauth/google";
 
 const AppContent = () => {
   const location = useLocation(); // Get the current location (path)
@@ -79,9 +80,11 @@ const AppContent = () => {
 
 function App() {
   return (
-    <Router>
-      <AppContent />
-    </Router>
+    <GoogleOAuthProvider clientId="1019491445977-kpbn41vglvv10jndfvj07uuqmqerdbkm.apps.googleusercontent.com">
+      <Router>
+        <AppContent />
+      </Router>
+    </GoogleOAuthProvider>
   );
 }
 

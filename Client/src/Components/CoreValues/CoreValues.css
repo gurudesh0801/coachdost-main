@@ -8,13 +8,12 @@
   color: white;
   padding: 6rem 2rem;
   overflow: hidden;
-  /* Add spacing between left and right sections */
-  margin: auto;
   font-family: "Plus Jakarta Sans", sans-serif;
   font-optical-sizing: auto;
   font-weight: 700;
   font-style: normal;
   margin-top: 2rem;
+  margin-bottom: 10rem;
   position: relative;
 }
 
@@ -74,7 +73,7 @@
 }
 
 .value-card1 {
-  background: linear-gradient(180deg, #dddddde3, #d5d5d5f3);
+  background: linear-gradient(180deg, #dddddd1c, #d5d5d50f);
   border-radius: 15px;
   width: 16rem;
   height: 8rem;
@@ -112,6 +111,7 @@
   font-size: 1rem;
   font-weight: 500;
   line-height: 1.2;
+  color: #fff;
 }
 /* Responsive Design */
 
