@@ -52,9 +52,19 @@
 }
 .text-btn .btn2 {
   padding: 1rem 2rem;
-  border: 1px solid blue;
+  font-size: 0.8rem;
+  border: 1px solid rgb(255, 77, 0);
   background: transparent;
   border-radius: 2rem;
+  text-transform: uppercase;
+}
+.text-btn .btn2 i {
+  font-size: 1rem;
+}
+
+.text-btn .btn2:hover {
+  background: #e86f1a;
+  color: #fff;
 }
 
 .leftCont {
@@ -64,9 +74,13 @@
 
 .leftCont h1 {
   font-size: 28px;
-  font-weight: bold;
   color: #220b53;
   margin-bottom: 10px;
+  font-family: "Roboto", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
 }
 
 .leftCont p {

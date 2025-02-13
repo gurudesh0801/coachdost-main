@@ -1,40 +1,45 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./CoreValues.css";
 import {
   FaUsers,
   FaChartLine,
   FaLightbulb,
   FaHandsHelping,
-} from "react-icons/fa"; // Import different icons
+} from "react-icons/fa";
 
 const CoreValues = () => {
-  let val = document.querySelector(".core-values-title");
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("animate");
+          } else {
+            entry.target.classList.remove("animate");
+          }
+        });
+      },
+      { threshold: 0.2 } // Adjust threshold for when the animation triggers
+    );
 
-  gsap.to(val, {
-    x: 10,
-    stagger: 1,
-  });
-  gsap.from(val, {
-    x: 100,
-    stagger: 1,
-  });
+    const elements = document.querySelectorAll(
+      ".core-values-title, .value-card1"
+    );
+    elements.forEach((el) => observer.observe(el));
+
+    return () => {
+      elements.forEach((el) => observer.unobserve(el));
+    };
+  }, []);
+
   const values = [
     {
       title: "Unwavering Support Throughout Your Journey",
-      icon: <FaHandsHelping />, // Helping hands icon
+      icon: <FaHandsHelping />,
     },
-    {
-      title: "Growth-Focused Development Path",
-      icon: <FaChartLine />, // Growth chart icon
-    },
-    {
-      title: "Knowledge-Driven Progress",
-      icon: <FaLightbulb />, // Lightbulb icon for knowledge
-    },
-    {
-      title: "Resilience-Building Approach",
-      icon: <FaUsers />, // Team icon
-    },
+    { title: "Growth-Focused Development Path", icon: <FaChartLine /> },
+    { title: "Knowledge-Driven Progress", icon: <FaLightbulb /> },
+    { title: "Resilience-Building Approach", icon: <FaUsers /> },
   ];
 
   return (
@@ -42,8 +47,7 @@ const CoreValues = () => {
       <div className="core-values-left">
         <p className="core-values-subtitle">CORE VALUES</p>
         <h1 className="core-values-title">
-          Our <br /> Commitment to <br />
-          Your Success
+          Our <br /> Commitment to <br /> Your Success
         </h1>
       </div>
       <div className="core-values-right">

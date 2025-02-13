@@ -1,26 +1,36 @@
-import React from "react";
-import { FaClock, FaLanguage, FaLock, FaTools } from "react-icons/fa"; // Import React Icons
-import "./WhyChooseUs.css"; // Import the CSS file
+import React, { useEffect } from "react";
+import { FaClock, FaLanguage, FaLock, FaTools } from "react-icons/fa";
+import "./WhyChooseUs.css";
 
 const WhyChooseUs = () => {
   const cards = [
-    {
-      title: "24/7 Access to Expert Guidance",
-      icon: <FaClock />, // React Icon for clock
-    },
-    {
-      title: "Multilingual Coaches Across Industries",
-      icon: <FaLanguage />, // React Icon for languages
-    },
-    {
-      title: "Safe & Private Coaching Environment",
-      icon: <FaLock />, // React Icon for lock
-    },
-    {
-      title: "End-to-End Coaching Platform",
-      icon: <FaTools />, // React Icon for tools
-    },
+    { title: "24/7 Access to Expert Guidance", icon: <FaClock /> },
+    { title: "Multilingual Coaches Across Industries", icon: <FaLanguage /> },
+    { title: "Safe & Private Coaching Environment", icon: <FaLock /> },
+    { title: "End-to-End Coaching Platform", icon: <FaTools /> },
   ];
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+          } else {
+            entry.target.classList.remove("show");
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    const elements = document.querySelectorAll(".card1, .explore-button12");
+    elements.forEach((el) => observer.observe(el));
+
+    return () => {
+      elements.forEach((el) => observer.unobserve(el));
+    };
+  }, []);
 
   return (
     <>
@@ -34,7 +44,7 @@ const WhyChooseUs = () => {
             </div>
           ))}
         </div>
-        <button className="explore-button12">Start Now</button>
+        <button className="explore-button1">Start Now</button>
       </section>
     </>
   );

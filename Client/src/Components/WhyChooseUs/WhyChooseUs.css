@@ -1,14 +1,10 @@
+/* ============================== */
 /* Main Container */
+/* ============================== */
 .why-choose-us-container {
-  background: linear-gradient(
-    110deg,
-    #1e105f,
-    #68099f
-  ); /* Gradient Background */
-  border-radius: 50px;
-  padding-top: 5rem;
-  padding-left: 3rem;
-  padding-right: 3rem;
+  background: linear-gradient(110deg, #1e105f, #68099f);
+  border-radius: 20px;
+  padding-top: 6rem;
   text-align: center;
   max-width: 1300px;
   margin: auto;
@@ -17,39 +13,72 @@
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
+/* ============================== */
 /* Title */
+/* ============================== */
 .why-choose-us-title {
   font-size: 4rem;
-  margin: 5rem 0;
-  font-weight: 700;
+  margin-bottom: 3rem;
   line-height: 1.2;
   text-align: center;
-  color: #dc762c;
+  color: #ee3f00;
+  font-family: "Quicksand", serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
 }
 
+/* ============================== */
 /* Cards Container */
+/* ============================== */
 .cards-container1 {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* Default 4 cards per row */
+  grid-template-columns: repeat(4, 1fr);
   gap: 2rem;
-  padding: 0rem 4rem;
-  margin: 2rem auto;
+  padding: 0 4rem;
+  margin-bottom: 2rem;
 }
 
+/* ============================== */
 /* Individual Card */
+/* ============================== */
 .card1 {
-  background: linear-gradient(
-    180deg,
-    #ffffff66,
-    #66666666
-  ); /* Transparent gradient */
+  background: linear-gradient(180deg, #ffffff66, #66666666);
   border-radius: 15px;
-  padding: 1rem;
-  height: auto; /* Adaptable height */
+  padding: 1.5rem;
+  height: auto;
   text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
+/* Hover Animation */
+.card1:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* ============================== */
+/* Scroll Animation - Initial Hidden State */
+/* ============================== */
+
+/* Reveal Effect when in View */
+.card1,
+.explore-button12 {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.card1.show,
+.explore-button12.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* ============================== */
+/* Icon Styling */
+/* ============================== */
 .icon {
   font-size: 2rem;
   display: flex;
@@ -59,60 +88,103 @@
   width: 3.5rem;
   height: 3.5rem;
   margin: 1rem auto;
-  color: #ffffff; /* Icon color */
+  color: white;
   border-radius: 50%;
-  transition: color 0.3s ease;
+  transition: background 0.3s ease, transform 0.3s ease;
 }
 
+/* Hover Effect on Icon */
+.card1:hover .icon {
+  background: #f56e00;
+  transform: scale(1.1);
+}
+
+/* ============================== */
+/* Card Title */
+/* ============================== */
 .card-title {
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-weight: 600;
   color: white;
+  margin-top: 0.5rem;
 }
 
+/* ============================== */
 /* Explore Button */
-.explore-button12 {
+/* ============================== */
+.explore-button1 {
   background-color: #f08c3a;
-  color: #ffffff;
-  border: none;
+  color: white;
+  border: 1px solid white;
   padding: 0.8rem 2rem;
   border-radius: 3rem;
   font-size: 1rem;
+  text-transform: uppercase;
   font-weight: 600;
   cursor: pointer;
   transition: background 0.3s ease, transform 0.3s ease;
   margin: 2rem 0;
 }
-.explore-button1:hover {
+
+/* Button Hover Effect */
+.explore-button12:hover {
   background-color: #f56e00;
+  transform: scale(1.05);
 }
 
-/* ================================= */
-/* Responsive Design for Devices */
-/* ================================= */
+/* ============================== */
+/* Responsive Design */
+/* ============================== */
 
-/* Desktops and Large Screens (Above 1200px) */
+/* Large Screens (Above 1200px) */
 @media (min-width: 1200px) {
   .cards-container1 {
-    grid-template-columns: repeat(4, 1fr); /* 4 cards per row */
-    gap: 2rem;
+    grid-template-columns: repeat(4, 1fr);
   }
 
   .why-choose-us-title {
-    font-size: 4rem; /* Large title for big screens */
+    font-size: 4rem;
   }
 
-  .explore-button1 {
+  .explore-button12 {
     padding: 1rem 2.5rem;
     font-size: 1.2rem;
   }
 }
 
-/* Laptops and Small Desktops (1024px and below) */
+/* Laptops & Small Desktops (1024px and below) */
 @media (max-width: 1024px) {
   .cards-container1 {
-    grid-template-columns: repeat(2, 1fr); /* 2 cards per row */
+    grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
+  }
+
+  .why-choose-us-container {
+    padding: 3rem;
+  }
+
+  .why-choose-us-title {
+    font-size: 3rem;
+  }
+
+  .explore-button12 {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+  }
+
+  .icon {
+    font-size: 2rem;
+    width: 3rem;
+    height: 3rem;
+  }
+}
+
+/* Tablets (768px and below) */
+@media (max-width: 768px) {
+  .cards-container1 {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 0 2rem;
   }
 
   .why-choose-us-container {
@@ -120,86 +192,55 @@
   }
 
   .why-choose-us-title {
-    font-size: 3rem; /* Slightly smaller title */
+    font-size: 2.5rem;
   }
 
-  .explore-button1 {
-    padding: 1rem 2rem;
-    font-size: 1rem;
-  }
-
-  .icon {
-    font-size: 2rem; /* Adjusted icon size */
-    width: 3rem;
-    height: 3rem;
-  }
-}
-
-/* Tablets and Small Tablets (768px and below) */
-@media (max-width: 768px) {
-  .cards-container1 {
-    grid-template-columns: 1fr; /* 1 card per row */
-    gap: 1rem;
-    padding: 2rem 4rem;
-    margin: 0rem auto;
-  }
-
-  .why-choose-us-container {
-    padding: 1.5rem;
-  }
-
-  .why-choose-us-title {
-    font-size: 2.5rem; /* Smaller title */
-  }
-
-  .explore-button1 {
+  .explore-button12 {
     padding: 0.8rem 1.5rem;
     font-size: 0.9rem;
   }
 
   .card1 {
-    padding: 1rem;
-    border-radius: 10px; /* Adjust border radius */
+    padding: 1.2rem;
+    border-radius: 12px;
   }
 
   .icon {
     font-size: 1.8rem;
-    width: 2.5rem;
-    height: 2.5rem;
+    width: 3rem;
+    height: 3rem;
   }
 }
 
 /* Mobile Phones (480px and below) */
 @media (max-width: 480px) {
   .why-choose-us-container {
-    padding: 1rem;
-    border-radius: 10px;
-    margin: 0rem auto;
+    padding: 1.5rem;
+    border-radius: 20px;
   }
 
   .why-choose-us-title {
-    font-size: 2rem; /* Compact title */
+    font-size: 2rem;
   }
 
   .cards-container1 {
-    gap: 1rem; /* Smaller gap */
-    padding: 0rem 2rem;
+    padding: 0;
   }
 
   .card1 {
-    padding: 0.8rem;
-    border-radius: 8px; /* Small border radius */
+    padding: 1rem;
+    border-radius: 10px;
   }
 
   .icon {
-    font-size: 1.5rem; /* Smaller icon */
-    width: 2rem;
-    height: 2rem;
+    font-size: 1.5rem;
+    width: 2.5rem;
+    height: 2.5rem;
   }
 
-  .explore-button1 {
+  .explore-button12 {
     padding: 0.6rem 1rem;
-    font-size: 0.8rem;
-    border-radius: 10px;
+    font-size: 0.85rem;
+    border-radius: 20px;
   }
 }

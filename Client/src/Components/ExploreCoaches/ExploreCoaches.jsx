@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./ExploreCoaches.css";
 import img1 from "../../assets/images/slider_img1.jpg";
 import img2 from "../../assets/images/img3.jpg";
@@ -53,29 +53,54 @@ const cardsData = [
   {
     id: 1,
     country: "Career Coaching",
-    image: img1, // Replace with actual image URL
+    image: img1,
     topics: ["Land your dream job with personalized career guidance."],
   },
   {
     id: 2,
     country: "Executive Coaching",
-    image: img2, // Replace with actual image URL
-    topics: [" Turn your business idea into reality with expert mentors"],
+    image: img2,
+    topics: ["Turn your business idea into reality with expert mentors"],
   },
   {
     id: 3,
     country: "Anger Management Coaching",
-    image: img3, // Replace with actual image URL
+    image: img3,
     topics: ["Achieve your health and fitness goals with top coaches."],
   },
   {
     id: 4,
     country: "Self Confidence Coaching",
-    image: img4, // Replace with actual image URL
-    topics: [" Improve your communication skills with language experts."],
+    image: img4,
+    topics: ["Improve your communication skills with language experts."],
   },
 ];
+
 const ExploreCoaches = () => {
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+          } else {
+            entry.target.classList.remove("show");
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    const elements = document.querySelectorAll(
+      ".explore-coach-card, .card, .explore-coaches-main-title, .texth1, .textbtn"
+    );
+    elements.forEach((el) => observer.observe(el));
+
+    return () => {
+      elements.forEach((el) => observer.unobserve(el));
+    };
+  }, []);
+
   return (
     <section className="explore-coaches-section">
       {/* Header */}
@@ -117,12 +142,13 @@ const ExploreCoaches = () => {
           </div>
         ))}
       </div>
+
       <div className="btnSide">
         <button className="textbtn2">
-          <i class="ri-arrow-left-line"></i>
+          <i className="ri-arrow-left-line"></i>
         </button>
         <button className="textbtn1">
-          <i class="ri-arrow-right-line"></i>
+          <i className="ri-arrow-right-line"></i>
         </button>
       </div>
 
@@ -130,6 +156,7 @@ const ExploreCoaches = () => {
         <h1 className="texth1">Popular Coaching Categories</h1>
         <button className="textbtn">Explore Now</button>
       </div>
+
       <div className="cards-container">
         {cardsData.map((card) => (
           <div key={card.id} className="card">
@@ -142,7 +169,7 @@ const ExploreCoaches = () => {
                 </li>
               ))}
             </ul>
-            <button className="textbtn2">View More</button>
+            <button className="textbtn2">VIEW MORE</button>
           </div>
         ))}
       </div>

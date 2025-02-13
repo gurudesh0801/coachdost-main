@@ -1,8 +1,32 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { FaGlobe, FaCalendarAlt, FaBook } from "react-icons/fa";
 import "./Features.css";
 
 const Features = () => {
+  const featureRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          } else {
+            entry.target.classList.remove("visible"); // Optional: remove to re-trigger on scroll up
+          }
+        });
+      },
+      { threshold: 0.2 } // Trigger animation when 20% of the element is visible
+    );
+
+    const elements = featureRef.current.querySelectorAll(
+      ".features-title, .feature-card, .features-button"
+    );
+    elements.forEach((el) => observer.observe(el));
+
+    return () => elements.forEach((el) => observer.unobserve(el)); // Cleanup observer
+  }, []);
+
   const features = [
     {
       title: "Range of Highly Experienced Coaches",
@@ -25,8 +49,10 @@ const Features = () => {
   ];
 
   return (
-    <div className="features-container">
-      <h1>Unlock Your Full Potential with Personalized Coaching</h1>
+    <div className="features-container" ref={featureRef}>
+      <h1 className="features-title">
+        Unlock Your Full Potential with Personalized Coaching
+      </h1>
       <div className="features-grid">
         {features.map((feature, index) => (
           <div className="feature-card" key={index}>

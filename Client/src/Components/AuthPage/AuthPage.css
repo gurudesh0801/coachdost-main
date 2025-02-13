@@ -53,8 +53,7 @@
 
 /* Auth card */
 .auth-card {
-  background-color: rgba(126, 34, 206, 0.3);
-  backdrop-filter: blur(4px);
+  background-color: rgba(255, 255, 255, 0.09);
   border-radius: 1.5rem;
   padding: 2rem;
   width: 100%;
@@ -83,9 +82,8 @@
 
 .toggle-button {
   flex: 1;
-  padding: 1rem 1.5rem;
-  border-radius: 9999px;
-  font-size: 0.875rem;
+  padding: 0.8rem 1rem;
+  font-size: 0.8rem;
   border: none;
   transition: all 0.3s;
 }
@@ -115,7 +113,10 @@
   width: 90%;
   padding: 0.75rem 1rem;
   border-radius: 0.5rem;
-  background-color: white;
+  border: none;
+  background: none;
+  border: 1px solid white;
+  color: aliceblue;
   color: #111827;
 }
 
@@ -139,8 +140,16 @@
 .footer-links {
   display: flex;
   gap: 1rem;
+  margin: 3rem 0rem;
   font-size: 0.875rem;
   color: rgba(255, 255, 255, 0.7);
+}
+
+.footer-links a {
+  padding: 0.4rem;
+  color: aliceblue;
+  background: transparent;
+  border-radius: 1rem;
 }
 
 .submit-button {
@@ -160,36 +169,31 @@
 
 /* Social login */
 .social-login {
-  margin-top: 2rem;
+  margin-top: 4rem;
   display: flex;
   justify-content: center;
-  gap: 1rem;
+  gap: 3rem;
+  background: transparent;
 }
 
 .social-button {
-  padding: 0.5rem;
-  border-radius: 9999px;
-  background-color: white;
   transition: background-color 0.3s;
-}
-
-.social-button:hover {
-  background-color: #f3f4f6;
+  background: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .social-button img {
-  width: 2rem;
-  height: 2rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 10px;
 }
 
 .social-button.linkedin svg {
   color: #0077b5;
 }
-
-.social-button.google svg {
-  color: #4b5563;
-}
-
 /* Responsive Styles */
 
 /* For small screens (mobile devices) */

@@ -41,6 +41,11 @@
   cursor: pointer;
 }
 
+.explore-coaches-title-section2 ul li:hover {
+  text-decoration: underline;
+  font-size: 1.2rem;
+}
+
 .explore-coaches-subtitle {
   color: #ddd;
   font-size: 1rem;
@@ -55,9 +60,10 @@
 .explore-coaches-view-all-btn {
   background-color: #f08c3a;
   color: #fff;
-  padding: 1rem 2rem;
-  border: none;
+  padding: 0.8rem 2rem;
+  border: 1px solid white;
   border-radius: 2rem;
+  text-transform: uppercase;
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
@@ -66,6 +72,37 @@
 
 .explore-coaches-view-all-btn:hover {
   background-color: #e86f1a;
+}
+
+/* Default hidden state - Offscreen to the left */
+.explore-coach-card,
+.card,
+.explore-coaches-main-title,
+.texth1,
+.textbtn {
+  opacity: 0;
+  transform: translateX(-2rem);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+/* Show when scrolled into view */
+.explore-coach-card.show,
+.card.show,
+.explore-coaches-main-title.show,
+.texth1.show,
+.textbtn.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Reverse animation when scrolling back up */
+.explore-coach-card.hide,
+.card.hide,
+.explore-coaches-main-title.hide,
+.texth1.hide,
+.textbtn.hide {
+  opacity: 0;
+  transform: translateX(-40px);
 }
 
 /* Coaches Slider */
@@ -127,7 +164,7 @@
   background: transparent;
   border-radius: 2rem;
   font-size: 1.5rem;
-  font-weight: 800;
+  font-weight: 600;
   color: #ddd;
   border: 2px solid white;
 }
@@ -136,7 +173,8 @@
   background: transparent;
   border-radius: 2rem;
   font-size: 1.5rem;
-  font-weight: 800;
+  text-transform: uppercase;
+  font-weight: 600;
   color: #ddd;
   border: 2px solid white;
 }
@@ -145,6 +183,7 @@
 .textbtn2:hover {
   background: #e86f1a;
   transition: 0.5s;
+  color: #ddd;
 }
 
 .explore-coach-hover-title {
@@ -165,6 +204,7 @@
   padding: 1rem 2rem;
   font-weight: bold;
   border-radius: 5px;
+  text-transform: uppercase;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
@@ -183,12 +223,18 @@
   text-align: start;
 }
 .textCont .textbtn {
-  padding: 1rem 2rem;
+  padding: 0.8rem 2rem;
   border-radius: 2rem;
   background: #f08c3a;
-  border: none;
+  border: 1px solid white;
+  font-weight: 600;
+  text-transform: uppercase;
   color: white;
   cursor: pointer;
+}
+.textbtn:hover {
+  background: #e86f1a;
+  transition: 0.5s;
 }
 /* Cards Section */
 .cards-container {

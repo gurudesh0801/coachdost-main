@@ -1,30 +1,51 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import "./TestimonialsCoaches.css";
 import img from "../../assets/images/slider_img4.jpg";
 
 const TestimonialsCoaches = () => {
+  const testimonialsRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("fade-in");
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    const elements =
+      testimonialsRef.current?.querySelectorAll(".testimonial-card");
+    elements?.forEach((el) => observer.observe(el));
+
+    return () => observer.disconnect();
+  }, []);
+
   const testimonials = [
     {
       name: "PERSON 1",
-      image: img, // Replace with actual image URL
+      image: img,
       description:
         "Et purus duis sollicitudin dignissim habitant. Egestas nulla quis the venenatis cras sed eu",
     },
     {
       name: "PERSON 2",
-      image: img, // Replace with actual image URL
+      image: img,
       description:
         "Et purus duis sollicitudin dignissim habitant. Egestas nulla quis the venenatis cras sed eu",
     },
     {
       name: "PERSON 3",
-      image: img, // Replace with actual image URL
+      image: img,
       description:
         "Et purus duis sollicitudin dignissim habitant. Egestas nulla quis the venenatis cras sed eu",
     },
     {
       name: "PERSON 4",
-      image: img, // Replace with actual image URL
+      image: img,
       description:
         "Et purus duis sollicitudin dignissim habitant. Egestas nulla quis the venenatis cras sed eu",
     },
@@ -32,11 +53,9 @@ const TestimonialsCoaches = () => {
 
   return (
     <div className="testimonials-container">
-      {/* Heading */}
       <h1 className="testimonials-heading">Testimonials</h1>
 
-      {/* Testimonials Grid */}
-      <div className="testimonials-grid">
+      <div ref={testimonialsRef} className="testimonials-grid">
         {testimonials.map((testimonial, index) => (
           <div key={index} className="testimonial-card">
             <img
@@ -60,7 +79,6 @@ const TestimonialsCoaches = () => {
         ))}
       </div>
 
-      {/* Footer Buttons */}
       <div className="testimonials-footer">
         <button className="join-button">JOIN THEM NOW</button>
         <button className="read-more-stories">Read More</button>

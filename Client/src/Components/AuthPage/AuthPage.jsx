@@ -291,18 +291,19 @@ const AuthPage = ({ setToken, setUser, user }) => {
                 </div>
               )}
               <div className="social-login">
-                <button type="button" className="social-button google">
-                  <GoogleLogin
-                    onSuccess={(credentialResponse) => {
-                      console.log(credentialResponse);
-                    }}
-                    onError={() => {
-                      console.log("Login Failed");
-                    }}
-                    useOneTap // Optional: Enables auto-login
-                  />
-                  ;
-                </button>
+                <GoogleLogin
+                  onSuccess={(credentialResponse) => {
+                    console.log(credentialResponse);
+                  }}
+                  onError={() => {
+                    console.log("Login Failed");
+                  }}
+                  type="icon" // Alternative: "outline" or "filled_blue"
+                  size="large"
+                  shape="circle" // Ensures only the Google logo appears
+                  useOneTap
+                />
+
                 <button
                   type="button"
                   onClick={gotoLinkedIn}
@@ -314,9 +315,9 @@ const AuthPage = ({ setToken, setUser, user }) => {
 
               <div className="form-footer">
                 <div className="footer-links">
-                  <button type="button">Help</button>
-                  <button type="button">Privacy</button>
-                  <button type="button">Terms</button>
+                  <a href="#">Help</a>
+                  <a href="#">Privacy</a>
+                  <a href="#">Terms</a>
                 </div>
                 <button type="submit" className="submit-button">
                   Next
