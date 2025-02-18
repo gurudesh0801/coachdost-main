@@ -52,7 +52,7 @@ const FAQ = () => {
 
   return (
     <div className="faq-container">
-      <h1 className="faq-title">FAQ</h1>
+      <h1 className="faq-title">Frequently Asked Questions</h1>
 
       <div className="faq-categories">
         {Object.keys(categories).map((key) => (

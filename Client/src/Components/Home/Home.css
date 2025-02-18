@@ -16,6 +16,7 @@
 }
 
 /* Background Overlay */
+
 .hero::before {
   content: "";
   background: url("../../assets/images/Vector.png") no-repeat center;

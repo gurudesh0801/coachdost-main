@@ -21,6 +21,7 @@ import CoachExplore from "./Components/CoachExplore/CoachExplore";
 import FAQ from "./Components/FAQ/FAQ";
 import AuthPage from "./Components/AuthPage/AuthPage";
 import { GoogleOAuthProvider } from "@react-oauth/google";
+import Contact from "../src/Components/Contact/Contact";
 
 const AppContent = () => {
   const location = useLocation(); // Get the current location (path)
@@ -66,6 +67,7 @@ const AppContent = () => {
         <Route path="/our-team" element={<OurTeam1 />} />
         <Route path="/explorecoaches" element={<CoachExplore />} />
         <Route path="/faq" element={<FAQ />} />
+        <Route path="/contact" element={<Contact />} />
         <Route
           path="/login"
           element={
