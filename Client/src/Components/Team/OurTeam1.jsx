@@ -1,28 +1,78 @@
-import React from "react";
+import React, { useEffect } from "react";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
 import "./OurTeam1.css";
 
+import img1 from "../../assets/images/slider_img1.jpg";
+import img2 from "../../assets/images/slider_img2.jpg";
+
+gsap.registerPlugin(ScrollTrigger);
+
 const OurTeam1 = () => {
+  useEffect(() => {
+    // Hero Section Animation
+    let ctx = gsap.context(() => {
+      gsap.from(".hero-title", {
+        opacity: 0,
+        y: -50,
+        duration: 1,
+        ease: "power2.out",
+      });
+
+      gsap.from(".hero-description", {
+        opacity: 0,
+        y: 50,
+        duration: 1,
+        ease: "power2.out",
+        delay: 0.3,
+      });
+
+      // Leadership Cards Animation
+      gsap.from(".leadership-card", {
+        opacity: 0,
+        y: 50,
+        duration: 1,
+        stagger: 0.3,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: ".leadership-section",
+          start: "top 80%",
+          end: "top 50%",
+          scrub: 1,
+        },
+      });
+    });
+    return () => ctx.revert();
+  }, []);
+
   const leadershipTeam = [
     {
-      name: "John Smith",
-      position: "Founder & CEO",
-      expertise: "Leadership Development",
-      experience: "15+ years",
-      achievements: "Led 500+ coaching sessions",
+      name: "Tina Rattra",
+      position: "Co-Founder and Strategy Head",
+      image:
+        "https://res.cloudinary.com/dhfl0g2hw/image/upload/v1740235635/Coachdost/h2ibtom1rhupllyiq0c9.png",
     },
     {
-      name: "Sarah Johnson",
-      position: "Head of Coaching",
-      expertise: "Career Development",
-      experience: "12+ years",
-      achievements: "Developed coaching frameworks for 100+ coaches",
+      name: "Kapil Joshi",
+      position: "Co-Founder and Strategy Head",
+      image:
+        "https://res.cloudinary.com/dhfl0g2hw/image/upload/v1740235635/Coachdost/o8thxtxvkfcdoo9nfppi.png",
     },
     {
-      name: "David Lee",
-      position: "Technical Lead",
-      expertise: "Platform Development",
-      experience: "10+ years",
-      achievements: "Built solutions for 50k+ users",
+      name: "Tanvi Tepan",
+      position: "Creative Head",
+      image:
+        "https://res.cloudinary.com/dhfl0g2hw/image/upload/v1740235635/Coachdost/ixz3gniumrwjmhmhmnyv.png",
+    },
+    {
+      name: "Arjun Tepan",
+      position: "Creative Head",
+      image: img1,
+    },
+    {
+      name: "Yash Bhosale",
+      position: "CTO",
+      image: img2,
     },
   ];
 
@@ -43,6 +93,11 @@ const OurTeam1 = () => {
         <div className="leadership-grid">
           {leadershipTeam.map((leader) => (
             <div className="leadership-card" key={leader.name}>
+              <img
+                src={leader.image}
+                alt={leader.name}
+                className="team-image"
+              />
               <div className="card-content">
                 <h3 className="card-name">{leader.name}</h3>
                 <p className="card-position">{leader.position}</p>
@@ -53,44 +108,6 @@ const OurTeam1 = () => {
             </div>
           ))}
         </div>
-      </section>
-
-      {/* Culture Section */}
-      <section className="culture-section">
-        <h2 className="culture-title">Our Culture</h2>
-        <div className="culture-grid">
-          {[
-            {
-              title: "Innovation",
-              description:
-                "We push boundaries to improve the coaching experience.",
-            },
-            {
-              title: "Collaboration",
-              description: "We work together to create impactful solutions.",
-            },
-            {
-              title: "Excellence",
-              description:
-                "We are committed to delivering high-quality results.",
-            },
-          ].map((value, index) => (
-            <div className="culture-card" key={index}>
-              <h3 className="culture-card-title">{value.title}</h3>
-              <p className="culture-card-description">{value.description}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Join Us Section */}
-      <section className="join-us-section">
-        <h2 className="join-us-title">Join Our Mission</h2>
-        <p className="join-us-description">
-          We're always looking for passionate individuals to help transform
-          lives through coaching.
-        </p>
-        <button className="join-us-button">View Open Positions</button>
       </section>
     </div>
   );
